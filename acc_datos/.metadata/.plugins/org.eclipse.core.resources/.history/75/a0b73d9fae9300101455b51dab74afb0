@@ -1,0 +1,28 @@
+package repositorio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import modelo.usuario;
+
+public class usuarioRepo {
+	List<usuario> usuarios = new ArrayList<>();
+	
+	public List<usuario> addUsuario (usuario u) {
+		this.usuarios.add(u);
+		return usuarios;
+	}
+	
+	public List<usuario> borrarUsuario (usuario u) {
+		this.usuarios.remove(u);
+		return usuarios;
+	}
+	
+	public usuario devuelveUsuario (usuario u) {
+		usuario f = null;
+		if (this.usuarios.contains(u)){
+			f = u;
+		}
+		return f;
+	}
+}

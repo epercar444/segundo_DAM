@@ -1,0 +1,40 @@
+package services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import modelo.Canal;
+import repositorio.CanalRepo;
+
+public class CanalServ {
+	CanalRepo repositorio;
+	
+
+	
+	public CanalServ() {
+		super();
+		this.repositorio = new CanalRepo();
+	}
+
+	public CanalRepo getRepositorio() {
+		return repositorio;
+	}
+
+
+	public void setRepositorio(CanalRepo repositorio) {
+		this.repositorio = repositorio;
+	}
+
+
+	public void addCanal (Canal c) {
+		repositorio.addCanal(c);
+	}
+	
+	public void bajaCanal (Canal c) {
+		repositorio.borrarCanal(c);
+	}
+	
+	public Canal leCanal (Canal c) {
+		return repositorio.devuelveCanal(c);
+	}
+}

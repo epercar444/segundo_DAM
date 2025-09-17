@@ -1,0 +1,50 @@
+package controlador;
+
+import java.time.LocalDate;
+
+import modelo.Canal;
+import modelo.Retrans;
+import modelo.Usuario;
+import repositorio.CanalRepo;
+import repositorio.RetransRepo;
+import repositorio.UsuarioRepo;
+import services.CanalServ;
+import services.RetransServ;
+import services.UsuarioServ;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Usuario usuario1 = new Usuario(1, "Carlos Sánchez", "carlos@email.com", LocalDate.of(2023, 5, 20), true);
+        Usuario usuario2 = new Usuario(2, "Ana García", "ana@email.com", LocalDate.of(2023, 6, 10), true);
+        Canal canal1 = new Canal(1, LocalDate.of(2023, 5, 10));
+        Canal canal2 = new Canal(2, LocalDate.of(2024, 3, 15));
+        Retrans retrans1 = new Retrans(101, 120);  
+        Retrans retrans2 = new Retrans(102, 150);
+        
+        UsuarioServ u1 = new UsuarioServ();
+        f.addUser(usuario2);
+        f.addUser(usuario1);
+        f.bajaUser(usuario2);
+        System.out.println(u1.getRepositorio().getUsuarios());
+        System.out.println(f.leeUser(usuario1));
+        
+        CanalRepo c = new CanalRepo();
+        CanalServ c1 = new CanalServ();
+        c1.addCanal(canal1);
+        c1.addCanal(canal2);
+        c1.bajaCanal(canal2);
+        System.out.println(c.getCanales());
+        System.out.println(c1.leCanal(canal1));
+        
+        RetransRepo r = new RetransRepo();
+        RetransServ r1 = new RetransServ();
+        r1.addRetrans(retrans1);
+        r1.addRetrans(retrans2);
+        r1.bajaRetrans(retrans2);
+        System.out.println(r.getRetransmisiones());
+        System.out.println(r1.leeRetrans(retrans1));
+
+	}
+
+}

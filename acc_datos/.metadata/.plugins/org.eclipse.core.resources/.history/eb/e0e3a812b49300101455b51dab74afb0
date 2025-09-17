@@ -1,0 +1,36 @@
+package services;
+
+import modelo.Usuario;
+import repositorio.UsuarioRepo;
+
+public class UsuarioServ {
+	UsuarioRepo repositorio;
+	
+	
+	public UsuarioServ() {
+		super();
+		this.repositorio = repositorio;
+	}
+
+	public UsuarioRepo getRepositorio() {
+		return repositorio;
+	}
+
+
+	public void setRepositorio(UsuarioRepo repositorio) {
+		this.repositorio = repositorio;
+	}
+
+
+	public void addUser (Usuario u) {
+		repositorio.addUsuario(u);
+	}
+	
+	public void bajaUser (Usuario u) {
+		repositorio.borrarUsuario(u);
+	}
+	
+	public Usuario leeUser (Usuario u) {
+		return repositorio.devuelveUsuario(u);
+	}
+}

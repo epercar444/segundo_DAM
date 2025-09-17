@@ -1,0 +1,20 @@
+package services;
+
+import modelo.canal;
+import repositorio.canalRepo;
+
+public class canalServ {
+	canalRepo repositorio = new canalRepo();
+	
+	public void addCanal (canal c) {
+		repositorio.addCanal(c);
+	}
+	
+	public void bajaCanal (canal c) {
+		repositorio.borrarCanal(c);
+	}
+	
+	public void leCanal (canal c) {
+		repositorio.devuelveCanal(c);
+	}
+}

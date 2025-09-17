@@ -1,0 +1,28 @@
+package controlador;
+
+import java.time.LocalDate;
+
+import modelo.Usuario;
+import repositorio.UsuarioRepo;
+import services.UsuarioServ;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Usuario usuario1 = new Usuario(1, "Carlos Sánchez", "carlos@email.com", LocalDate.of(2023, 5, 20), true);
+        Usuario usuario2 = new Usuario(2, "Ana García", "ana@email.com", LocalDate.of(2023, 6, 10), true);
+
+        
+        UsuarioRepo u = new UsuarioRepo();
+        UsuarioServ f = new UsuarioServ();
+        f.addUser(usuario2);
+        f.addUser(usuario1);
+        f.bajaUser(usuario2);
+        System.out.println(u.getUsuarios());
+        System.out.println(f.leeUser(usuario1));
+        
+
+
+	}
+
+}

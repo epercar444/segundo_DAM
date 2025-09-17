@@ -1,0 +1,28 @@
+package repositorio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import modelo.canal;
+
+public class canalRepo {
+	List<canal> canales = new ArrayList<>();
+	
+	public List<canal> addUsuario (canal c) {
+		this.canales.add(c);
+		return canales;
+	}
+	
+	public List<canal> borrarUsuario (canal c) {
+		this.canales.remove(c);
+		return canales;
+	}
+	
+	public canal devuelveUsuario (canal c) {
+		canal f = null;
+		if (this.canales.contains(c)){
+			f = c;
+		}
+		return f;
+	}
+}

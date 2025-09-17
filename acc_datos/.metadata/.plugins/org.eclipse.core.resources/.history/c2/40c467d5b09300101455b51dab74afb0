@@ -1,0 +1,18 @@
+package controlador;
+
+import java.time.LocalDate;
+
+import modelo.Usuario;
+
+public class main {
+
+	public static void main(String[] args) {
+		Usuario usuario1 = new Usuario(1, "Carlos Sánchez", "carlos@email.com", LocalDate.of(2023, 5, 20), true);
+        Usuario usuario2 = new Usuario(2, "Ana García", "ana@email.com", LocalDate.of(2023, 6, 10), true);
+        Usuario usuario3 = new Usuario(3, "Luis Pérez", "luis@email.com", LocalDate.of(2022, 4, 15), false);
+        Usuario usuario4 = new Usuario(4, "María López", "maria@email.com", LocalDate.of(2021, 8, 30), false);
+        Usuario usuario5 = new Usuario(5, "Pedro Fernández", "pedro@email.com", LocalDate.of(2024, 2, 1), false);
+
+	}
+
+}

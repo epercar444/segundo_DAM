@@ -1,0 +1,48 @@
+package modelo;
+
+import java.time.LocalDate;
+import java.util.Objects;
+
+public class Canal {
+	private int id_canal;
+	private LocalDate fecha_creacion;
+	public canal(int id_canal, LocalDate fecha_creacion) {
+		super();
+		this.id_canal = id_canal;
+		this.fecha_creacion = fecha_creacion;
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(fecha_creacion, id_canal);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		canal other = (canal) obj;
+		return Objects.equals(fecha_creacion, other.fecha_creacion) && id_canal == other.id_canal;
+	}
+	public int getId_canal() {
+		return id_canal;
+	}
+	public void setId_canal(int id_canal) {
+		this.id_canal = id_canal;
+	}
+	public LocalDate getFecha_creacion() {
+		return fecha_creacion;
+	}
+	public void setFecha_creacion(LocalDate fecha_creacion) {
+		this.fecha_creacion = fecha_creacion;
+	}
+	@Override
+	public String toString() {
+		return "canal [id_canal=" + id_canal + ", fecha_creacion=" + fecha_creacion + "]";
+	}
+	
+	
+	
+}

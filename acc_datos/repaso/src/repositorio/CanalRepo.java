@@ -1,0 +1,71 @@
+package repositorio;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import modelo.Canal;
+
+public class CanalRepo {
+	List<Canal> canales;
+	
+	
+	public CanalRepo() {
+		super();
+		this.canales = new ArrayList<>();
+	}
+	
+
+	public List<Canal> getCanales() {
+		return canales;
+	}
+
+
+	public void setCanales(List<Canal> canales) {
+		this.canales = canales;
+	}
+
+
+	@Override
+	public String toString() {
+		return "canalRepo [canales=" + canales + "]";
+	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(canales);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CanalRepo other = (CanalRepo) obj;
+		return Objects.equals(canales, other.canales);
+	}
+
+	
+	
+
+	public void addCanal (Canal c) {
+		this.canales.add(c);
+	}
+	
+	public void borrarCanal (Canal c) {
+		this.canales.remove(c);
+	}
+	
+	public Canal devuelveCanal (Canal c) {
+		Canal f = null;
+		if (this.canales.contains(c)){
+			f = c;
+		}
+		return f;
+	}
+}

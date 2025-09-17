@@ -1,0 +1,20 @@
+package services;
+
+import modelo.Retrans;
+import repositorio.RetransRepo;
+
+public class RetransServ {
+	RetransRepo repositorio = new RetransRepo();
+	
+	public void addRetrans (Retrans r) {
+		repositorio.addRetrans(r);
+	}
+	
+	public void bajaRetrans (Retrans r) {
+		repositorio.borrarRetrans(r);
+	}
+	
+	public void leeRetrans (Retrans r) {
+		repositorio.devuelveRetrans(r);
+	}
+}

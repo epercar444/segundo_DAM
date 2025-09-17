@@ -1,0 +1,68 @@
+package repositorio;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import modelo.Retrans;
+
+
+public class RetransRepo {
+	List<Retrans> retransmisiones;
+	
+	
+	public RetransRepo() {
+		super();
+		this.retransmisiones = new ArrayList<>();
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(retransmisiones);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		RetransRepo other = (RetransRepo) obj;
+		return Objects.equals(retransmisiones, other.retransmisiones);
+	}
+
+
+	@Override
+	public String toString() {
+		return "RetransRepo [retransmisiones=" + retransmisiones + "]";
+	}
+
+	public List<Retrans> getRetransmisiones() {
+		return retransmisiones;
+	}
+
+	public void setRetransmisiones(List<Retrans> retransmisiones) {
+		this.retransmisiones = retransmisiones;
+	}
+
+	public void addRetrans (Retrans r) {
+		this.retransmisiones.add(r);
+		return retransmisiones;
+	}
+	
+	public List<Retrans> borrarRetrans (Retrans r) {
+		this.retransmisiones.remove(r);
+		return retransmisiones;
+	}
+	
+	public Retrans devuelveRetrans (Retrans r) {
+		Retrans f = null;
+		if (this.retransmisiones.contains(r)){
+			f = r;
+		}
+		return f;
+	}
+}

@@ -1,0 +1,29 @@
+package repositorio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import modelo.retrans;
+
+
+public class retransRepo {
+	List<retrans> retransmisiones = new ArrayList<>();
+	
+	public List<retrans> addUsuario (retrans r) {
+		this.retransmisiones.add(r);
+		return retransmisiones;
+	}
+	
+	public List<retrans> borrarUsuario (retrans r) {
+		this.retransmisiones.remove(r);
+		return retransmisiones;
+	}
+	
+	public retrans devuelveUsuario (retrans r) {
+		retrans f = null;
+		if (this.retransmisiones.contains(r)){
+			f = u;
+		}
+		return f;
+	}
+}
