@@ -1,6 +1,7 @@
 package Libreria.repositorio;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 import Libreria.modelo.Editorial;
@@ -23,43 +24,58 @@ public class EditorialRepo {
 	}
 	
 	
-	public void addLibro (Editorial e) {
+	public void addEditorial (Editorial e) {
 		editoriales.add(e);
 	}
 	
-	public boolean deleteLibro (Editorial e) throws Libreria_Exception {
-		boolean esta = false;
-		if (editoriales.contains(e)) {
+	public boolean deleteEditorial (String CIF) throws Libreria_Exception {
+		boolean esta = true;
+		Editorial e = leeEditorial(CIF);
+		if (e.equals(null)) {
+			esta= false;
+			throw new Libreria_Exception ("La editorial indicada no existe");
+		}
+		return esta;
+	}
+	
+	public Editorial leeEditorial (String CIF) throws Libreria_Exception {
+		boolean encontrado = false;
+		Editorial p = null;
+		
+		Iterator<Editorial> iterator = editoriales.iterator();
+			while (!encontrado && iterator.hasNext()) {
+				Editorial e = iterator.next();
+				if (e.getCIF().equals(CIF)) {
+					p = e; 
+					encontrado = true;
+			}
+		}
+		return p;
+	}
+	
+	public boolean actualizaEditorial (String CIF,Editorial e1) throws Libreria_Exception {
+		boolean esta = true;
+		Editorial e = leeEditorial(CIF);
+		if (e.equals(null)) {
+			esta= false;
+			throw new Libreria_Exception ("La editorial indicada no existe");
+		}
+		else {
 			editoriales.remove(e);
-			esta = true;
-		}
-		else {
-			throw new Libreria_Exception ("No existe dicha editorial");
+			editoriales.add(e1);
 		}
 		return esta;
 	}
 	
-	public boolean consultLibro (Editorial e) throws Libreria_Exception {
-		boolean esta = false;
-		if (editoriales.contains(e)) {
+	public boolean consultaEditorial (String CIF) throws Libreria_Exception {
+		boolean esta = true;
+		Editorial e = leeEditorial(CIF);
+		if (e.equals(null)) {
+			esta= false;
+			throw new Libreria_Exception ("La editorial indicada no existe");
+		}
+		else {
 			System.out.println(e.toString());
-			esta = true;
-		}
-		else {
-			throw new Libreria_Exception ("No existe dicha editorial");
-		}
-		return esta;
-	}
-	
-	public boolean actualizaLibro (Editorial antigua, Editorial nueva) throws Libreria_Exception {
-		boolean esta = false;
-		if (editoriales.contains(antigua)) {
-			editoriales.remove(antigua);
-			editoriales.add(nueva);
-			esta = true;
-		}
-		else {
-			throw new Libreria_Exception ("No existe dicha editorial");
 		}
 		return esta;
 	}

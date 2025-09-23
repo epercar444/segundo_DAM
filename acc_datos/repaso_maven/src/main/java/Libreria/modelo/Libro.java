@@ -4,12 +4,13 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Libro {
-	private String titulo, autor, editorial,ISBN;
+	private String titulo, autor, ISBN;
 	private LocalDate anyo_publicacion;
 	private int num_ejem_disp;
 	private Genero_Libro genero;
+	private Editorial editorial;
 	
-	public Libro(String titulo, String autor, String editorial, String iSBN, LocalDate anyo_publicacion,
+	public Libro(String titulo, String autor, Editorial editorial, String iSBN, LocalDate anyo_publicacion,
 			int num_ejem_disp,Genero_Libro genero) {
 		super();
 		this.titulo = titulo;
@@ -41,10 +42,10 @@ public class Libro {
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-	public String getEditorial() {
+	public Editorial getEditorial() {
 		return editorial;
 	}
-	public void setEditorial(String editorial) {
+	public void setEditorial(Editorial editorial) {
 		this.editorial = editorial;
 	}
 	public String getISBN() {

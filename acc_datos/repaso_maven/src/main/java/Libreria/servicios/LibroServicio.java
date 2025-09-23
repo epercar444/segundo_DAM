@@ -1,5 +1,82 @@
 package Libreria.servicios;
 
-public class LibroServicio {
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
+import Libreria.modelo.Genero_Libro;
+import Libreria.modelo.Libreria_Exception;
+import Libreria.modelo.Libro;
+import Libreria.repositorio.LibroRepo;
+
+public class LibroServicio {
+	LibroRepo repo = new LibroRepo();
+	
+	public void leeLibro (String ISBN) {
+		try {
+			repo.leeLibro(ISBN);
+		} catch (Libreria_Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void addLibro (Libro l) {
+		repo.addLibro(l);
+	}
+	
+	public void deleteLibro (String ISBN) {
+		try {
+			repo.deleteLibro(ISBN);
+		} catch (Libreria_Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void actualizaLibro (Libro l, String ISBN) {
+		try {
+			repo.actualizaLibro(ISBN, l);
+		} catch (Libreria_Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void consultaLibro (String ISBN) {
+		try {
+			repo.consultaLibro(ISBN);
+		} catch (Libreria_Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public Set<Libro> getPorGenero(Genero_Libro genero) {
+		Set<Libro> libros_genero = new HashSet<>();
+		for (Libro l : repo.getLibros()) {
+			if (l.getGenero().equals(genero)) {
+				libros_genero.add(l);
+			}
+		}
+		return libros_genero;
+	}
+	
+	public Map<Genero_Libro,Set<Libro>> getMapaPorGenero (Genero_Libro genero) {
+		Set <Libro> libros_por_genero = getPorGenero(genero);
+		Map<Genero_Libro,Set<Libro>> mapa = new HashMap<>();
+		mapa.put(genero, libros_por_genero);
+		return mapa;
+	}
+	
+	public Set<Libro> getPorCIF(String CIF) {
+		Set<Libro> libros_por_CIF = new HashSet<>();
+		for (Libro l : repo.getLibros()) {
+			if (l.getEditorial().getCIF().equals(CIF)) {
+				libros_por_CIF.add(l);
+			}
+		}
+		return libros_por_CIF;
+	}
 }

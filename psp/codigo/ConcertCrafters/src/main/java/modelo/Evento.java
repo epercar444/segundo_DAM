@@ -16,8 +16,8 @@ public abstract class Evento {
 		super();
 		contador++;
 		this.id = id + contador;
-		setNum_entradas_vendidas(num_entradas_vendidas); //validaciones siempre en el set
 		setCap_max_asist(cap_max_asist);
+		setNum_entradas_vendidas(num_entradas_vendidas); //validaciones siempre en el set
 		this.nombre = nombre;
 		this.fecha = fecha;
 		this.estado = estado;
@@ -111,7 +111,7 @@ public abstract class Evento {
 	}
 	
 	public void getPorcentajeOcupacion () {
-		int porcentaje = (num_entradas_vendidas / cap_max_asist) * 100;
+		int porcentaje = (num_entradas_vendidas * 100) / cap_max_asist;
 		System.out.println(porcentaje + "%");
 	}
 	
@@ -122,7 +122,7 @@ public abstract class Evento {
 			throw new CraftersException ("El numero de entradas finales vendidas no puede ser mayor a la capacidad");
 		}
 		else {
-			porcentaje = (num_entradas_final + cap_max_asist) * 100;
+			porcentaje = (num_entradas_final * 100) / cap_max_asist;
 			System.out.println(porcentaje + "%");
 		}
 	}

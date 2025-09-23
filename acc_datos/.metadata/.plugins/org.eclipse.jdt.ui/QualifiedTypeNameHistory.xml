@@ -5,4 +5,10 @@
     <fullyQualifiedTypeName name="repositorio.UsuarioRepo"/>
     <fullyQualifiedTypeName name="repositorio.CanalRepo"/>
     <fullyQualifiedTypeName name="repositorio.RetransRepo"/>
+    <fullyQualifiedTypeName name="modelo.Concierto"/>
+    <fullyQualifiedTypeName name="enum_.Estado_Crafters"/>
+    <fullyQualifiedTypeName name="Libreria.repositorio.LibroRepo"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.TreeSet"/>
 </qualifiedTypeNameHistroy>

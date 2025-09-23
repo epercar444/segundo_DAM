@@ -2,7 +2,7 @@ package Libreria.modelo;
 
 import java.util.Objects;
 
-public class Editorial {
+public class Editorial implements Comparable<Editorial>{
 
 	private String nombre,dirección,CIF,web,email;
 
@@ -76,5 +76,14 @@ public class Editorial {
 	public String toString() {
 		return "Editorial [nombre=" + nombre + ", dirección=" + dirección + ", CIF=" + CIF + ", web=" + web + ", email="
 				+ email + "]";
+	}
+
+	@Override
+	public int compareTo(Editorial o) {
+		int comparacion = this.nombre.compareTo(o.getNombre());
+		if (comparacion == 0) {
+			comparacion = this.CIF.compareTo(o.getCIF());
+		}
+		return comparacion;
 	}
 }

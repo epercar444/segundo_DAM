@@ -10,7 +10,7 @@ import Libreria.repositorio.*;
 public class Libreria_main {
 
 	public static void main(String[] args) {
-		LibroRepo n = new LibroRepo();
+		/*LibroRepo n = new LibroRepo();
 		Libro miLibro = new Libro("Cien Años de Soledad", "Gabriel García Márquez", "Editorial Sudamericana", "978-3-16-148410-0", LocalDate.of(1967, 5, 30), 5, Genero_Libro.TERROR);
 		try {
 			n.addLibro(miLibro);
@@ -18,7 +18,7 @@ public class Libreria_main {
 		} catch (Libreria_Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 	}
 	
 	

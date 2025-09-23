@@ -1,0 +1,23 @@
+package Libreria.servicios;
+
+import Libreria.modelo.Libreria_Exception;
+import Libreria.modelo.Libro;
+import Libreria.repositorio.LibroRepo;
+
+public class LibroServicio {
+	LibroRepo repo = new LibroRepo();
+	
+	public Libro leeLibro (String ISBN) {
+		try {
+			return repo.leeLibro(ISBN);
+		} catch (Libreria_Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void addLibro (Libro l) {
+		repo.addLibro(l);
+	}
+	
+}

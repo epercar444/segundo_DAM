@@ -30,20 +30,16 @@ public class LibroRepo {
 	}
 	
 	public boolean deleteLibro (String ISBN) throws Libreria_Exception {
-		boolean esta = false;
-		for (Libro l : libros) {
-			while (l.getISBN().equals(ISBN)) {
-				libros.remove(l);
-			}
-			esta = true;
-		}
-		if (esta = false) {
-			throw new Libreria_Exception ("No existe dicho libro");
+		boolean esta = true;
+		Libro l = leeLibro(ISBN);
+		if (l.equals(null)) {
+			esta= false;
+			throw new Libreria_Exception ("El libro indicado no existe");
 		}
 		return esta;
 	}
 	
-	public Libro consultLibro (String ISBN) throws Libreria_Exception {
+	public Libro leeLibro (String ISBN) throws Libreria_Exception {
 		boolean encontrado = false;
 		Libro p = null;
 		
@@ -58,17 +54,32 @@ public class LibroRepo {
 		return p;
 	}
 	
-	/*public boolean actualizaLibro (Libro l) throws Libreria_Exception {
-		boolean esta = false;
-		if (libros.contains(antiguo)) {
-			libros.remove(antiguo);
-			libros.add(nuevo);
-			esta = true;
+	public boolean actualizaLibro (String ISBN,Libro l1) throws Libreria_Exception {
+		boolean esta = true;
+		Libro l = leeLibro(ISBN);
+		if (l.equals(null)) {
+			esta= false;
+			throw new Libreria_Exception ("El libro indicado no existe");
 		}
 		else {
-			throw new Libreria_Exception ("No existe dicho libro");
+			libros.remove(l);
+			libros.add(l1);
 		}
-		return esta;*/
+		return esta;
 	}
+	
+	public boolean consultaLibro (String ISBN) throws Libreria_Exception {
+		boolean esta = true;
+		Libro l = leeLibro(ISBN);
+		if (l.equals(null)) {
+			esta= false;
+			throw new Libreria_Exception ("La editorial indicada no existe");
+		}
+		else {
+			System.out.println(l.toString());
+		}
+		return esta;
+	}
+}
 
 
