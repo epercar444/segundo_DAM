@@ -10,7 +10,7 @@ public class main {
 		try {
 			Deportivo d1 = new Deportivo(600, 500, null, null, null, false);
 		} catch (CraftersException e) {
-			System.out.println(e.getMessage());	}
+			System.out.println(e.getMessage());	  }
 		
 
 	}

@@ -16,8 +16,8 @@ public abstract class Evento {
 		super();
 		contador++;
 		this.id = id + contador;
-		this.num_entradas_vendidas = getNum_entradas_vendidas();
-		this.cap_max_asist = cap_max_asist;
+		setNum_entradas_vendidas(num_entradas_vendidas); //validaciones siempre en el set
+		setCap_max_asist(cap_max_asist);
 		this.nombre = nombre;
 		this.fecha = fecha;
 		this.estado = estado;
@@ -35,22 +35,27 @@ public abstract class Evento {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getNum_entradas_vendidas() throws CraftersException {
+	public int getNum_entradas_vendidas() {
+		return num_entradas_vendidas;
+	}
+	public void setNum_entradas_vendidas(int num_entradas_vendidas) throws CraftersException {
 		if (num_entradas_vendidas < 0 || num_entradas_vendidas > cap_max_asist) {
 			throw new CraftersException ("No es posible construir un evento con esos datos");
 		}
 		else {
-		return num_entradas_vendidas;
-		}
-	}
-	public void setNum_entradas_vendidas(int num_entradas_vendidas) {
 		this.num_entradas_vendidas = num_entradas_vendidas;
+		}
 	}
 	public int getCap_max_asist() {
 		return cap_max_asist;
 	}
-	public void setCap_max_asist(int cap_max_asist) {
+	public void setCap_max_asist(int cap_max_asist) throws CraftersException {
+		if (num_entradas_vendidas > cap_max_asist) {
+			throw new CraftersException ("No es posible construir un evento con esos datos");
+		}
+		else {
 		this.cap_max_asist = cap_max_asist;
+		}
 	}
 	public String getNombre() {
 		return nombre;
