@@ -32,9 +32,12 @@ public class LibroRepo {
 	public boolean deleteLibro (String ISBN) throws Libreria_Exception {
 		boolean esta = true;
 		Libro l = leeLibro(ISBN);
-		if (l.equals(null)) {
+		if (l==null) {
 			esta= false;
 			throw new Libreria_Exception ("El libro indicado no existe");
+		}
+		else {
+			libros.remove(l);
 		}
 		return esta;
 	}
@@ -54,10 +57,10 @@ public class LibroRepo {
 		return p;
 	}
 	
-	public boolean actualizaLibro (String ISBN,Libro l1) throws Libreria_Exception {
+	public boolean actualizaLibro (Libro l1) throws Libreria_Exception {
 		boolean esta = true;
-		Libro l = leeLibro(ISBN);
-		if (l.equals(null)) {
+		Libro l = leeLibro(l1.getISBN());
+		if (l == null) {
 			esta= false;
 			throw new Libreria_Exception ("El libro indicado no existe");
 		}
@@ -71,7 +74,7 @@ public class LibroRepo {
 	public boolean consultaLibro (String ISBN) throws Libreria_Exception {
 		boolean esta = true;
 		Libro l = leeLibro(ISBN);
-		if (l.equals(null)) {
+		if (l ==null) {
 			esta= false;
 			throw new Libreria_Exception ("La editorial indicada no existe");
 		}

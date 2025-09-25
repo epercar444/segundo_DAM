@@ -31,7 +31,7 @@ public class EditorialRepo {
 	public boolean deleteEditorial (String CIF) throws Libreria_Exception {
 		boolean esta = true;
 		Editorial e = leeEditorial(CIF);
-		if (e.equals(null)) {
+		if (e==null) {
 			esta= false;
 			throw new Libreria_Exception ("La editorial indicada no existe");
 		}
@@ -56,7 +56,7 @@ public class EditorialRepo {
 	public boolean actualizaEditorial (String CIF,Editorial e1) throws Libreria_Exception {
 		boolean esta = true;
 		Editorial e = leeEditorial(CIF);
-		if (e.equals(null)) {
+		if (e==null) {
 			esta= false;
 			throw new Libreria_Exception ("La editorial indicada no existe");
 		}
@@ -70,7 +70,7 @@ public class EditorialRepo {
 	public boolean consultaEditorial (String CIF) throws Libreria_Exception {
 		boolean esta = true;
 		Editorial e = leeEditorial(CIF);
-		if (e.equals(null)) {
+		if (e==null) {
 			esta= false;
 			throw new Libreria_Exception ("La editorial indicada no existe");
 		}

@@ -6,3 +6,4 @@
 1758657445038	Rename local variable 'conteo'
 1758657462567	Rename local variable 'libros_por_editoriales'
 1758657581199	Rename local variable 'editorial'
+1758823718307	Rename method 'contarYOrdenarLibros'

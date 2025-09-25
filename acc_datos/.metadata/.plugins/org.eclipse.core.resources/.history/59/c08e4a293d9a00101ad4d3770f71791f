@@ -1,0 +1,34 @@
+package Libreria.controlador;
+
+import java.time.LocalDate;
+
+import Libreria.modelo.Editorial;
+import Libreria.modelo.Genero_Libro;
+import Libreria.modelo.Libreria_Exception;
+import Libreria.modelo.Libro;
+import Libreria.repositorio.*;
+import Libreria.servicios.EditorialServicio;
+import Libreria.servicios.LibroServicio;
+
+public class Libreria_main {
+
+	public static void main(String[] args) {
+		EditorialServicio serv_edi = new EditorialServicio();
+		LibroServicio serv_li = new LibroServicio();
+		Editorial editorial1 = new Editorial("Planeta", "Calle Falsa 123", "A12345678", "www.planeta.com", "info@planeta.com");
+		Libro libro2 = new Libro("Cien años de soledad", "Gabriel García Márquez", editorial1, "ISBN654321", LocalDate.of(1967, 5, 30), 7, Genero_Libro.INFANTIL);
+		Libro libro1 = new Libro("El Quijote", "Miguel de Cervantes", editorial1, "ISBN123456", LocalDate.of(1605, 1, 16), 10, Genero_Libro.HISTÓRICO);
+		
+		System.out.println("Añadir libro: ");
+		serv_li.addLibro(libro1);
+		System.out.println(serv_li.getRepo().getLibros());
+		
+		
+	}
+	
+}
+
+
+
+
+
