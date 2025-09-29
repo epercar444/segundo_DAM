@@ -3,11 +3,8 @@ package modelo;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import enum_.Estado_Crafters;
-import excepciones.CraftersException;
-
 public abstract class Evento {
-	static int contador = 0;
+	static int contador;
 	int id, num_entradas_vendidas, cap_max_asist;
 	String nombre;
 	final LocalDate fecha;
@@ -15,7 +12,7 @@ public abstract class Evento {
 	public Evento(int num_entradas_vendidas, int cap_max_asist, String nombre, LocalDate fecha, Estado_Crafters estado) throws CraftersException {
 		super();
 		contador++;
-		this.id = id + contador;
+		this.id = contador;
 		setCap_max_asist(cap_max_asist);
 		setNum_entradas_vendidas(num_entradas_vendidas); //validaciones siempre en el set
 		this.nombre = nombre;
@@ -39,7 +36,7 @@ public abstract class Evento {
 		return num_entradas_vendidas;
 	}
 	public void setNum_entradas_vendidas(int num_entradas_vendidas) throws CraftersException {
-		if (num_entradas_vendidas < 0 || num_entradas_vendidas > cap_max_asist) {
+		if (num_entradas_vendidas <= 0 || num_entradas_vendidas > cap_max_asist) {
 			throw new CraftersException ("No es posible construir un evento con esos datos");
 		}
 		else {
@@ -50,7 +47,7 @@ public abstract class Evento {
 		return cap_max_asist;
 	}
 	public void setCap_max_asist(int cap_max_asist) throws CraftersException {
-		if (num_entradas_vendidas > cap_max_asist) {
+		if (cap_max_asist <= 0) {
 			throw new CraftersException ("No es posible construir un evento con esos datos");
 		}
 		else {
@@ -92,7 +89,7 @@ public abstract class Evento {
 	
 	
 	
-	public void modificaEstado (Evento e, Estado_Crafters estado_nuevo) throws CraftersException {
+	public void modificaEstado (Estado_Crafters estado_nuevo) throws CraftersException {
 		if (this.estado.equals(this.estado.PENDIENTE) && (estado_nuevo.equals(this.estado.PROGRAMADO) || estado_nuevo.equals(this.estado.CANCELADO) || estado_nuevo.equals(this.estado.FINALIZADO) || estado_nuevo.equals(this.estado.APLAZADO))) {
 			this.setEstado(estado_nuevo);
 		}

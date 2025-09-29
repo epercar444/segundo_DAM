@@ -2,10 +2,11 @@ package controlador;
 
 import java.time.LocalDate;
 
-import enum_.Estado_Crafters;
-import excepciones.CraftersException;
 import modelo.Concierto;
+import modelo.CraftersException;
 import modelo.Deportivo;
+import modelo.Estado_Crafters;
+import modelo.Evento;
 
 public class main {
 
@@ -13,7 +14,7 @@ public class main {
 		//1.
 		System.out.println("Ejercicio 1:");
 		try {
-			Deportivo d1 = new Deportivo(600, 500, null, null, null, false);
+			Evento d1 = new Deportivo(600, 500, null, null, null, false);
 		} catch (CraftersException e) {
 			System.out.println(e.getMessage());	  }
 		
@@ -24,7 +25,7 @@ public class main {
 			Concierto c1 = new Concierto(200, 500, "RockFest", LocalDate.now(), Estado_Crafters.APLAZADO, "Queen", new String[]{"Artista1", "Artista2"}, 10000.0, 20000.0);
 			c1.getPorcentajeOcupacion(50);
 			System.out.println(c1.toString());
-			c1.modificaEstado(c1, Estado_Crafters.PROGRAMADO);
+			c1.modificaEstado(Estado_Crafters.PROGRAMADO);
 			System.out.println(c1.toString());
 		} catch (CraftersException e) {
 			// TODO Auto-generated catch block
@@ -53,19 +54,19 @@ public class main {
 			System.out.println(d2.toString());
 		} catch (CraftersException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		
 		
 		//5
 		System.out.println("Ejercicio 5:");
 		try {
-			Deportivo d3 = new Deportivo(0, 500, "Partido Local", LocalDate.now(), Estado_Crafters.PENDIENTE, true);
-			d3.modificaEstado(d3, Estado_Crafters.PROGRAMADO);
+			Deportivo d3 = new Deportivo(100, 500, "Partido Local", LocalDate.now(), Estado_Crafters.PENDIENTE, true);
+			d3.modificaEstado(Estado_Crafters.PROGRAMADO);
 			System.out.println(d3.toString());
 		} catch (CraftersException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 
 
@@ -73,7 +74,7 @@ public class main {
 		System.out.println("Ejercicio 6:");
 		try {
 			Deportivo d4 = new Deportivo(0, 5000, "Final Copa", LocalDate.now(), Estado_Crafters.CANCELADO, false);
-			d4.modificaEstado(d4, Estado_Crafters.PENDIENTE);
+			d4.modificaEstado(Estado_Crafters.PENDIENTE);
 		} catch (CraftersException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());

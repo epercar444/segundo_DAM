@@ -2,9 +2,6 @@ package modelo;
 
 import java.time.LocalDate;
 
-import enum_.Estado_Crafters;
-import excepciones.CraftersException;
-
 public class Deportivo extends Evento{
 	
 	boolean son_televisados;
