@@ -1,4 +1,4 @@
-//alert("Hello to JS");
+/*alert("Hello to JS");
 
 console.log("Hola K ASE 2!");
 
@@ -70,6 +70,42 @@ var third_array2 = new Array(3,5,6,7);
 var arrayFinal = new Array(third_array, third_array2);
 console.log(arrayFinal);
 
-//primero final luego columna
+//primero fila luego columna
 arrayFinal[1][2] = 8;
 console.log(arrayFinal);
+*/
+
+
+var third_array2 = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
+/*for (var i=0; third_array2.length > i; i++) {
+    console.log(third_array2[i]);
+}*/
+/*recorrer a la inversa
+for (var i = third_array2.length-1;i >= 0;i--) {
+    console.log("Entramos en la iteración de "+third_array2[i])
+}*/
+/*Forma más eficiente (en cuanto a tiempo)
+var i = third_array2.length-1;
+for(;i>=0;i--){
+        console.log("Entramos en la iteración de "+third_array2[i])
+}*/
+/*third_array2.forEach(function myFunction(item) {
+  console.log(item); 
+});*/
+
+/*let today = new Date();
+let first_october = new Date(2025,9,1); //cambiar año o mes 
+console.log(today);
+console.log(first_october);
+console.log(today.getDay());
+
+if(today>first_october) {
+    console.log("Today is after to first october");
+}
+else {
+    console.log("Today is before to first october");
+}*/
+
+function myFirstFunction() {
+    console.log('Thanks you for you click')
+}
