@@ -20,6 +20,9 @@ public class Libreria_main {
 		Libro libro1 = new Libro("El Quijote", "Miguel de Cervantes", editorial1, "ISBN123456", LocalDate.of(1605, 1, 16), 10, Genero_Libro.HISTÓRICO);
 		Libro libro_actu = new Libro("El Quijote y Sancho Panza", "Miguel de Cervantes", editorial1, "ISBN123456", LocalDate.of(1605, 1, 16), 10, Genero_Libro.HISTÓRICO);
 		Libro libro3 = new Libro("Los pilares de la Tierra", "Ken Follett", editorial1, "ISBN987654", LocalDate.of(1989, 9, 1), 5, Genero_Libro.HISTÓRICO);
+		Editorial e1 = new Editorial("Planeta", "Calle Mayor 12, Madrid", "A12345678", "www.planeta.es", "contacto@planeta.es");
+		Editorial e2 = new Editorial("Anaya", "Avenida de América 33, Sevilla", "B87654321", "www.anaya.es", "info@anaya.es");
+		
 		
 		System.out.println("Añadir libro: ");
 		serv_li.addLibro(libro1);
@@ -49,6 +52,14 @@ public class Libreria_main {
 		System.out.println("Mapa: ");
 		System.out.println(serv_li.getMapaPorGenero(Genero_Libro.HISTÓRICO));
 		
+		
+		serv_edi.addEditorial(e1);
+		serv_edi.addEditorial(e2);
+		
+		System.out.println("Editorial ordenada: ");
+		serv_edi.getRepo().getEditoriales();	
+		
+		System.out.println(serv_edi.ordenaEditorialPorEmail());
 	}
 	
 }
