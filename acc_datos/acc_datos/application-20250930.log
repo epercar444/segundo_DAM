@@ -1,0 +1,2 @@
+2025-09-30 12:26:53.745 [main] DEBUG controlador.ProbandoLog - Empieza main
+2025-09-30 12:28:35.879 [main] DEBUG controlador.ProbandoLog - Esto se escribe en el fichero log

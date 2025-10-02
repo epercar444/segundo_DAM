@@ -1,1 +1,111 @@
-alert("Hello to JS");
+/*alert("Hello to JS");
+
+console.log("Hola K ASE 2!");
+
+var table = "Normal Table";
+let chair = "One chair";
+console.log(table);
+console.log(chair);
+
+let testBoolean = true;
+console.log(testBoolean);
+
+let testNumber = 10;
+console.log(testNumber);
+
+let testString = 'text';
+console.log(testString);
+
+let testBooleanObject = new Boolean (true);
+console.log(testBooleanObject);
+
+let testNumberObject = new Number(10);
+console.log(testNumberObject);
+
+let testStringObject = new String('text');
+console.log(testStringObject.toUpperCase());
+
+console.log(table+ ' ' + chair);
+
+let question = `How old is ${table} ${chair}`;
+console.log(question);
+
+let operador_a = 3;
+let inc = ++operador_a;
+let dec = --operador_a;
+console.log(operador_a);
+console.log(inc);
+console.log(dec);
+
+console.log(typeof(testBoolean))
+
+let testNull = null;
+console.log(typeof(testNull));
+
+let testUndefined;
+console.log(testUndefined);
+
+var first_array = [];
+console.log(first_array);
+
+var second_array = new Array(3);
+console.log(second_array);
+
+var third_array = new Array(3,5);
+console.log(third_array);
+
+var fourth_array = new Array(3,5,'Seville',true,third_array);
+console.log(fourth_array);
+
+console.log(third_array[1]);
+console.log(fourth_array[4][0]);
+
+console.log(fourth_array.push("Spain"));
+console.log(fourth_array[5]);
+
+fourth_array[1][2] = 3;
+console.log(fourth_array);
+
+var third_array2 = new Array(3,5,6,7);
+var arrayFinal = new Array(third_array, third_array2);
+console.log(arrayFinal);
+
+//primero fila luego columna
+arrayFinal[1][2] = 8;
+console.log(arrayFinal);
+*/
+
+
+var third_array2 = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
+/*for (var i=0; third_array2.length > i; i++) {
+    console.log(third_array2[i]);
+}*/
+/*recorrer a la inversa
+for (var i = third_array2.length-1;i >= 0;i--) {
+    console.log("Entramos en la iteración de "+third_array2[i])
+}*/
+/*Forma más eficiente (en cuanto a tiempo)
+var i = third_array2.length-1;
+for(;i>=0;i--){
+        console.log("Entramos en la iteración de "+third_array2[i])
+}*/
+/*third_array2.forEach(function myFunction(item) {
+  console.log(item); 
+});*/
+
+/*let today = new Date();
+let first_october = new Date(2025,9,1); //cambiar año o mes 
+console.log(today);
+console.log(first_october);
+console.log(today.getDay());
+
+if(today>first_october) {
+    console.log("Today is after to first october");
+}
+else {
+    console.log("Today is before to first october");
+}*/
+
+function myFirstFunction() {
+    console.log('Thanks you for you click')
+}

@@ -1,26 +1,28 @@
 package Libreria.repositorio;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import Libreria.modelo.Editorial;
 import Libreria.modelo.Libreria_Exception;
 
 public class EditorialRepo {
-	private Set<Editorial> editoriales;
+	private List<Editorial> editoriales;
 
-	public Set<Editorial> getEditoriales() {
+	public List<Editorial> getEditoriales() {
 		return editoriales;
 	}
 
-	public void setEditoriales(Set<Editorial> editoriales) {
+	public void setEditoriales(List<Editorial> editoriales) {
 		this.editoriales = editoriales;
 	}
 
 	public EditorialRepo() {
 		super();
-		this.editoriales = new HashSet<Editorial>();
+		this.editoriales = new ArrayList<Editorial>();
 	}
 	
 	

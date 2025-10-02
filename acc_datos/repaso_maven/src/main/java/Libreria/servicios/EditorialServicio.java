@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import Libreria.comparator.Comparator;
 import Libreria.modelo.Editorial;
 import Libreria.modelo.Libreria_Exception;
 import Libreria.modelo.Libro;
@@ -17,6 +18,22 @@ public class EditorialServicio {
 	EditorialRepo repo = new EditorialRepo();
 	LibroRepo repo1 = new LibroRepo();
 	
+	public EditorialRepo getRepo() {
+		return repo;
+	}
+
+	public void setRepo(EditorialRepo repo) {
+		this.repo = repo;
+	}
+
+	public LibroRepo getRepo1() {
+		return repo1;
+	}
+
+	public void setRepo1(LibroRepo repo1) {
+		this.repo1 = repo1;
+	}
+
 	public void leeEditorial (String CIF) {
 		try {
 			repo.leeEditorial(CIF);
@@ -57,39 +74,22 @@ public class EditorialServicio {
 		}
 	}
 	
-	public Set<Editorial> getEditorialOrdenada () {
+	/*public Set<Editorial> getEditorialOrdenada () {
 		Set<Editorial> editoriales_ordenadas_1 = new TreeSet<>();
 		for (Editorial e : repo.getEditoriales()) {
 			editoriales_ordenadas_1.add(e);
 		}
 		return editoriales_ordenadas_1;
 	}
+	ya se ordena*/
 	
-	public void ordenaEditorialPorLibro() {
-	    Map<Editorial, Integer> librosPorEditorial = new HashMap<>();
+	public List<Editorial> ordenaEditorialPorEmail() {
+		Comparator y = new Comparator();
+		List <Editorial > editorialesOrd = repo.getEditoriales();
+		editorialesOrd.sort(y); //void
+		return editorialesOrd;
+	    //hacer método q devuelva numlibros por editorial
+	    
 
-	    for (Libro libro : repo1.getLibros()) {
-	        Editorial editorial = libro.getEditorial();
-	        if (librosPorEditorial.containsKey(editorial)) {
-	            int cantidad = librosPorEditorial.get(editorial);
-	            librosPorEditorial.put(editorial, cantidad + 1);
-	        } else {
-	            librosPorEditorial.put(editorial, 1);
-	        }
-	    }
-
-	    List<Map.Entry<Editorial, Integer>> listaEditoriales = new ArrayList<>(librosPorEditorial.entrySet());
-
-	    listaEditoriales.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
-
-	    System.out.println("Editoriales ordenadas por número de libros (descendente):");
-	    for (Map.Entry<Editorial, Integer> entry : listaEditoriales) {
-	        Editorial editorial = entry.getKey();
-	        Integer cantidadLibros = entry.getValue();
-	        System.out.println("Editorial: " + editorial.getNombre()
-	                         + " | CIF: " + editorial.getCIF()
-	                         + " | Libros: " + cantidadLibros);
-	    }
-	}
-
+}
 }

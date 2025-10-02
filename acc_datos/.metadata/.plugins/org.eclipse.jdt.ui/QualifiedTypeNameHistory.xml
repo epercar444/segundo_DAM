@@ -9,9 +9,9 @@
     <fullyQualifiedTypeName name="enum_.Estado_Crafters"/>
     <fullyQualifiedTypeName name="Libreria.repositorio.LibroRepo"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.TreeSet"/>
     <fullyQualifiedTypeName name="Libreria.repositorio.EditorialRepo"/>
     <fullyQualifiedTypeName name="Libreria.servicios.EditorialServicio"/>
     <fullyQualifiedTypeName name="Libreria.servicios.LibroServicio"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
 </qualifiedTypeNameHistroy>

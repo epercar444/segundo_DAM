@@ -1,7 +1,9 @@
 package Libreria.repositorio;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import Libreria.modelo.Libreria_Exception;
@@ -9,19 +11,19 @@ import Libreria.modelo.Libro;
 
 public class LibroRepo {
 
-	private Set<Libro> libros;
+	private List<Libro> libros;
 
-	public Set<Libro> getLibros() {
+	public List<Libro> getLibros() {
 		return libros;
 	}
 
-	public void setLibros(Set<Libro> libros) {
+	public void setLibros(List<Libro> libros) {
 		this.libros = libros;
 	}
 
 	public LibroRepo() {
 		super();
-		this.libros = new HashSet<Libro>();
+		this.libros = new ArrayList<Libro>();
 	}
 	
 	
