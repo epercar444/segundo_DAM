@@ -67,17 +67,17 @@ public class Conversacion {
 
 	public Conversacion(String pregunta, String respuesta, TipoAgente agente) {
 		super();
-		this.id = this.calculaIdentificador();
+		//this.id = this.calculaIdentificador();
 		this.pregunta = pregunta;
 		this.respuesta = respuesta;
 		this.agente = agente;
 	}
 
 
-	public Conversacion(String id, String pregunta, String respuesta, int numValoracionesPositivas,
+	public Conversacion(String pregunta, String respuesta, int numValoracionesPositivas,
 			LocalDate fecha_conversacion, TipoAgente agente) {
 		super();
-		this.id = this.calculaIdentificador();
+		//this.id = this.calculaIdentificador();
 		this.pregunta = pregunta;
 		this.respuesta = respuesta;
 		NumValoracionesPositivas = numValoracionesPositivas;
@@ -85,14 +85,14 @@ public class Conversacion {
 		this.agente = agente;
 	}
 	
-	public String calculaIdentificador () {
+	/*public String calculaIdentificador () {
 		DateTimeFormatter formateador = DateTimeFormatter.ofPattern("ddMMyyyy");
 		String fecha_formateada = this.fecha_conversacion.format(formateador);
 		Random random = new Random();
 		int numero = random.nextInt(0,100);
 		String numero_formateado = Integer.toString(numero);
 		return fecha_formateada + numero_formateado;
-	}
+	}*/
 
 
 	@Override
