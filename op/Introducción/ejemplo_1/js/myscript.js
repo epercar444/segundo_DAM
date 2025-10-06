@@ -76,8 +76,8 @@ console.log(arrayFinal);
 */
 
 
-var third_array2 = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
-/*for (var i=0; third_array2.length > i; i++) {
+/*var third_array2 = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
+for (var i=0; third_array2.length > i; i++) {
     console.log(third_array2[i]);
 }*/
 /*recorrer a la inversa
@@ -107,5 +107,32 @@ else {
 }*/
 
 function myFirstFunction() {
-    console.log('Thanks you for you click')
+    console.log('Thanks you for you click');
 }
+
+function mySecondFunction() {
+    console.log('Thank you for you interest');
+}
+
+function myThirdFunction(mensaje) {
+    console.log('Pesao');
+    console.log(mensaje);
+}
+
+var div = document.getElementById('my_div');
+div.classList.add('my_class');
+console.log(div);
+
+
+var div2 = document.getElementsByTagName("div");
+console.log(div2);
+
+var div3 = document.querySelector(".my_class");
+console.log(div3);
+//# para traerme los ids y . para traerme las clases
+
+function $(selector) {
+    return document.querySelectorAll(selector);
+}
+console.log($("#my_third_div"));
+console.log($(".my_class"));
