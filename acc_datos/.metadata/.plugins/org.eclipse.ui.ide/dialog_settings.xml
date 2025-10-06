@@ -37,6 +37,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\evape\OneDrive\Escritorio\segundo_DAM\acc_datos\acc_datos_orig"/>
+			<item value="C:\Users\evape\OneDrive\Escritorio\segundo_DAM\acc_datos\acc_datos\src"/>
+			<item value="C:\Users\evape\OneDrive\Escritorio\segundo_DAM\acc_datos\acc_datos"/>
 			<item value="C:\Users\evape\OneDrive\Escritorio\segundo_DAM\acc_datos\repaso_maven\src"/>
 			<item value="C:\Users\evape\OneDrive\Escritorio\segundo_DAM\acc_datos\repaso_maven"/>
 			<item value="C:\Users\evape\OneDrive\Escritorio\segundo_DAM\psp\codigo\ConcertCrafters"/>

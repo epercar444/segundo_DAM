@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\evape\OneDrive\Escritorio\segundo_DAM\psp\codigo"/>
+			<item value="C:\Users\evape\OneDrive\Escritorio\segundo_DAM\acc_datos\acc_datos_orig"/>
 			<item value="C:\Users\evape\OneDrive\Escritorio\segundo_DAM\acc_datos\repaso_maven"/>
 			<item value="C:\Users\evape\OneDrive\Escritorio\segundo_DAM\acc_datos\repaso_maven\src\main"/>
 		</list>
