@@ -1,4 +1,4 @@
-package file.primer_boletin;
+package file.primer_boletin.modelo;
 
 import java.io.File;
 
@@ -9,7 +9,6 @@ import file.pruebas_iniciales.primera_prueba;
 
 public class Ejercicio1 {
 	private static final Logger logger = LogManager.getLogger(primera_prueba.class);
-	String rutaDirectorio = "C:\\Users\\alumno\\Desktop";
 	
 	public void listDirectorio (String ruta) throws ExceptionEjercicio1 {
 		File archivo = new File(ruta);
@@ -23,13 +22,6 @@ public class Ejercicio1 {
 			throw new ExceptionEjercicio1 ("La ruta indicada no existe");
 		}
 		
-	}
-	
-	public void datosDirectorio (String ruta) {
-		File archivo = new File(ruta);
-		if (archivo.exists() && archivo.isDirectory()) {
-			logger.info(archivo.getName() + archivo.getAbsolutePath() + archivo.getCanonicalPath() + archivo.);
-		}
 	}
 	
 }

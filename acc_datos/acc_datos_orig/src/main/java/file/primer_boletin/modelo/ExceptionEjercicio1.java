@@ -1,4 +1,4 @@
-package file.primer_boletin;
+package file.primer_boletin.modelo;
 
 public class ExceptionEjercicio1 extends Exception{
 

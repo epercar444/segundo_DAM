@@ -15,4 +15,6 @@
     <fullyQualifiedTypeName name="Libreria.servicios.LibroServicio"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="repaso1MVC.servicio.ServicioConversaciones"/>
+    <fullyQualifiedTypeName name="file.primer_boletin.modelo.Ejercicio1"/>
+    <fullyQualifiedTypeName name="file.primer_boletin.modelo.Ejercicio2"/>
 </qualifiedTypeNameHistroy>

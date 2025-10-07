@@ -5,3 +5,83 @@
 2025-10-07 10:23:42.042 [main] DEBUG repaso1MVC.servicio.IServicioConversaciones - No existe una conversación con estos datos
 2025-10-07 10:23:42.043 [main] INFO  repaso1MVC.controlador.GestionaPeticionesAChat - GetConversacion: null
 2025-10-07 10:54:41.537 [main] ERROR file.pruebas_iniciales.primera_prueba - Error al crear fichero:El sistema no puede encontrar la ruta especificada
+2025-10-07 22:34:07.503 [main] INFO  file.pruebas_iniciales.primera_prueba - acc_datos
+2025-10-07 22:34:07.506 [main] INFO  file.pruebas_iniciales.primera_prueba - apache-tomcat-9.0.105
+2025-10-07 22:34:07.506 [main] INFO  file.pruebas_iniciales.primera_prueba - DAM
+2025-10-07 22:34:07.506 [main] INFO  file.pruebas_iniciales.primera_prueba - desktop.ini
+2025-10-07 22:34:07.506 [main] INFO  file.pruebas_iniciales.primera_prueba - Documentación
+2025-10-07 22:34:07.506 [main] INFO  file.pruebas_iniciales.primera_prueba - Documentación.zip
+2025-10-07 22:34:07.506 [main] INFO  file.pruebas_iniciales.primera_prueba - Escritorio
+2025-10-07 22:34:07.507 [main] INFO  file.pruebas_iniciales.primera_prueba - msg
+2025-10-07 22:34:07.507 [main] INFO  file.pruebas_iniciales.primera_prueba - Rave.lnk
+2025-10-07 22:34:07.507 [main] INFO  file.pruebas_iniciales.primera_prueba - Reyes Carmona
+2025-10-07 22:34:07.507 [main] INFO  file.pruebas_iniciales.primera_prueba - Reyes Carmona - copia
+2025-10-07 22:34:07.507 [main] INFO  file.pruebas_iniciales.primera_prueba - segundo_DAM
+2025-10-07 22:45:02.979 [main] INFO  file.pruebas_iniciales.primera_prueba - acc_datos
+2025-10-07 22:45:02.982 [main] INFO  file.pruebas_iniciales.primera_prueba - apache-tomcat-9.0.105
+2025-10-07 22:45:02.982 [main] INFO  file.pruebas_iniciales.primera_prueba - DAM
+2025-10-07 22:45:02.982 [main] INFO  file.pruebas_iniciales.primera_prueba - desktop.ini
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - Documentación
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - Documentación.zip
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - Escritorio
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - msg
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - Rave.lnk
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - Reyes Carmona
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - Reyes Carmona - copia
+2025-10-07 22:45:02.984 [main] INFO  file.pruebas_iniciales.primera_prueba - segundo_DAM
+2025-10-07 22:45:02.984 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - La ruta indicada no existe
+2025-10-07 22:45:02.979 [main] INFO  file.pruebas_iniciales.primera_prueba - acc_datos
+2025-10-07 22:45:02.982 [main] INFO  file.pruebas_iniciales.primera_prueba - apache-tomcat-9.0.105
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - DAM
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - desktop.ini
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - Documentación
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - Documentación.zip
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - Escritorio
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - msg
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - Rave.lnk
+2025-10-07 22:45:02.983 [main] INFO  file.pruebas_iniciales.primera_prueba - Reyes Carmona
+2025-10-07 22:45:02.984 [main] INFO  file.pruebas_iniciales.primera_prueba - Reyes Carmona - copia
+2025-10-07 22:45:02.984 [main] INFO  file.pruebas_iniciales.primera_prueba - segundo_DAM
+2025-10-07 22:45:02.984 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - La ruta indicada no existe
+2025-10-07 22:45:34.248 [main] INFO  file.pruebas_iniciales.primera_prueba - acc_datos
+2025-10-07 22:45:34.250 [main] INFO  file.pruebas_iniciales.primera_prueba - apache-tomcat-9.0.105
+2025-10-07 22:45:34.252 [main] INFO  file.pruebas_iniciales.primera_prueba - DAM
+2025-10-07 22:45:34.252 [main] INFO  file.pruebas_iniciales.primera_prueba - desktop.ini
+2025-10-07 22:45:34.252 [main] INFO  file.pruebas_iniciales.primera_prueba - Documentación
+2025-10-07 22:45:34.252 [main] INFO  file.pruebas_iniciales.primera_prueba - Documentación.zip
+2025-10-07 22:45:34.252 [main] INFO  file.pruebas_iniciales.primera_prueba - Escritorio
+2025-10-07 22:45:34.252 [main] INFO  file.pruebas_iniciales.primera_prueba - msg
+2025-10-07 22:45:34.252 [main] INFO  file.pruebas_iniciales.primera_prueba - Rave.lnk
+2025-10-07 22:45:34.252 [main] INFO  file.pruebas_iniciales.primera_prueba - Reyes Carmona
+2025-10-07 22:45:34.252 [main] INFO  file.pruebas_iniciales.primera_prueba - Reyes Carmona - copia
+2025-10-07 22:45:34.252 [main] INFO  file.pruebas_iniciales.primera_prueba - segundo_DAM
+2025-10-07 22:45:34.253 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - La ruta indicada no existe
+2025-10-07 22:45:57.460 [main] INFO  file.pruebas_iniciales.primera_prueba - Escritorio
+2025-10-07 22:45:57.463 [main] INFO  file.pruebas_iniciales.primera_prueba - C:\Users\evape\Onedrive\Escritorio
+2025-10-07 22:45:57.463 [main] INFO  file.pruebas_iniciales.primera_prueba - C:\Users\evape\Onedrive\Escritorio
+2025-10-07 22:45:57.463 [main] INFO  file.pruebas_iniciales.primera_prueba - 20480
+2025-10-07 22:45:57.465 [main] INFO  file.pruebas_iniciales.primera_prueba - 1759771089710
+2025-10-07 22:45:57.465 [main] INFO  file.pruebas_iniciales.primera_prueba - true
+2025-10-07 22:45:57.465 [main] INFO  file.pruebas_iniciales.primera_prueba - C:\Users\evape\Onedrive
+2025-10-07 22:45:57.466 [main] INFO  file.pruebas_iniciales.primera_prueba - C:\Users\evape\OneDrive\Escritorio
+2025-10-07 22:46:54.848 [main] INFO  file.pruebas_iniciales.primera_prueba - acc_datos
+2025-10-07 22:46:54.850 [main] INFO  file.pruebas_iniciales.primera_prueba - apache-tomcat-9.0.105
+2025-10-07 22:46:54.851 [main] INFO  file.pruebas_iniciales.primera_prueba - DAM
+2025-10-07 22:46:54.851 [main] INFO  file.pruebas_iniciales.primera_prueba - desktop.ini
+2025-10-07 22:46:54.851 [main] INFO  file.pruebas_iniciales.primera_prueba - Documentación
+2025-10-07 22:46:54.851 [main] INFO  file.pruebas_iniciales.primera_prueba - Documentación.zip
+2025-10-07 22:46:54.851 [main] INFO  file.pruebas_iniciales.primera_prueba - Escritorio
+2025-10-07 22:46:54.851 [main] INFO  file.pruebas_iniciales.primera_prueba - msg
+2025-10-07 22:46:54.851 [main] INFO  file.pruebas_iniciales.primera_prueba - Rave.lnk
+2025-10-07 22:46:54.851 [main] INFO  file.pruebas_iniciales.primera_prueba - Reyes Carmona
+2025-10-07 22:46:54.852 [main] INFO  file.pruebas_iniciales.primera_prueba - Reyes Carmona - copia
+2025-10-07 22:46:54.852 [main] INFO  file.pruebas_iniciales.primera_prueba - segundo_DAM
+2025-10-07 22:46:54.852 [main] INFO  file.pruebas_iniciales.primera_prueba - Escritorio
+2025-10-07 22:46:54.852 [main] INFO  file.pruebas_iniciales.primera_prueba - C:\Users\evape\Onedrive\Escritorio
+2025-10-07 22:46:54.852 [main] INFO  file.pruebas_iniciales.primera_prueba - C:\Users\evape\Onedrive\Escritorio
+2025-10-07 22:46:54.853 [main] INFO  file.pruebas_iniciales.primera_prueba - 20480
+2025-10-07 22:46:54.853 [main] INFO  file.pruebas_iniciales.primera_prueba - 1759771089710
+2025-10-07 22:46:54.853 [main] INFO  file.pruebas_iniciales.primera_prueba - true
+2025-10-07 22:46:54.853 [main] INFO  file.pruebas_iniciales.primera_prueba - C:\Users\evape\Onedrive
+2025-10-07 22:46:54.854 [main] INFO  file.pruebas_iniciales.primera_prueba - C:\Users\evape\OneDrive\Escritorio
+2025-10-07 22:46:54.854 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - La ruta indicada no existe
