@@ -1,5 +1,7 @@
 package repaso1MVC.controlador;
 
+import java.time.LocalDate;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,12 +15,12 @@ public class GestionaPeticionesAChat {
 
 	public static void main(String[] args) {
 		ServicioConversaciones servicio = new ServicioConversaciones();
-		/*Conversacion c1 = new Conversacion("¿Qué es Java?", "Java es un lenguaje de programación", TipoAgente.IA),
-	             c2 = new Conversacion("¿Qué es una clase?", "Una clase es un plano para objetos", TipoAgente.HUMANO),
-	             c3 = new Conversacion("¿Qué es JVM?", "Es la máquina virtual de Java.", TipoAgente.IA);*/
+		Conversacion c1 = new Conversacion(1, "¿Cuál es el horario de atención?", "Nuestro horario es de 9 a 18 horas.", 10, LocalDate.of(2024, 4, 10), TipoAgente.HUMANO);
+		Conversacion c2 = new Conversacion(2, "¿Cómo puedo cambiar mi contraseña?", "Puedes cambiar tu contraseña desde la configuración de tu cuenta.", 5, LocalDate.of(2024, 3, 25), TipoAgente.HUMANO);
+		Conversacion c3 = new Conversacion(3, "¿Qué métodos de pago aceptan?", "Aceptamos tarjetas de crédito y débito, además de PayPal.", 7, LocalDate.of(2024, 5, 1), TipoAgente.IA);
 		
 		
-		servicio.registraNuevaConveracion(TipoAgente.HUMANO, "¿Qué es Java?", "Java es un lenguaje de programación",1);
+		servicio.registraNuevaConveracion(c1.getAgente(),c1.getPregunta(),c1.getRespuesta(),c1.getId());
 		servicio.registraNuevaConveracion(TipoAgente.IA, "¿Qué es una clase?", "Una clase es un plano para objetos",2);
 		logger.info("Conversaciones añadidas: " + servicio.getRepo().getConversaciones());
 		

@@ -1,0 +1,7 @@
+2025-10-07 10:15:25.681 [main] INFO  repaso1MVC.controlador.GestionaPeticionesAChat - Conversaciones añadidas: [Conversacion [id=1, pregunta=¿Qué es Java?, respuesta=Java es un lenguaje de programación, NumValoracionesPositivas=0, fecha_conversacion=null, agente=HUMANO], Conversacion [id=2, pregunta=¿Qué es una clase?, respuesta=Una clase es un plano para objetos, NumValoracionesPositivas=0, fecha_conversacion=null, agente=IA]]
+2025-10-07 10:15:25.683 [main] DEBUG repaso1MVC.servicio.IServicioConversaciones - No existe una conversación con estos datos
+2025-10-07 10:15:25.683 [main] INFO  repaso1MVC.controlador.GestionaPeticionesAChat - GetConversacion: null
+2025-10-07 10:23:42.040 [main] INFO  repaso1MVC.controlador.GestionaPeticionesAChat - Conversaciones añadidas: [Conversacion [id=1, pregunta=¿Cuál es el horario de atención?, respuesta=Nuestro horario es de 9 a 18 horas., NumValoracionesPositivas=0, fecha_conversacion=null, agente=HUMANO], Conversacion [id=2, pregunta=¿Qué es una clase?, respuesta=Una clase es un plano para objetos, NumValoracionesPositivas=0, fecha_conversacion=null, agente=IA]]
+2025-10-07 10:23:42.042 [main] DEBUG repaso1MVC.servicio.IServicioConversaciones - No existe una conversación con estos datos
+2025-10-07 10:23:42.043 [main] INFO  repaso1MVC.controlador.GestionaPeticionesAChat - GetConversacion: null
+2025-10-07 10:54:41.537 [main] ERROR file.pruebas_iniciales.primera_prueba - Error al crear fichero:El sistema no puede encontrar la ruta especificada
