@@ -3,12 +3,12 @@ package psp.tema1;
 import java.io.IOException;
 
 public class Lanzador {
-	private static final String directorioGeneralCasa = "C:\\Users\\evape\\Onedrive\\Escritorio\\segundo_DAM\\psp\\codigo\\target\\classes";
-	private static final String directorioGenerarClasses = "C:\\Users\\alumno\\Desktop\\segundo_DAM\\psp\\codigo\\target\\classes";
-	private static final String rutaSource = "C:\\Users\\alumno\\Desktop\\segundo_DAM\\psp\\codigo\\src\\main\\java\\psp\\tema1\\Gestiona.java";
+	private static final String directorioGeneralCasa = "target\\classes\\tema1\\Gestiona";
+	private static final String directorioGenerarClasses = "target\\classes\\";
+	private static final String rutaSource = "src\\main\\java\\psp\\tema1\\Gestiona.java";
 	public static void main(String[] args) {
 		Lanzador lanzador = new Lanzador();
-		//lanzador.ejecutaProcesoCompila();
+		lanzador.ejecutaProcesoCompila();
 		lanzador.ejecutaProcesoJava();
 	} 
 
@@ -18,8 +18,8 @@ public void ejecutaProcesoCompila() {
 	try {
 		pb.redirectErrorStream(true);
 		pb.inheritIO();
-		Process p = pb.start();
-		int exist = p.waitFor();
+		Process hijo = pb.start();
+		int exist = hijo.waitFor();
 		System.out.println(exist);
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
@@ -30,7 +30,7 @@ public void ejecutaProcesoCompila() {
 	}
 }
 public void ejecutaProcesoJava() {
-	 String[] comando = {"java", "-cp", this.directorioGenerarClasses, "psp.tema1.Gestiona"};
+	 String[] comando = {"java", "-cp", directorioGenerarClasses, "psp.tema1.Gestiona"};
 	 ProcessBuilder pb = new ProcessBuilder(comando);
 	try {
 		pb.redirectErrorStream(true);

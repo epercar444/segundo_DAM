@@ -11,7 +11,7 @@ import file.pruebas_iniciales.primera_prueba;
 public class Ejercicio2 {
 	private static final Logger logger = LogManager.getLogger(primera_prueba.class);
 	
-	public void propiedadesDirectorio (String ruta) throws ExceptionEjercicio1 {
+	public void getPropiedadesDirectorio (String ruta) throws ExceptionEjercicio1 {
 		File archivo = new File(ruta);
 		if (archivo.exists() && archivo.isDirectory()) {
 			logger.info(archivo.getName());
