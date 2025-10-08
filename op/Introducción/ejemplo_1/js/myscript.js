@@ -1,3 +1,15 @@
+function $(selector) {
+    return document.querySelector(selector);
+}
+console.log($("#my_third_div"));
+console.log($(".my_class"));
+console.log($(".prueba"));
+
+
+
+
+
+
 /*alert("Hello to JS");
 
 console.log("Hola K ASE 2!");
@@ -106,7 +118,7 @@ else {
     console.log("Today is before to first october");
 }*/
 
-function myFirstFunction() {
+/*function myFirstFunction() {
     console.log('Thanks you for you click');
 }
 
@@ -129,10 +141,39 @@ console.log(div2);
 
 var div3 = document.querySelector(".my_class");
 console.log(div3);
-//# para traerme los ids y . para traerme las clases
+//# para traerme los ids y . para traerme las clases*/
 
-function $(selector) {
-    return document.querySelectorAll(selector);
+
+/*var numbers = [1,2,3,4];
+var n_elevator_2 = numbers.map(function(n) {return n*n;});
+console.log(n_elevator_2);
+
+var n_elevator_3 = numbers.map((n) => {return n*n;});
+console.log(n_elevator_3);
+
+var n_elevator_4 = numbers.map(n => n*n);
+console.log(n_elevator_4);
+
+let numbers1 = [[1,1],[2,2],[3,3],[4,4]];
+let itself = numbers1.map(([x,y]) => x*y);
+console.log(itself);*/
+
+/*$("#btn").addEventListener("click",function () {
+    var input = document.createElement("input");
+    console.log("input");
+});*/
+
+$("#btn").addEventListener("click", function(){
+    var input = document.createElement("input");
+    input.setAttribute("type","email");
+    input.setAttribute("placeholder", "E-mail");
+    input.setAttribute("name", "emails[]");
+    $("#form").appendChild(input);
+    myAlert("Add new email input");
+});
+function myAlert(msg) {
+    var div = document.createElement("div");
+    div.classList.add("alert");
+    div.innerHTML = msg;
+    $("body").insertBefore(div,$("body").firstChild);
 }
-console.log($("#my_third_div"));
-console.log($(".my_class"));
