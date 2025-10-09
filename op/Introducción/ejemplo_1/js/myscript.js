@@ -169,11 +169,29 @@ $("#btn").addEventListener("click", function(){
     input.setAttribute("placeholder", "E-mail");
     input.setAttribute("name", "emails[]");
     $("#form").appendChild(input);
-    myAlert("Add new email input");
+    myAlert("<h3>Add new email input</h3>");
 });
 function myAlert(msg) {
     var div = document.createElement("div");
     div.classList.add("alert");
     div.innerHTML = msg;
     $("body").insertBefore(div,$("body").firstChild);
+    //console.log($("body").children[1]) //importante
+    var close = document.createElement("span");
+    close.style.float = "right";
+    close.classList.add("close");
+    close.innerHTML = "X";
+    div.appendChild(close);
+    $("body").insertBefore(div,$("body").firstChild);
+    beind_close();
+}
+
+function beind_close() {
+    let elements = document.querySelectorAll(".close");
+    for (var i=elements.length-1;i>=0;i--) {
+        let el = elements[i];
+        el.addEventListener("click",function(){
+            this.parentNode.style.display = "none";
+        });
+    }
 }
