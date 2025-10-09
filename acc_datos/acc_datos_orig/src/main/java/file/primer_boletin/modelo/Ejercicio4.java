@@ -25,6 +25,7 @@ public class Ejercicio4 {
 		}
 		else {
 			logger.info(padre.getName());
+			logger.info(padre.getAbsolutePath());
 		}
 
 		
