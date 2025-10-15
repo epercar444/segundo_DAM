@@ -19,9 +19,10 @@ public class ControladorDiff {
 		File folder2 = new File(directorioGeneralCasa2);
 		File folder3 = new File(directorioGeneralClase1);
 		File folder4 = new File(directorioGeneralClase2);
-		DiffFolder df = new DiffFolder(folder3, folder4);
+		DiffFolder df = new DiffFolder(folder1, folder1);
 		try {
-			logger.info("Contador ficheros: " + df.getNumFicheroPorDirectorio(folder3, folder4));
+			//logger.info("Contador ficheros: " + df.getNumFicheroPorDirectorio(folder1, folder2));
+			df.compare();
 		} catch (GestionFicherosException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

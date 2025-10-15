@@ -102,16 +102,16 @@ public class DiffFolder {
 				valor = ValorComparacion.FALTA_EN_1;
 			}
 			else if (encontrado1 && encontrado2) {
-				if (fecha1 >= fecha2) {
+				if (fecha1 > fecha2) {
 					valor = ValorComparacion.MENOS_NUEVO_EN_1;
 				}
-				else {
+				else if (fecha2 > fecha1){
 					valor = ValorComparacion.MENOS_NUEVO_EN_2;
 				}
-			}
-			else {
-				valor = ValorComparacion.IGUALES;
-			}
+				else {
+					valor = ValorComparacion.IGUALES;
+				}
+		}
 		}
 		return valor;
 	}
@@ -125,6 +125,7 @@ public class DiffFolder {
 			for (File f : ficheros) {
 				ValorComparacion valor = getValorComparacion (f);
 				ResultadoComparacion objeto = new ResultadoComparacion(f.getName(),f.lastModified(), valor);
+				logger.info(objeto.toString());
 			}
 		}
 		return null;
