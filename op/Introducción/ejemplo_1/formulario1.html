@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incripción equipo</title>
+    <link rel="stylesheet" href="css/formulario.css">
+
+</head>
+<body>
+    <h1>Incripción equipo</h1>
+    <form id="form">
+    <div class="field" id="field-email">
+        <label for="email">Email</label>
+            <input type="email" placeholder="Ej:abcdefg@gmail.com" name="mails">
+    <div class="field" id="field-phone" style="display:none;">
+         <label for="telefono">Teléfono</label>
+        <input type="tel" placeholder="Ej:123456789" name="phone">
+    <div class="field" id="field-dni" style="display:none;">
+        <label for="dni">DNI</label>
+            <input type="text" placeholder="Ej:12345678A" name="dni">
+    <div class="field" id="field-date" style="display:none;">
+        <label for="fecha_nacimiento">Fecha Nacimiento</label>
+            <input type="date" placeholder="dd/mm/aaaa" name="date">
+    <div class="field" id="field-category" style="display:none;">
+        <label for="category">Categoría</label>
+        <select name="category">
+            <option value="">Selecciona una opción</option>
+            <option value="1">Benjamín</option>
+            <option value="2">Alevín</option>
+            <option value="3">Infantil</option>
+            <option value="4">Cadete</option>
+            <option value="5">Juvenil</option>
+    </form>
+    <script src ="./js/myscript.js"></script>
+</body>
+</html>
