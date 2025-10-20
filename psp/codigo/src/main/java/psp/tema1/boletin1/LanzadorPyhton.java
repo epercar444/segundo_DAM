@@ -3,7 +3,7 @@ package psp.tema1.boletin1;
 import java.io.IOException;
 
 public class LanzadorPyhton {
-	private static final String directorioGeneral = "C:\\Users\\alumno\\Desktop\\segundo_DAM\\psp\\codigo\\src\\main\\resources\\ejemplo.py";
+	private static final String directorioGeneral = "src\\main\\resources\\ejemplo.py";
 	public void ejecutaProcesoPyhton() {
 		 String[] comando = {"python", directorioGeneral};
 		 ProcessBuilder pb = new ProcessBuilder(comando);

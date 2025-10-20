@@ -30,7 +30,7 @@ public void ejecutaProcesoCompila() {
 	}
 }
 public void ejecutaProcesoJava() {
-	 String[] comando = {"java", "-cp", directorioGenerarClasses, "psp.tema1.Gestiona"};
+	 String[] comando = {"java", "-cp", "target/classes", "psp.tema1.Gestiona","hola","caracola"};
 	 ProcessBuilder pb = new ProcessBuilder(comando);
 	try {
 		pb.redirectErrorStream(true);
