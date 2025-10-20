@@ -48,3 +48,9 @@ input, select {
   display:none;
 }
 
+h5 {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  text-decoration: underline;
+}
