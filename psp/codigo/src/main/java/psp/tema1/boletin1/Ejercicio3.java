@@ -1,4 +1,4 @@
-package psp.tema1;
+package psp.tema1.boletin1;
 
 import java.io.IOException;
 

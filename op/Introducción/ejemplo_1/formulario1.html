@@ -10,21 +10,21 @@
 <body>
     <h1>Incripción equipo</h1>
     <form id="form">
-    <div class="field" id="field-email">
+    <div id="field-email">
         <label for="email">Email</label>
-            <input type="email" placeholder="Ej:abcdefg@gmail.com" name="mails">
-    <div class="field" id="field-phone" style="display:none;">
+            <input type="email" placeholder="Ej:abcdefg@gmail.com" name="mails" required>
+    <div class="field" id="field-phone">
          <label for="telefono">Teléfono</label>
-        <input type="tel" placeholder="Ej:123456789" name="phone">
-    <div class="field" id="field-dni" style="display:none;">
+        <input type="tel" placeholder="Ej:123456789" name="phone" required>
+    <div class="field" id="field-dni">
         <label for="dni">DNI</label>
-            <input type="text" placeholder="Ej:12345678A" name="dni">
-    <div class="field" id="field-date" style="display:none;">
+            <input type="text" placeholder="Ej:12345678A" name="dni" required>
+    <div class="field" id="field-date">
         <label for="fecha_nacimiento">Fecha Nacimiento</label>
-            <input type="date" placeholder="dd/mm/aaaa" name="date">
-    <div class="field" id="field-category" style="display:none;">
+            <input type="date" placeholder="dd/mm/aaaa" name="date" required>
+    <div class="field" id="field-category">
         <label for="category">Categoría</label>
-        <select name="category">
+        <select name="category" required>
             <option value="">Selecciona una opción</option>
             <option value="1">Benjamín</option>
             <option value="2">Alevín</option>
@@ -32,6 +32,6 @@
             <option value="4">Cadete</option>
             <option value="5">Juvenil</option>
     </form>
-    <script src ="./js/myscript.js"></script>
+    <script src ="./js/formularioScript.js"></script>
 </body>
 </html>

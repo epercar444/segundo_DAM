@@ -44,3 +44,7 @@ input, select {
   margin-bottom: 15px;
 }
 
+.field {
+  display:none;
+}
+
