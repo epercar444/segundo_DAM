@@ -1,0 +1,17 @@
+2025-10-21 10:44:25.255 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 0
+2025-10-21 10:46:49.132 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 0
+2025-10-21 10:51:54.372 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 4
+2025-10-21 10:52:17.891 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 4
+2025-10-21 10:54:35.430 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 6
+2025-10-21 10:56:08.046 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 6
+2025-10-21 11:47:06.881 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 6
+2025-10-21 11:47:56.229 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 6
+2025-10-21 12:01:37.222 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 6
+2025-10-21 12:01:52.963 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 0
+2025-10-21 12:02:52.082 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 0
+2025-10-21 12:15:05.909 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 0
+2025-10-21 12:15:32.701 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 0
+2025-10-21 12:18:01.301 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 6
+2025-10-21 12:32:21.498 [main] INFO  file.pruebas_iniciales.gestionaFicheros - Número de veces: 6
+2025-10-21 12:34:09.807 [main] DEBUG file.pruebas_iniciales.gestionaFicheros - file.JSONprimerasPruebas.Empleado@15888343
+2025-10-21 12:34:27.691 [main] DEBUG file.pruebas_iniciales.gestionaFicheros - Empleado [identificador=empleado21, NombreApellido=null, empresa=Su Empresa, edad=34]

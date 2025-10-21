@@ -1,0 +1,1 @@
+El número de veces que aparece dicha palabra es: 6 
