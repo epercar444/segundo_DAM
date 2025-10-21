@@ -9,9 +9,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.google.gson.Gson;
 
-import file.JSON.primerasPruebas.Empleado;
-import file.pruebas_iniciales.gestionaFicheros;
-
 public class UtilidadesJsonPokemons {
 	private static final Logger logger = LogManager.getLogger(UtilidadesJsonPokemons.class); //pasa algo si no es de tu tipo?
 	public Pokemon leePokemon(String ruta) throws FileNotFoundException {
