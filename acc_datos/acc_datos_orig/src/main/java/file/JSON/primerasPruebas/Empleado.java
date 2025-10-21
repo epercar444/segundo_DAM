@@ -1,4 +1,4 @@
-package file.JSONprimerasPruebas;
+package file.JSON.primerasPruebas;
 
 public class Empleado {
 	private String identificador,NombreApellido,empresa;

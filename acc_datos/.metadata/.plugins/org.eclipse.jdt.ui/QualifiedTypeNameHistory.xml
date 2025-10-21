@@ -19,4 +19,9 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="file.segundo_boletin.Ejercicio1SinMVC.DiffFolder"/>
     <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="file.segundo_boletin.Paises.utiles.GestionaFicherosPaises"/>
+    <fullyQualifiedTypeName name="file.segundo_boletin.Paises.Pais"/>
+    <fullyQualifiedTypeName name="psp.tema1.boletin2.Ejercicio11.LanzadorJAR"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 </qualifiedTypeNameHistroy>

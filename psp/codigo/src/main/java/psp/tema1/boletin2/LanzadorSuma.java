@@ -3,13 +3,6 @@ package psp.tema1.boletin2;
 import java.io.IOException;
 
 public class LanzadorSuma {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		LanzadorSuma m = new LanzadorSuma();
-		m.ejecutaProcesoJava();
-		
-	}
 	public void ejecutaProcesoCompila() {
 		String[] comando = { "javac", "-d", "src/main/java/psp/tema1", "ProcesoHijo_CalculaSuma"};
 		ProcessBuilder pb = new ProcessBuilder(comando);

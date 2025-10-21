@@ -1,4 +1,4 @@
-package file.utilesJSON;
+package file.JSON.utiles;
 
 import java.io.File;
 import java.io.FileReader;
@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.google.gson.Gson;
 
-import file.JSONprimerasPruebas.Empleado;
+import file.JSON.primerasPruebas.Empleado;
 import file.pruebas_iniciales.gestionaFicheros;
 
 public class GestionaJSON {
@@ -19,7 +19,7 @@ public class GestionaJSON {
 		File ruta = new File(ruta_fichero);
 		g.leeEmpleados(ruta);
 	}
-	private static final Logger logger = LogManager.getLogger(gestionaFicheros.class);
+	private static final Logger logger = LogManager.getLogger(GestionaJSON.class);
 	public void leeEmpleados(File rutaFichero) {
 		try {
 		  Gson gson = new Gson();

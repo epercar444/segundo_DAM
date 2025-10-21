@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import file.pruebas_iniciales.gestionaFicheros;
 
 public class GestionaControladorPalabras {
-	private static final Logger logger = LogManager.getLogger(gestionaFicheros.class);
+	private static final Logger logger = LogManager.getLogger(GestionaControladorPalabras.class);
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ContadorPalabras clase = new ContadorPalabras();
