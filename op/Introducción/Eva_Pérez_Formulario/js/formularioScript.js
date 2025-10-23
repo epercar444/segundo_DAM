@@ -10,6 +10,13 @@ function muestra(elemento) {
 
 function oculta(elemento) {
   elemento.style.display = "none";
+    const inputs = elemento.querySelectorAll("input, select, textarea");
+  inputs.forEach(input => {
+    if (input.tagName === "SELECT") {
+      input.value = ""; // vuelve a la opción por defecto
+    } else if (input.type === "text" || input.type === "number" || input.type === "date" || input.type === "email") {
+      input.value = ""; // limpia valor
+  }});
 }
  //Funciones para ocultar todos los atributos siguientes en el caso de no validar dicho atributo. Se llamarán en las diferentes funciones de validación.
 function ocultaFieldsFromSurname() {
@@ -56,7 +63,6 @@ function ocultaFieldsFromButton() {
 function validaName() {
   const name = $("#name");
   name.setCustomValidity(""); //borramos errores anteriores
-  //validaSurname();
   if (name.value.length > 2) {
     muestra($("#field-surname"));
   } else {
@@ -70,8 +76,9 @@ function validaSurname() {
   const surname = $("#surname");
   surname.setCustomValidity("");
   const parts = surname.value.trim().split(" ");
-  //validaEmail(); //Se valida el dato posterior para asegurar su estado.
-  if (parts.length === 2 && parts[1] !== "") {
+  if ((parts.length === 1 && parts[0].length > 2) || // un solo apellido válido
+    (parts.length === 2 && parts[0].length > 2 && parts[1].length > 2) // dos apellidos válidos
+  ) {
     muestra($("#field-email"));
   } else {
     surname.setCustomValidity("Introduce unos apellidos correctos");
@@ -83,7 +90,6 @@ function validaSurname() {
 function validaEmail() {
   const email = $("#email");
   email.setCustomValidity("");
-  //validaPhone();
   if (email.checkValidity()) { //Uso checkValidity() unicamente en los atributos que HTML5 puede validar por el type del atributo.
     muestra($("#field-phone"));
   } else {
@@ -96,7 +102,6 @@ function validaEmail() {
 function validaPhone() {
   const phone = $("#phone");
   phone.setCustomValidity("");
-  //validaDNI();
   if (phone.checkValidity() && phone.value.length === 9) {
     muestra($("#field-dni"));
   } else {
@@ -110,7 +115,6 @@ function validaDNI() {
   const dni = $("#dni");
   const regex = /^[0-9]{8}[A-Z]$/; //Expresión regular para validar el DNI
   dni.setCustomValidity("");
- // validaCategory();
   if (regex.test(dni.value.toUpperCase())) { //deja introducir palabras en minúscula ya que aquí la estamos pasando a mayúsculas
     muestra($("#field-category"));
   } else {
@@ -124,7 +128,6 @@ function validaCategory() {
   const category = $("#category");
   const teamSelect = $("#team");
   category.setCustomValidity("");
-  //validaTeam();
   teamSelect.innerHTML = '<option value="">Selecciona un equipo</option>'; //Siempre será la opción que nos aparezca en el desplegable de team.
 if (category.value != "") {
   if (category.value === "1") { //Se está escribiendo por el HTML para que salga opción diferente dependiendo de la categoría seleccionada.
@@ -146,7 +149,6 @@ if (category.value != "") {
     teamSelect.innerHTML += '<option value="Juvenil-C">C</option>';
   }
   muestra($("#field-team"));
-  //validaTeam();
 }
 else {
     category.setCustomValidity("Elige una opción para poder continuar.");
@@ -159,7 +161,6 @@ else {
 function validaTeam() {
   const equipo = $("#team");
   equipo.setCustomValidity("");
-  //validaMatch();
   if (equipo.value != "") {
     muestra($("#field-match"));
   } else {
@@ -173,14 +174,13 @@ function validaMatch() {
   const category = $("#category");
   const match = $("#match");
   match.setCustomValidity("");
-  validaDate();
   if (category.value == "1" && match.value=="1" || category.value == "2" && match.value=="2" || category.value == "3" && match.value=="3" || category.value == "4" && match.value=="4" || category.value == "5" && match.value=="5") {
     //Acorde con el mensaje de error que se nos muestra, dependiendo de la categoría, se corresponde un partido. En el caso que no coincidan, no seguirá mostrando datos y le mostrará el mensaje de error.
       muestra($("#field-date"));
     }
     else {
-      match.setCustomValidity("Introduce un partido válida, recuerda que debe corresponderse a la categoría indicada "+
-      "Benjamín -> Algabeño-Santiponce, Alevín -> Algabeño-Bormujos, Infantil -> Algabeño-Gines, Cadete -> Algabeño-Guillena, Juvenil -> Cantillana");
+      match.setCustomValidity("Introduce un partido válido, recuerda que debe corresponderse a la categoría indicada "+
+      "Benjamín -> Algabeño-Santiponce, Alevín -> Algabeño-Bormujos, Infantil -> Algabeño-Gines, Cadete -> Algabeño-Guillena, Juvenil -> Algabeño-Cantillana");
       match.reportValidity();
       ocultaFieldsFromDate();
     }
@@ -190,7 +190,6 @@ function validaDate() {
   const date = $("#date");
   const category = $("#category");
   date.setCustomValidity("");
-  validaShirt();
   const fechaNacimiento = new Date(date.value);
   const hoy = new Date();
   const edad = hoy.getFullYear() - fechaNacimiento.getFullYear(); //solo tenemos en cuenta el año, ya que he aporximado la edad que normalmente tienen los niños en esa categoría
@@ -254,19 +253,19 @@ function enviarFormulario(e) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  $("#name").addEventListener("blur", validaName); //blur para que el siguiente elemento se muestre tras la validación y un clic fuera de la pantalla
+  $("#name").addEventListener("change", validaName); //blur para que el siguiente elemento se muestre tras la validación y un clic fuera de la pantalla
   $("#name").addEventListener("input", validaName); //si el valor del atributo cambia, se recoge
 
-  $("#surname").addEventListener("blur", validaSurname);
+  $("#surname").addEventListener("change", validaSurname);
   $("#surname").addEventListener("input", validaSurname);
 
-  $("#email").addEventListener("blur", validaEmail);
+  $("#email").addEventListener("change", validaEmail);
   $("#email").addEventListener("input", validaEmail);
 
-  $("#phone").addEventListener("blur", validaPhone);
+  $("#phone").addEventListener("change", validaPhone);
   $("#phone").addEventListener("input", validaPhone);
 
-  $("#dni").addEventListener("blur", validaDNI);
+  $("#dni").addEventListener("change", validaDNI);
   $("#dni").addEventListener("input", validaDNI);
 
   $("#category").addEventListener("change", validaCategory); //para desplegables o fechas
@@ -281,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("#date").addEventListener("change", validaDate); 
   $("#date").addEventListener("input", validaDate);
 
-  $("#shirt").addEventListener("blur", validaShirt);
+  $("#shirt").addEventListener("change", validaShirt);
   $("#shirt").addEventListener("input", validaShirt);
 
   $("#button").addEventListener("click", enviarFormulario); //click para enviar el formulario cuando se pinche en el botón
