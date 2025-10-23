@@ -10,7 +10,7 @@ class Autor :
         self.nombre = nombre
         self.apellidos = apellidos
     
-    def MostrarPunto(self) :
+    def MostrarAutor(self) :
         print("El autor es",self.nombre,self.apellidos)
 
     
@@ -27,7 +27,7 @@ class Libro:
         print ("La información del libro es: " \
         "titulo ->",self.titulo, \
         "ISBN ->",self.ISBN, \
-        "autor ->",self.autor)
+        "autor ->"),self.autor.MostrarAutor()
 
     def ObtenerTitulo (self) :
         return self.titulo
@@ -52,7 +52,7 @@ class Biblioteca :
 
     def MostrarBiblioteca(self):
         for libro in self.listaLibros:
-            print("Título:", libro.titulo, "ISBN:", libro.ISBN, "Autor:", libro.autor.nombre, libro.autor.apellidos)
+            print(libro.MostrarLibro())
 
 
 

@@ -10,7 +10,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-image: url('/algabeño.jpg');
+  background-image: url('img/algabeño.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -23,12 +23,11 @@ h1 {
   text-shadow: 1px 1px 2px white;
 }
 
-h5 {
+form h3 {
+  font-size: 16px; 
+  margin-bottom: 15px; 
+  color: #003366; 
   text-align: center;
-  color: #003366;
-  font-size: 12px;
-  text-decoration: underline;
-  margin-bottom: 15px;
 }
 
 form {
@@ -54,7 +53,7 @@ input, select {
   border-radius: 5px;
   font-size: 16px;
   margin-bottom: 15px;
-  width: 100%;
+  width: 100%; 
   box-sizing: border-box;
 }
 
@@ -73,6 +72,9 @@ input, select {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
   margin-top: 10px;
+  width: 60%; 
+  margin-left: auto; 
+  margin-right: auto; 
 }
 
 #button:hover {
