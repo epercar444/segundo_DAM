@@ -118,7 +118,7 @@ function validaDNI() {
   if (regex.test(dni.value.toUpperCase())) { //deja introducir palabras en minúscula ya que aquí la estamos pasando a mayúsculas
     muestra($("#field-category"));
   } else {
-    dni.setCustomValidity("Introduce un DNI correcto");
+    dni.setCustomValidity("Introduce un DNI con el formato correcto -> 12345678A (8 números + 1 letra)");
     dni.reportValidity();
     ocultaFieldsFromCategory();
   }
@@ -151,7 +151,7 @@ if (category.value != "") {
   muestra($("#field-team"));
 }
 else {
-    category.setCustomValidity("Elige una opción para poder continuar.");
+    category.setCustomValidity("Elige una opción diferente a 'Seleccione una opción.");
     category.reportValidity();
     ocultaFieldsFromTeam();
 }
@@ -164,7 +164,7 @@ function validaTeam() {
   if (equipo.value != "") {
     muestra($("#field-match"));
   } else {
-    equipo.setCustomValidity("Elige una opción para poder continuar.");
+    equipo.setCustomValidity("Elige una opción diferente a 'Seleccione un equipo'.");
     equipo.reportValidity();
     ocultaFieldsFromMatch();
   }
@@ -179,7 +179,7 @@ function validaMatch() {
       muestra($("#field-date"));
     }
     else {
-      match.setCustomValidity("Introduce un partido válido, recuerda que debe corresponderse a la categoría indicada "+
+      match.setCustomValidity("Debe elegir una opción diferente a 'Seleccione un partido'.Introduce un partido válido, recuerda que debe corresponderse a la categoría indicada "+
       "Benjamín -> Algabeño-Santiponce, Alevín -> Algabeño-Bormujos, Infantil -> Algabeño-Gines, Cadete -> Algabeño-Guillena, Juvenil -> Algabeño-Cantillana");
       match.reportValidity();
       ocultaFieldsFromDate();
@@ -201,8 +201,8 @@ function validaDate() {
       (category.value == "5" && edad == 18)) {
         muestra($("#field-shirt"));
   } else {
-    date.setCustomValidity("Introduce una edad válida, recuerda que debe corresponderse a la categoría indicada"+
-    "Benjamín -> 9, Alevín -> 11, Infantil -> 13, Cadete -> 15, Juvenil -> 18");
+    date.setCustomValidity("Introduce una edad válida, recuerda que debe corresponderse a la categoría indicada "+
+    "Benjamín -> 9 años(2016), Alevín -> 11 años(2014), Infantil -> 13 años (2012), Cadete -> 15 años (2010), Juvenil -> 18 años (2007)");
     date.reportValidity();
     ocultaFieldsFromShirt();
   }
@@ -221,8 +221,9 @@ function validaShirt() {
   }
 }
 
-function enviarFormulario(e) { 
+
   //Esta función, mediante unas tablas de DNI que tiene asignada cada equipo, recoge el valor del dni, de la categoría y del equipo, si el dni introducido no se encuentra en la tabla salta mensaje de error, sino, salta mensaje de envío correcto. En ambos casos, la página se recarga. 
+function enviarFormulario(e) { 
   e.preventDefault();
 
   const dni = $("#dni").value.toUpperCase().trim();
@@ -233,7 +234,7 @@ function enviarFormulario(e) {
     "Alevín-B": ["44444444D","55555555E","66666666F"],
     "Alevín-C": ["77777777G","88888888H","99999999I"],
     "Infantil-A": ["10101010A","20202020B","30303030C"],
-    "Infantil-B": ["40404040D","50505050E","60606060F"],
+    "Infantil-B": ["40404040D","50505050E","60606050F"],
     "Benjamin-A": ["12121212A","13131313B"],
     "Benjamin-B": ["14141414C","15151515D"],
     "Cadete-A": ["16161616A","17171717B"],
@@ -244,13 +245,38 @@ function enviarFormulario(e) {
   };
 
   if (jugadores[equipo] && jugadores[equipo].includes(dni)) {
-    alert("¡Formulario enviado correctamente!"); //en este caso uso alert ya que es el último paso del formulario
+    alert("¡Formulario enviado correctamente!");
+    location.reload();
   } else {
     alert("Error: el DNI no coincide con el equipo seleccionado");
+    oculta($("#field-button")); // ocultar botón si el DNI no coincide
   }
-
-  location.reload(); //reinicio página
 }
+
+// Mostrar botón si DNI válido al cambiar
+$("#dni").addEventListener("input", () => {
+  const dni = $("#dni").value.toUpperCase().trim();
+  const equipo = $("#team").value;
+
+  const jugadores = {
+    "Alevín-A": ["11111111A","22222222B","33333333C"],
+    "Alevín-B": ["44444444D","55555555E","66666666F"],
+    "Alevín-C": ["77777777G","88888888H","99999999I"],
+    "Infantil-A": ["10101010A","20202020B","30303030C"],
+    "Infantil-B": ["40404040D","50505050E","60606050F"],
+    "Benjamin-A": ["12121212A","13131313B"],
+    "Benjamin-B": ["14141414C","15151515D"],
+    "Cadete-A": ["16161616A","17171717B"],
+    "Cadete-B": ["18181818C","19191919D"],
+    "Juvenil-A": ["20202020A","21212121B"],
+    "Juvenil-B": ["22222222C","23232323D"],
+    "Juvenil-C": ["24242424E","25252525F"]
+  };
+
+  if (jugadores[equipo] && jugadores[equipo].includes(dni)) {
+    muestra($("#field-button"));
+  }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   $("#name").addEventListener("change", validaName); //blur para que el siguiente elemento se muestre tras la validación y un clic fuera de la pantalla
