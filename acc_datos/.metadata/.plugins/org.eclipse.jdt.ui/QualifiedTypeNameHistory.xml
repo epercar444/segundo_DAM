@@ -15,8 +15,6 @@
     <fullyQualifiedTypeName name="repaso1MVC.servicio.ServicioConversaciones"/>
     <fullyQualifiedTypeName name="file.primer_boletin.modelo.Ejercicio1"/>
     <fullyQualifiedTypeName name="file.primer_boletin.modelo.Ejercicio2"/>
-    <fullyQualifiedTypeName name="java.util.HashSet"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="file.segundo_boletin.Ejercicio1SinMVC.DiffFolder"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
@@ -24,4 +22,9 @@
     <fullyQualifiedTypeName name="file.segundo_boletin.Paises.Pais"/>
     <fullyQualifiedTypeName name="psp.tema1.boletin2.Ejercicio11.LanzadorJAR"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="file.TowerGPT.modelo.InteraccionAgente"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="file.TowerGPT.servicio.InteraccionAgenteServ"/>
+    <fullyQualifiedTypeName name="file.TowerGPT.repositorio.InteraccionAgenteRepo"/>
 </qualifiedTypeNameHistroy>

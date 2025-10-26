@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 import com.google.gson.Gson;
 
 public class UtilidadesJsonPokemons {
-	private static final Logger logger = LogManager.getLogger(UtilidadesJsonPokemons.class); //pasa algo si no es de tu tipo?
+	private static final Logger logger = LogManager.getLogger(UtilidadesJsonPokemons.class); 
 	public Pokemon leePokemon(String ruta) throws FileNotFoundException {
 		File ruta_real = new File(ruta);
 		Gson gson = new Gson();
@@ -24,7 +24,7 @@ public class UtilidadesJsonPokemons {
 	}
 	
 	public void leeJson (String ruta,List<Pokemon> pokemons) {
-		{// Convertir el objeto a JSON
+		// Convertir el objeto a JSON
 			 Gson gson = new Gson();
 			 String json = gson.toJson(pokemons);
 			 FileWriter fichero = null;
@@ -41,4 +41,4 @@ public class UtilidadesJsonPokemons {
 						System.out.println("Error al escribir empleado");
 					}			}		}	   }
 	}
-}
+
