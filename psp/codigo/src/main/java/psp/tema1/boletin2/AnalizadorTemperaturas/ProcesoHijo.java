@@ -11,9 +11,9 @@ import java.util.Scanner;
 public class ProcesoHijo {
 	public static void main(String[] args) {
 		ProcesoHijo pb = new ProcesoHijo();
-		String ruta_ficheroTemperaturas = args [0];
+		String ruta_ficheroTemperaturas = args [0] + "temperaturas.txt";
 		int numeroTemperatura = Integer.parseInt(args[1]);
-		String ruta_localFicherosCreados = args[2];
+		String ruta_localFicherosCreados = args[0] + args[1] +".txt";
 		try {
 			System.out.println(pb.ContadorTemperaturasSuperiorA(ruta_ficheroTemperaturas, numeroTemperatura));
 			pb.CreaFicheroTemperatura(ruta_ficheroTemperaturas, numeroTemperatura, ruta_localFicherosCreados);

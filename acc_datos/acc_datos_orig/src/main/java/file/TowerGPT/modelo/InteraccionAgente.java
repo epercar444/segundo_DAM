@@ -10,10 +10,10 @@ public class InteraccionAgente implements Comparable<InteraccionAgente>{
 	private int id,porcentaje_Acierto;
 	private TipoAgente tipoAgente;
 	private String peticion,respuesta;
-	private float valoracion;
+	private float valoracion,tiempoEcujecion;
 	
 	public InteraccionAgente(int porcentaje_Acierto, TipoAgente tipoAgente, String peticion, String respuesta,
-			float valoracion) {
+			float valoracion,float tiempoEjecucion) {
 		super();
 		this.id = contador;
 		this.porcentaje_Acierto = porcentaje_Acierto;
@@ -21,7 +21,16 @@ public class InteraccionAgente implements Comparable<InteraccionAgente>{
 		this.peticion = peticion;
 		this.respuesta = respuesta;
 		this.valoracion = valoracion;
+		this.tiempoEcujecion = tiempoEjecucion;
 		contador++;
+	}
+	
+	public float getTiempoEcujecion() {
+		return tiempoEcujecion;
+	}
+
+	public void setTiempoEcujecion(float tiempoEcujecion) {
+		this.tiempoEcujecion = tiempoEcujecion;
 	}
 	public int getId() {
 		return id;
@@ -81,7 +90,7 @@ public class InteraccionAgente implements Comparable<InteraccionAgente>{
 	public String toString() {
 		return "InteraccionAgente [id=" + id + ", porcentaje_Acierto=" + porcentaje_Acierto + "%" + ", tipoAgente="
 				+ tipoAgente + ", peticion=" + peticion + ", respuesta=" + respuesta + ", valoracion=" + valoracion
-				+ "]";
+				+ ", tiempoEcujecion=" + tiempoEcujecion + "]";
 	}
 	@Override
 	public int compareTo(InteraccionAgente o) {

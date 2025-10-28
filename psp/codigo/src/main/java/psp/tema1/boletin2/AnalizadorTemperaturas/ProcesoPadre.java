@@ -5,27 +5,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 public class ProcesoPadre {
 	private static final String directorioFicheroCreado = "src/main/resources/";
-	private static final String directorioFicheroTemperaturas = "src/main/resources/temperaturas.txt";
+	private static final String directorioFicheroTemperaturas = "src/main/resources/";
 	private static final String directorioGenerarClases = "target/classes";
 	private static final String rutaFicheroJava = "src/main/java/psp/tema1/boletin2/AnalizadorTemperaturas/ProcesoHijo.java" ;
 	public static void main(String[] args) {
+		int [] umbrales = {10,20,25,30,35};
 		ProcesoPadre pp = new ProcesoPadre();
-		String[] comando1 = {"java", "-cp", directorioGenerarClases,rutaFicheroJava,directorioFicheroTemperaturas,"10",(directorioFicheroCreado+"10.txt")};
-		String[] comando2 = {"java", "-cp", directorioGenerarClases,rutaFicheroJava,directorioFicheroTemperaturas,"20",(directorioFicheroCreado+"20.txt")};
-		String[] comando3 = {"java", "-cp", directorioGenerarClases,rutaFicheroJava,directorioFicheroTemperaturas,"25",(directorioFicheroCreado+"25.txt")};
-		String[] comando4 = {"java", "-cp", directorioGenerarClases,rutaFicheroJava,directorioFicheroTemperaturas,"30",(directorioFicheroCreado+"30.txt")};
-		String[] comando5 = {"java", "-cp", directorioGenerarClases,rutaFicheroJava,directorioFicheroTemperaturas,"35",(directorioFicheroCreado+"35.txt")};
-
-		ProcessBuilder pb1 = new ProcessBuilder(comando1);
-		ProcessBuilder pb2 = new ProcessBuilder(comando2);
-		ProcessBuilder pb3 = new ProcessBuilder(comando3);
-		ProcessBuilder pb4 = new ProcessBuilder(comando4);
-		ProcessBuilder pb5 = new ProcessBuilder(comando5);
-		pp.ejecutaProceso(pb1);
-		pp.ejecutaProceso(pb2);
-		pp.ejecutaProceso(pb3);
-		pp.ejecutaProceso(pb4);
-		pp.ejecutaProceso(pb5);
+		for (int i : umbrales) {
+			String i_String = Integer.toString(i);
+			String[] comando1 = {"java", "-cp", directorioGenerarClases,rutaFicheroJava,directorioFicheroTemperaturas,i_String};
+			ProcessBuilder pb1 = new ProcessBuilder(comando1);
+			pp.ejecutaProceso(pb1);
+		}
 
 	}
 	public void compilaProceso() {

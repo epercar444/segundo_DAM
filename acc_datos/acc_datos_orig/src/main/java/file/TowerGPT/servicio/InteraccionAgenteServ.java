@@ -149,14 +149,18 @@ public class InteraccionAgenteServ {
 		    return mejor;
 		}
 	public float calcularTiempoMedioPorTipo (TipoAgente a) { //me invento los datos porque no me los aporta el enunciado
-		float tiempoMedio = 0;
-		if (a.equals(TipoAgente.HUMANO)) {
-			tiempoMedio = 3.3f;
-		}
-		else {
-			tiempoMedio = 2.5f;
-		}
-		return tiempoMedio;
+	    float tiempo_medio = 0;
+	    int NumTotalInteracciones = NumTotalInteraccionesPorTipo(a);
+	    for (InteraccionAgente f : clase_repo.getInteracciones()) {
+	        if (f.getTipoAgente().equals(a)) {
+	            tiempo_medio += f.getTiempoEcujecion();
+	        }
+	    }
+	    float media_real = tiempo_medio / NumTotalInteracciones;
+	    if (NumTotalInteracciones == 0) {
+	        tiempo_medio = 0;
+	    }
+	    return media_real;
 	}
 	
 	public float calculaPorcentajAciertoMedioPorTipo(TipoAgente p) {
