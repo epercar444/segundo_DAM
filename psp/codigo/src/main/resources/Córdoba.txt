@@ -1,0 +1,7 @@
+Artículo: Cojines	, Unidades: 6	, Importe: 90	, Referencia: 0000010	, Dirección: c/Calle Córdoba, 7	, Provincia: Córdoba	, Fecha: 05/03/2021
+Artículo: Armario	, Unidades: 1	, Importe: 450	, Referencia: 0000016	, Dirección: c/Calle Córdoba, 18	, Provincia: Córdoba	, Fecha: 11/03/2021
+Artículo: Ropa de cama	, Unidades: 4	, Importe: 200	, Referencia: 0000024	, Dirección: c/Calle Córdoba, 29	, Provincia: Córdoba	, Fecha: 19/03/2021
+Artículo: Espejo grande	, Unidades: 1	, Importe: 150	, Referencia: 0000032	, Dirección: c/Calle Córdoba, 37	, Provincia: Córdoba	, Fecha: 27/03/2021
+Artículo: Ropa de cama	, Unidades: 3	, Importe: 150	, Referencia: 0000040	, Dirección: c/Calle Córdoba, 45	, Provincia: Córdoba	, Fecha: 04/04/2021
+Artículo: Silla infantil	, Unidades: 2	, Importe: 80	, Referencia: 0000048	, Dirección: c/Calle Córdoba, 53	, Provincia: Córdoba	, Fecha: 12/04/2021
+Artículo: Ropa de hogar	, Unidades: 2	, Importe: 80	, Referencia: 0000056	, Dirección: c/Calle Córdoba, 61	, Provincia: Córdoba	, Fecha: 20/04/2021

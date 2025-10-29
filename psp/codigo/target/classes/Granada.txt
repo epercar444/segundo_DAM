@@ -1,0 +1,8 @@
+Artículo: Cortina	, Unidades: 3	, Importe: 300	, Referencia: 0000005	, Dirección: c/Calle Granada, 5	, Provincia: Granada	, Fecha: 02/03/2021
+Artículo: Alexa	, Unidades: 2	, Importe: 50	, Referencia: 0000006	, Dirección: c/Calle 4	, Provincia: Granada	, Fecha: 02/03/2021
+Artículo: Toallas	, Unidades: 2	, Importe: 40	, Referencia: 0000007	, Dirección: c/Calle 5	, Provincia: Granada	, Fecha: 07/03/2021
+Artículo: Mesa de comedor	, Unidades: 1	, Importe: 500	, Referencia: 0000020	, Dirección: c/Calle Granada, 25	, Provincia: Granada	, Fecha: 15/03/2021
+Artículo: Lamparita	, Unidades: 2	, Importe: 60	, Referencia: 0000028	, Dirección: c/Calle Granada, 33	, Provincia: Granada	, Fecha: 23/03/2021
+Artículo: Silla escritorio	, Unidades: 2	, Importe: 120	, Referencia: 0000036	, Dirección: c/Calle Granada, 41	, Provincia: Granada	, Fecha: 31/03/2021
+Artículo: Mesa plegable	, Unidades: 2	, Importe: 100	, Referencia: 0000044	, Dirección: c/Calle Granada, 49	, Provincia: Granada	, Fecha: 08/04/2021
+Artículo: Silla moderna	, Unidades: 2	, Importe: 140	, Referencia: 0000052	, Dirección: c/Calle Granada, 57	, Provincia: Granada	, Fecha: 16/04/2021

@@ -1,18 +1,19 @@
-package psp.tema1.boletin2.AnalizadorTemperaturas;
+package psp.SimulacionUd1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+
 public class ProcesoPadre {
-	private static final String directorioFicheroTemperaturas = "src/main/resources/";
+	private static final String directorioFicheroPedidos = "src/main/resources/";
 	private static final String directorioGenerarClases = "target/classes";
-	private static final String rutaFicheroJava = "src/main/java/psp/tema1/boletin2/AnalizadorTemperaturas/ProcesoHijo.java" ;
+	private static final String rutaFicheroJava = "src/main/java/psp/SimulacionUd1/ProcesoHijo.java" ;
 	public static void main(String[] args) {
-		int [] umbrales = {10,20,25,30,35};
+		String [] provincias = {"Sevilla","Huelva","Jaén","Granada","Córdoba","Cádiz","Málaga","Almería"};
 		ProcesoPadre pp = new ProcesoPadre();
-		for (int i : umbrales) {
-			String i_String = Integer.toString(i);
-			String[] comando1 = {"java", "-cp", directorioGenerarClases,rutaFicheroJava,directorioFicheroTemperaturas,i_String};
+		for (String i : provincias) {
+			String[] comando1 = {"java", "-cp", directorioGenerarClases,"psp.SimulacionUd1.ProcesoHijo",directorioFicheroPedidos,i};
 			ProcessBuilder pb1 = new ProcessBuilder(comando1);
 			pp.ejecutaProceso(pb1);
 		}
@@ -38,7 +39,7 @@ public class ProcesoPadre {
 	public void ejecutaProceso(ProcessBuilder pb) {
 		try {
 			// pb.redirectErrorStream(true);
-			// pb.inheritIO(); no en el flujo de salida, sino pantalla
+			//pb.inheritIO(); //no en el flujo de salida, sino pantalla
 			Process p1 = pb.start();
 
 
@@ -46,7 +47,7 @@ public class ProcesoPadre {
 			BufferedReader errorReader = new BufferedReader(new InputStreamReader(p1.getErrorStream()));
 
 			int exit = p1.waitFor();
-			System.out.println(exit);
+			//System.out.println(exit);
 
 			if (exit != 0) {
 				String errorLinea = errorReader.readLine();

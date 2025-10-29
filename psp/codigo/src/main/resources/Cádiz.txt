@@ -1,0 +1,7 @@
+Artículo: Estantería	, Unidades: 4	, Importe: 120	, Referencia: 0000009	, Dirección: c/Calle Cádiz, 6	, Provincia: Cádiz	, Fecha: 04/03/2021
+Artículo: Silla de oficina	, Unidades: 2	, Importe: 180	, Referencia: 0000015	, Dirección: c/Calle Cádiz, 15	, Provincia: Cádiz	, Fecha: 10/03/2021
+Artículo: Lámpara LED	, Unidades: 3	, Importe: 120	, Referencia: 0000023	, Dirección: c/Calle Cádiz, 28	, Provincia: Cádiz	, Fecha: 18/03/2021
+Artículo: Silla de cocina	, Unidades: 2	, Importe: 70	, Referencia: 0000031	, Dirección: c/Calle Cádiz, 36	, Provincia: Cádiz	, Fecha: 26/03/2021
+Artículo: Cojines grandes	, Unidades: 4	, Importe: 160	, Referencia: 0000039	, Dirección: c/Calle Cádiz, 44	, Provincia: Cádiz	, Fecha: 03/04/2021
+Artículo: Lámpara techo LED	, Unidades: 1	, Importe: 120	, Referencia: 0000047	, Dirección: c/Calle Cádiz, 52	, Provincia: Cádiz	, Fecha: 11/04/2021
+Artículo: Cojines cama	, Unidades: 4	, Importe: 100	, Referencia: 0000055	, Dirección: c/Calle Cádiz, 60	, Provincia: Cádiz	, Fecha: 19/04/2021

@@ -1,0 +1,7 @@
+Artículo: Lámpara de techo	, Unidades: 2	, Importe: 200	, Referencia: 0000012	, Dirección: c/Calle Almería, 8	, Provincia: Almería	, Fecha: 07/03/2021
+Artículo: Lámpara de mesa	, Unidades: 3	, Importe: 90	, Referencia: 0000018	, Dirección: c/Calle Almería, 21	, Provincia: Almería	, Fecha: 13/03/2021
+Artículo: Mesa auxiliar	, Unidades: 1	, Importe: 90	, Referencia: 0000026	, Dirección: c/Calle Almería, 31	, Provincia: Almería	, Fecha: 21/03/2021
+Artículo: Cama doble	, Unidades: 1	, Importe: 550	, Referencia: 0000034	, Dirección: c/Calle Almería, 39	, Provincia: Almería	, Fecha: 29/03/2021
+Artículo: Mesa de noche	, Unidades: 2	, Importe: 120	, Referencia: 0000042	, Dirección: c/Calle Almería, 47	, Provincia: Almería	, Fecha: 06/04/2021
+Artículo: Armario pequeño	, Unidades: 2	, Importe: 220	, Referencia: 0000050	, Dirección: c/Calle Almería, 55	, Provincia: Almería	, Fecha: 14/04/2021
+Artículo: Mesa auxiliar	, Unidades: 2	, Importe: 90	, Referencia: 0000058	, Dirección: c/Calle Almería, 63	, Provincia: Almería	, Fecha: 22/04/2021
