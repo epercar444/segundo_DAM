@@ -1,4 +1,4 @@
-package xml.primeraspruebas.DOM;
+package xml.primeraspruebas.repositorio;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -11,10 +11,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
-import ejemplo.controlador.ProbandoLog;
+
 import xml.primeraspruebas.modelo.Empleado;
 
 public class domEmpleado {
