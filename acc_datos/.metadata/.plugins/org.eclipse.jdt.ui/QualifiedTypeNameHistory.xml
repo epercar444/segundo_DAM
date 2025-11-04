@@ -24,7 +24,10 @@
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="file.TowerGPT.modelo.InteraccionAgente"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="file.TowerGPT.servicio.InteraccionAgenteServ"/>
     <fullyQualifiedTypeName name="file.TowerGPT.repositorio.InteraccionAgenteRepo"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="psp.tema1.Simulacion2.ProcesoHijo"/>
+    <fullyQualifiedTypeName name="java.lang.ProcessBuilder"/>
+    <fullyQualifiedTypeName name="psp.tema1.Simulacion2.ProcesoPadre"/>
 </qualifiedTypeNameHistroy>
