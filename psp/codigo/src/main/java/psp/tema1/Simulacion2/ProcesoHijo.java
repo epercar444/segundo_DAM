@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProcesoHijo {
-
+	//la idea principal era lnazar dos procesos hijos a la vez (es decir, dos clases distintas), una para DNIs y otra para NSSs
 	public static void main(String[] args) {
 		String rutaFicheroABuscar = args[0] + "datos.txt";
 		String ruta_DNIs = args[0] + "DNIs.txt";
