@@ -15,5 +15,16 @@ public class Actor {
 	public String toString() {
 		return "Actor [actor=" + actor + "]";
 	}
+
+	public Actor(String actor) {
+		super();
+		this.actor = actor;
+	}
+
+	public Actor() {
+		super();
+	}
+	
+	
 	
 }

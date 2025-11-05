@@ -42,5 +42,16 @@ public class Pelicula {
 		return "Pelicula [titulo=" + titulo + ", director=" + director + ", fecha=" + fecha + ", actores=" + actores
 				+ "]";
 	}
+	public Pelicula(String titulo, String director, int fecha, List<Actor> actores) {
+		super();
+		this.titulo = titulo;
+		this.director = director;
+		this.fecha = fecha;
+		this.actores = actores;
+	}
+	public Pelicula() {
+		super();
+	}
+	
 	
 }

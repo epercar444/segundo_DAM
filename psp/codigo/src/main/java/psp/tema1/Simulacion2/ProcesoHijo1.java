@@ -9,32 +9,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProcesoHijo {
+public class ProcesoHijo1 {
+
 	public static void main(String[] args) {
 		String rutaFicheroABuscar = args[0] + "datos.txt";
-		String ruta_numSegSocial = args[0] + "NSSs.txt";
-		ProcesoHijo ph = new ProcesoHijo();
-		
+		String ruta_DNIs = args[0] + "DNIs.txt";
+		ProcesoHijo1 ph1 = new ProcesoHijo1();
 		try {
-			ph.GeneraNSSFichero(rutaFicheroABuscar, ruta_numSegSocial);
-			System.out.println(ph.GuardarNumSegSoc(rutaFicheroABuscar));
+			ph1.GeneraDNIsFichero(rutaFicheroABuscar, ruta_DNIs);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
-	public List<String> GuardarNumSegSoc (String ruta) throws FileNotFoundException {
-		List<String> numeros_segsocial = new ArrayList<>();
+	public List<String> GuardarDNIs (String ruta) throws FileNotFoundException {
+		ProcesoHijo ph = new ProcesoHijo();
+		List<String> dnis = new ArrayList<>();
 		Scanner in = null;
 		try {
 			FileReader fichero = new FileReader(ruta);
 			in = new Scanner(fichero);
 			while (in.hasNext()) { 
 				String linea = in.nextLine();
-				String [] linea_split = linea.split(",");
-				if (linea_split[0].startsWith("AN")) {
-						numeros_segsocial.add(linea);
+				List<String> numSegSocial = ph.GuardarNumSegSoc(ruta);
+				if (!numSegSocial.contains(linea)) {
+						dnis.add(linea);
 					}
 				}
 		} finally {
@@ -42,11 +42,11 @@ public class ProcesoHijo {
 				in.close();
 			}
 		}
-		return numeros_segsocial;
+		return dnis;
 	}
 	
-	public void GeneraNSSFichero (String rutaFicheroABuscar,String ruta) throws IOException {
-		List<String> numeros_segsocial = GuardarNumSegSoc(rutaFicheroABuscar);
+	public void GeneraDNIsFichero (String rutaFicheroABuscar,String ruta) throws IOException {
+		List<String> dnis = GuardarDNIs(rutaFicheroABuscar);
 		PrintWriter out = null;
 		try {
 			FileWriter ficheroSalida;
@@ -54,7 +54,7 @@ public class ProcesoHijo {
 			// abre el fichero de texto
 			out = new PrintWriter(ficheroSalida);
 			// escribe el listado persona a persona
-			for (String s : numeros_segsocial) {
+			for (String s : dnis) {
 				out.printf("%s %n" , s);
 			}
 			}		
@@ -64,6 +64,4 @@ public class ProcesoHijo {
 			if (out!=null)
 				out.close();
 		}	}
-
-
 }
