@@ -19,10 +19,10 @@ public class PeliculaServ {
 	private PeliculaRepo repositorio;
 	
 	
-	public PeliculaServ() {
+	public PeliculaServ(List<Pelicula> peliculas) {
 		super();
 		this.dom = new domPelicula();
-		this.repositorio = new PeliculaRepo();
+		this.repositorio = new PeliculaRepo(peliculas);
 	}
 
 	public PeliculaRepo getRepositorio() {
@@ -33,20 +33,9 @@ public class PeliculaServ {
 		this.repositorio = repositorio;
 	}
 
-	public void RellenaRepo () {
-		try {
-			List<Pelicula> peliculas = leerPeliculasDesdeXML("peliculas.xml");
-			repositorio.setPeliculas(peliculas);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
 	
 	public void addPelicula (Pelicula p) {
 		try {
-			RellenaRepo();
 			repositorio.addPelicula(p);
 		} catch (NotAddException e) {
 			// TODO Auto-generated catch block

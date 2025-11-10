@@ -15,7 +15,15 @@ import xml.primerBoletin.service.PeliculaServ;
 public class GestionaPelicula {
 	private static final Logger logger = LogManager.getLogger(GestionaPelicula.class);
 	public static void main(String[] args) {
-		PeliculaServ ps = new PeliculaServ();
+		domPelicula dom = new domPelicula();
+		List<Pelicula> peliculas = new ArrayList<>();
+		try {
+			peliculas = dom.leerPeliculasDesdeXML("peliculas.xml");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		PeliculaServ ps = new PeliculaServ(peliculas);
 		Actor actor1 = new Actor("Clint Eastwood");
 		Actor actor2 = new Actor("Geraldine Hughes");
 		Actor actor3 = new Actor("John Carroll Lynch");

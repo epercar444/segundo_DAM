@@ -63,7 +63,7 @@ public class ejemploEscritura {
 		transformer.transform(source, resultado);
 	}
 
-	public void escribeEmpleadosEnXML(String nombreFichero, List<Producto> productos) {
+	public void escribeProductosEnXML(String nombreFichero, List<Producto> productos) {
 		try {
 			Document documento = this.construyoObjetoDocumento("productos.xml");
 			for(Producto e : productos)

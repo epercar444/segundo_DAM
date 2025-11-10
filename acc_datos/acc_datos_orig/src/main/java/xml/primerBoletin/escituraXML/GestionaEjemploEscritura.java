@@ -13,6 +13,6 @@ public class GestionaEjemploEscritura {
         productos.add(new Producto(4, 10, "Auriculares Bluetooth", 79.90f, true));
         productos.add(new Producto(5, 5, "Webcam Full HD", 45.00f, true));
         
-        escritura.escribeEmpleadosEnXML("productos1.xml", productos);
+        escritura.escribeProductosEnXML("productos1.xml", productos);
 	}
 }

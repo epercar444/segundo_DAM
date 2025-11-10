@@ -13,9 +13,13 @@ import xml.primerBoletin.service.PeliculaServ;
 public class PeliculaRepo {
     private static final Logger logger = LogManager.getLogger(PeliculaRepo.class);
     private List<Pelicula> peliculas;
-    private PeliculaServ servicio;
 
-    public PeliculaRepo() {
+    public PeliculaRepo(List<Pelicula> peliculas) {
+		super();
+		this.peliculas = peliculas;
+	}
+
+	public PeliculaRepo() {
         super();
         this.peliculas = new ArrayList<>();
     }
@@ -50,6 +54,7 @@ public class PeliculaRepo {
     	}
     	peliculas.remove(p);
     }
+    //no está bien
 
     public void updatePelicula(Pelicula p) throws NotAddException {
         boolean actualizado = false;
