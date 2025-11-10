@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 
 import xml.primerBoletin.exceptions.NotAddException;
 import xml.primerBoletin.modelo.Pelicula;
-import xml.primerBoletin.service.PeliculaServ;
 
 public class PeliculaRepo {
     private static final Logger logger = LogManager.getLogger(PeliculaRepo.class);
@@ -33,35 +32,29 @@ public class PeliculaRepo {
     }
 
     public void addPelicula(Pelicula p) throws NotAddException {
-    	Iterator<Pelicula> it = peliculas.iterator();
-    	while (it.hasNext()) {
-    	    Pelicula p1 = it.next();
-    	    if (p1.getTitulo().equals(p.getTitulo())) {
-    	        throw new NotAddException("La película ya existe en la lista"); 
+    	if (!peliculas.contains(p)) {
+        	peliculas.add(p);
+    	}
+    	else {
+    		throw new NotAddException("La película ya existe en la lista"); 
     	    }
     	}
-    	peliculas.add(p);
-
-    }
 
     public void deletePelicula(Pelicula p) throws NotAddException {
-    	Iterator<Pelicula> it = peliculas.iterator();
-    	while (it.hasNext()) {
-    	    Pelicula p1 = it.next();
-    	    if (!p1.getTitulo().equals(p.getTitulo())) {
-    	        throw new NotAddException("La película no existe en la lista"); 
+    	if (peliculas.contains(p)) {
+        	peliculas.remove(p);
+    	}
+    	else {
+    		throw new NotAddException("La película no existe en la lista"); 
     	    }
     	}
-    	peliculas.remove(p);
-    }
-    //no está bien
 
     public void updatePelicula(Pelicula p) throws NotAddException {
         boolean actualizado = false;
-        for (Pelicula p1 : new ArrayList<>(peliculas)) {
+        for (int i = 0; i < peliculas.size(); i++) {
+            Pelicula p1 = peliculas.get(i);
             if (p1.getTitulo().equals(p.getTitulo())) {
-                peliculas.remove(p1);
-                peliculas.add(p);
+                peliculas.set(i, p);
                 actualizado = true;
             }
         }
@@ -69,6 +62,7 @@ public class PeliculaRepo {
             throw new NotAddException("No existe una película con dichos datos en la lista");
         }
     }
+
 
     public void readPelicula(Pelicula p) throws NotAddException {
         if (peliculas.contains(p)) {

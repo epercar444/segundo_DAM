@@ -24,7 +24,7 @@ public class GestionaPelicula {
 			e.printStackTrace();
 		}
 		PeliculaServ ps = new PeliculaServ(peliculas);
-		Actor actor1 = new Actor("Clint Eastwood");
+		Actor actor1 = new Actor("Eva Pérez"); //prueba
 		Actor actor2 = new Actor("Geraldine Hughes");
 		Actor actor3 = new Actor("John Carroll Lynch");
 		List<Actor> actoresGranTorino = new ArrayList<>();
@@ -40,16 +40,30 @@ public class GestionaPelicula {
 		actoresAleatoria.add(actorB);
 		Pelicula peliculaAleatoria = new Pelicula("Luz de Medianoche", "Christopher Nolan", 2023, actoresAleatoria);
 		try {
-			//add
-			ps.addPelicula(peliculaAleatoria);
+			//add : bien 
+			//ps.addPelicula(peliculaAleatoria);
 			//ps.addPelicula(granTorino);
-			logger.info(ps.getRepositorio().getPeliculas());
+			//logger.info(ps.getRepositorio().getPeliculas());
 
 			
-			//delete : no me deletea bien
+			//delete : bien
 			//ps.deletePelicula(granTorino); 
-			ps.deletePelicula(peliculaAleatoria);
-			logger.info(ps.getRepositorio().getPeliculas());
+			//ps.deletePelicula(peliculaAleatoria);
+			//logger.info(ps.getRepositorio().getPeliculas());
+			
+			
+			//actualiza : bien
+			//ps.updatePelicula(granTorino);
+			//ps.updatePelicula(peliculaAleatoria);
+			//logger.info(ps.getRepositorio().getPeliculas());
+			
+			//read : bien
+			//ps.readPelicula(granTorino);
+			//ps.readPelicula(peliculaAleatoria);
+			
+			//readFromXML : bien
+			//logger.info(ps.leerPeliculasDesdeXML("peliculas.xml"));
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

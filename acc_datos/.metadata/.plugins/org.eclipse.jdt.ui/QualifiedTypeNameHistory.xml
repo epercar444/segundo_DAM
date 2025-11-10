@@ -23,11 +23,20 @@
     <fullyQualifiedTypeName name="psp.tema1.boletin2.Ejercicio11.LanzadorJAR"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="file.TowerGPT.modelo.InteraccionAgente"/>
-    <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="file.TowerGPT.servicio.InteraccionAgenteServ"/>
     <fullyQualifiedTypeName name="file.TowerGPT.repositorio.InteraccionAgenteRepo"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="psp.tema1.Simulacion2.ProcesoHijo"/>
     <fullyQualifiedTypeName name="java.lang.ProcessBuilder"/>
     <fullyQualifiedTypeName name="psp.tema1.Simulacion2.ProcesoPadre"/>
+    <fullyQualifiedTypeName name="xml.SimulacionF1.utils.NotExistException"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="xml.SimulacionF1.repositorio.EquipoRepo"/>
+    <fullyQualifiedTypeName name="xml.SimulacionF1.utils.domEquipo"/>
+    <fullyQualifiedTypeName name="xml.SimulacionF1.service.EquipoServ"/>
+    <fullyQualifiedTypeName name="xml.SimulacionF1.utils.domPiloto"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="xml.SimulacionF1.utils.EscrituraJSON"/>
+    <fullyQualifiedTypeName name="xml.SimulacionF1.utils.EscrituraXML"/>
 </qualifiedTypeNameHistroy>
