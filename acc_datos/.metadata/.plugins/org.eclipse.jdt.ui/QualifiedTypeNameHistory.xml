@@ -39,4 +39,5 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="xml.SimulacionF1.utils.EscrituraJSON"/>
     <fullyQualifiedTypeName name="xml.SimulacionF1.utils.EscrituraXML"/>
+    <fullyQualifiedTypeName name="xml.SimulacionBancoAlimentos.utils.creaCSV"/>
 </qualifiedTypeNameHistroy>

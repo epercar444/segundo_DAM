@@ -1,5 +1,6 @@
 package xml.SimulacionBancoAlimentos.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,17 +12,20 @@ import xml.SimulacionBancoAlimentos.modelo.Trabajador;
 import xml.SimulacionBancoAlimentos.repositorio.BancoAlimentosRepo;
 import xml.SimulacionBancoAlimentos.utils.BancoException;
 import xml.SimulacionBancoAlimentos.utils.TipoTrabajador;
+import xml.SimulacionBancoAlimentos.utils.creaCSV;
 import xml.SimulacionBancoAlimentos.utils.leeXML;
 
 public class BancoAlimentosService {
 	private static final Logger logger = LogManager.getLogger(BancoAlimentosService.class);
 	private BancoAlimentosRepo repositorio;
 	private leeXML lectorXML;
+	private creaCSV creadorCSV;
 
 	public BancoAlimentosService(List<CentroLogistico> centros) {
 		super();
 		this.repositorio = new BancoAlimentosRepo(centros);
 		this.lectorXML = new leeXML();
+		this.creadorCSV = new creaCSV();
 	}
 	
 	public void addCentroLogistico (CentroLogistico c) {
@@ -88,8 +92,13 @@ public class BancoAlimentosService {
 		return trabajadoresTipo;
 	}
 	
-	public CentroLogistico getCentroXTrabajador (Trabajador t) {
-		
+	public void creaCSV (String ruta, List<Trabajador> Voluntarios,List<CentroLogistico> centros) {
+		try {
+			creadorCSV.CreaFicheroCsv(ruta, Voluntarios, centros);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

@@ -7,12 +7,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import xml.SimulacionBancoAlimentos.modelo.CentroLogistico;
+import xml.SimulacionBancoAlimentos.modelo.Trabajador;
 import xml.SimulacionBancoAlimentos.service.BancoAlimentosService;
 import xml.SimulacionBancoAlimentos.utils.TipoTrabajador;
 import xml.SimulacionBancoAlimentos.utils.leeXML;
 
 
 public class GestionaBancoAlimentos {
+	private static final String rutaCSV = "src/main/resources/Voluntarios.csv";
 	private static final Logger logger = LogManager.getLogger(GestionaBancoAlimentos.class);
 	public static void main(String[] args) {
 		leeXML lectorXML = new leeXML();
@@ -28,6 +30,9 @@ public class GestionaBancoAlimentos {
 		logger.info(centros);
 		
 		logger.info(service.trabajadoresPorTipo(TipoTrabajador.ASALARIADO, centros));
+		
+		List<Trabajador> voluntarios = service.trabajadoresPorTipo(TipoTrabajador.VOLUNTARIO, centros);
+		service.creaCSV(rutaCSV, voluntarios, centros);
 
 	}
 

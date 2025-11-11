@@ -49,8 +49,11 @@ public class leeXML {
 	    centro.setNombre(nombre);
 	    centro.setCiudad(ciudad);
 	    centro.setNumComedores(comedoresAbastecidos);
-
-	    // Lista de trabajadores : meter en otro método aparte
+	    List<Trabajador> trabajadores =addTrabajadoresToCL(elemento, id);
+	    centro.setTrabajadores(trabajadores);
+	    return centro;
+	}
+	private List<Trabajador> addTrabajadoresToCL (Element elemento,String id){
 	    List<Trabajador> trabajadores = new ArrayList<>();
 	    NodeList listaTrabajadores = elemento.getElementsByTagName("Trabajador");
 	    for (int i = 0; i < listaTrabajadores.getLength(); i++) {
@@ -64,10 +67,7 @@ public class leeXML {
 	        trabajador.setId_centrologistico(id);
 	        trabajadores.add(trabajador);
 	    }
-
-	    centro.setTrabajadores(trabajadores);
-
-	    return centro;
+	    return trabajadores;
 	}
 	public List<CentroLogistico> leerCentrosDesdeXML(String rutaFichero) throws Exception {
 		List<CentroLogistico> centros= new ArrayList<CentroLogistico>();
