@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<productos.xml>
+	<Producto aLaVenta="false" id="1">
+		<nombre>Producto 1</nombre>
+		<precio>10.0</precio>
+		<stock>3</stock>
+	</Producto>
+	<Producto aLaVenta="false" id="3">
+		<nombre>Producto 3</nombre>
+		<precio>25.0</precio>
+		<stock>0</stock>
+	</Producto>
+</productos.xml>

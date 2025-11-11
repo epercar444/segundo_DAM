@@ -1,0 +1,16 @@
+[
+	{
+		"id": 1,
+		"stock": 3,
+		"nombre": "Producto 1",
+		"precio": 10.0,
+		"aLaVenta": false
+	},
+	{
+		"id": 3,
+		"stock": 0,
+		"nombre": "Producto 3",
+		"precio": 25.0,
+		"aLaVenta": false
+	}
+]

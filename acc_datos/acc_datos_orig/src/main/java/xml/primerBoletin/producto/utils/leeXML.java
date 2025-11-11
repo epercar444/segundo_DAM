@@ -37,13 +37,15 @@ public class leeXML {
 		private Producto getProductoFromElement(Element elemento) {
 			Producto producto = new Producto();
 		    String nombre = elemento.getElementsByTagName("Nombre").item(0).getTextContent().trim();
-			int precio = Integer.parseInt(elemento.getElementsByTagName("Precio").item(0).getTextContent().trim());
+			float precio = Float.parseFloat(elemento.getElementsByTagName("Precio").item(0).getTextContent().trim());
 			int stock = Integer.parseInt(elemento.getElementsByTagName("Stock").item(0).getTextContent().trim());
 			int id = Integer.parseInt(elemento.getAttribute("id").trim()); // La etiqueta empleado tiene el atributo identificador
-			boolean enVenta = Boolean.parseBoolean(elemento.getAttribute("enVenta"));
+			boolean enVenta = Boolean.parseBoolean(elemento.getAttribute("aLaVenta"));
 			producto.setNombre(nombre);
 			producto.setPrecio(precio);
 			producto.setStock(stock);
+			producto.setId(id);
+			producto.setaLaVenta(enVenta);
 
 			return producto;
 
