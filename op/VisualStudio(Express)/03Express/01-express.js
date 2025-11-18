@@ -16,9 +16,9 @@ app.get('/contacto.html',(req,res) => {
   console.log(__dirname)
 })
 
-app.use((req,res)=> {
+/*app.use((req,res)=> {
   res.status(404).sendFile(__dirname + "/public/html/404.html")
-})
+})*/
 
 app.get('/aboutUs',(req,res) => {
   res.send("Estás en aboutUs")
