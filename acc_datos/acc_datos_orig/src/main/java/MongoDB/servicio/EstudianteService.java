@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.mongodb.client.MongoDatabase;
 
-import MongoDB.modelo.Estudiante;
-import MongoDB.repositorio.EstudianteRepositorio;
+import MongoDB.boletin2.modelo.Estudiante;
+import MongoDB.boletin2.repositorio.EstudianteRepositorio;
 
 public class EstudianteService {
 	   private final EstudianteRepositorio repo;
