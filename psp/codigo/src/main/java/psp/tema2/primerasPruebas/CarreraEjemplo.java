@@ -1,5 +1,7 @@
 package psp.tema2.primerasPruebas;
 
+import java.util.Arrays;
+
 public class CarreraEjemplo {
 		   public static void main(String[] args) throws InterruptedException {
 		       long t_inicio = System.currentTimeMillis();
@@ -26,6 +28,7 @@ public class CarreraEjemplo {
 		       long t_fin = System.currentTimeMillis();
 		       long tiempototal = t_fin - t_inicio;
 		       System.out.println("El proceso total ha tardado: "+tiempototal+" seg");
+		    
 		   }
 		}
 

@@ -9,6 +9,7 @@ public class Contador {
 		       return valor;
 		   }
 		}
+
 		class TareaIncremento implements Runnable {
 		   private Contador contador;
 		   public TareaIncremento(Contador contador) {
