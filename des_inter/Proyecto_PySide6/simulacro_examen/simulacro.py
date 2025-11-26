@@ -33,8 +33,8 @@ class VentanaPrincipal(QMainWindow):
         self.crear_central()       
         self.crear_acciones()      
         self.crear_menus()         
-        self.crear_toolbar()       # TODO: completar
-        self.crear_statusbar()     # TODO: completar
+        self.crear_toolbar()       
+        self.crear_statusbar()     
         self.conectar_senales()    # TODO: completar
 
     # =========================
@@ -46,7 +46,7 @@ class VentanaPrincipal(QMainWindow):
         #crear widgets del formulario
         self.line_edit_titulo = QLineEdit()
         self.line_edit_titulo.setPlaceholderText("Introduce un título")
-        self.line_edit_titulo.setMaxLength(10)
+        self.line_edit_titulo.setMaxLength(25)
 
 
         self.combo_categoria = QComboBox()
@@ -91,16 +91,18 @@ class VentanaPrincipal(QMainWindow):
     # ACCIONES, MENÃš Y TOOLBAR
     # =========================
     def crear_acciones(self):
-        #crear acciones (QAction) con texto y atajos
+        # Crear acciones (QAction) con texto
         self.accion_limpiar_nota = QAction("Limpiar nota", self)
-        # self.accion_limpiar_nota.triggered.connect(...)
         self.accion_imprimir_nota = QAction("Imprimir nota", self)
-        # self.accion_limpiar_nota.triggered.connect(...)        
         self.accion_salir = QAction("Salir", self)
-        # self.accion_limpiar_nota.triggered.connect(...)
         self.accion_acerca_de = QAction("Acerca de", self)
-        # self.accion_limpiar_nota.triggered.connect(...)
-        pass
+
+        # Conectar acciones a los slots correspondientes
+        self.accion_limpiar_nota.triggered.connect(self.slot_limpiar_nota)
+        self.accion_imprimir_nota.triggered.connect(self.slot_imprimir_nota)
+        self.accion_salir.triggered.connect(self.slot_salir)
+        self.accion_acerca_de.triggered.connect(self.slot_acerca_de)
+
 
 
     def crear_menus(self):
@@ -124,7 +126,7 @@ class VentanaPrincipal(QMainWindow):
         self.addToolBar(toolbar)
         pass
 
-    def crear_statusbar(self,valor=None): #valor recibe la señal que emiten al ser modificados
+    def crear_statusbar(self): 
         #crear barra de estado y mostrar un mensaje inicial
         barra_estado = QStatusBar()
         self.setStatusBar(barra_estado)
@@ -136,17 +138,20 @@ class VentanaPrincipal(QMainWindow):
         sender = self.sender()  # obtengo el widget que envió la señal
 
         if sender == self.line_edit_titulo:
-            self.statusBar().showMessage("Título modificado:", valor)
+            self.statusBar().showMessage("Título modificado: " + self.line_edit_titulo.text(), 3000)
+
         elif sender == self.combo_categoria:
             categoria = self.combo_categoria.currentText()
-            self.statusBar().showMessage("Categoría modificada:", categoria)
-        elif sender == self.radio_prioridad_normal  or sender == self.radio_prioridad_alta:
-            if self.radio_prioridad_normal.isChecked() :
+            self.statusBar().showMessage("Categoría modificada: " + categoria, 3000)
+
+        elif sender == self.radio_prioridad_normal or sender == self.radio_prioridad_alta:
+            if self.radio_prioridad_normal.isChecked():
                 prioridad = "Normal"
-                self.statusBar().showMessage("Prioridad modificada:",prioridad)
-            else :
+                self.statusBar().showMessage("Prioridad modificada: " + prioridad, 3000)
+            else:
                 prioridad = "Alta"
-                self.statusBar().showMessage("Prioridad modificada:",prioridad)   
+                self.statusBar().showMessage("Prioridad modificada: " + prioridad, 3000)
+
         pass
 
 
@@ -161,6 +166,103 @@ class VentanaPrincipal(QMainWindow):
         self.radio_prioridad_normal.toggled.connect(self.crear_statusbar)
         self.radio_prioridad_alta.toggled.connect(self.crear_statusbar)
         pass
+
+    # =========================
+    # FUNCIONES DE UTILIDAD
+    # =========================
+    def obtener_prioridad_actual(self):
+        #devolver prioridad actual
+        prioridad = ""
+        if self.radio_prioridad_normal.isChecked() :
+            prioridad = "Normal"
+        else :
+            prioridad = "Alta"
+        return prioridad    # único return
+
+    def limpiar_contenido_nota(self):
+        #borrar tí­tulo, categorí­a, prioridad y contenid
+        self.line_edit_titulo.clear()
+        self.combo_categoria.setCurrentIndex(0)
+        self.radio_prioridad_normal.setChecked(True)
+        self.texto_nota.clear()
+        pass
+
+    def imprimir_en_consola(self):
+        #imprimir la nota completa usando print con comas
+        titulo = self.line_edit_titulo.text()
+        categoria = self.combo_categoria.currentText()
+        prioridad = self.obtener_prioridad_actual()
+        contenido = self.texto_nota.toPlainText()
+
+        print("Título:", titulo, ", Categoría:", categoria, ", Prioridad:", prioridad, ", Contenido:", contenido)
+        pass
+
+# =========================
+# SLOTS (LOGICA)
+# =========================
+    def slot_limpiar_nota(self):
+        # Mostrar cuadro de mensaje crítico para confirmar limpieza
+        boton = QMessageBox.question(
+            self,
+            "Confirmar limpieza",
+            "¿Deseas limpiar la nota?",
+            buttons=QMessageBox.Yes | QMessageBox.No,
+            defaultButton=QMessageBox.No
+        )
+
+        if boton == QMessageBox.Yes:
+            self.limpiar_contenido_nota()
+            self.statusBar().showMessage("Nota limpiada", 3000)
+            self.statusBar().showMessage("Nota limpiada", 3000)
+
+
+    def slot_imprimir_nota(self):
+        # imprimir en consola
+        self.imprimir_en_consola()
+        self.statusBar().showMessage("Nota impresa en la consola", 3000)
+
+
+    def slot_salir(self):
+        boton = QMessageBox.question(
+            self,
+            "Salir",
+            "¿Estás segura de que quieres salir?",
+            buttons=QMessageBox.Yes | QMessageBox.No,
+            defaultButton=QMessageBox.No
+        )
+
+        if boton == QMessageBox.Yes:
+            self.close()
+
+
+
+    def slot_acerca_de(self):
+        boton = QMessageBox.information(
+            self,
+            "Acerca de",
+            "Mini Bloc de Notas\nCreado con PySide6",
+            buttons=QMessageBox.Ok,
+            defaultButton=QMessageBox.Ok
+        )
+
+
+    def slot_titulo_cambiado(self, nuevo_titulo):
+        # actualizar título de la ventana
+        self.setWindowTitle("Mini Bloc de Notas - " + nuevo_titulo)
+        self.statusBar().showMessage("Título cambiado a: " + nuevo_titulo, 3000)
+
+
+    def slot_categoria_cambiada(self, nueva_categoria):
+        self.statusBar().showMessage("Categoría cambiada a: " + nueva_categoria, 3000)
+
+
+    def slot_prioridad_cambiada(self, checked):
+        if checked:   # solo mostramos el mensaje cuando se activa
+            if self.radio_prioridad_normal.isChecked():
+                self.statusBar().showMessage("Prioridad cambiada a: Normal", 3000)
+            else:
+                self.statusBar().showMessage("Prioridad cambiada a: Alta", 3000)
+
 
 
 
