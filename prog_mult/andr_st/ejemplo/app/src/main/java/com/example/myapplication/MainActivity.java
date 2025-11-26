@@ -74,8 +74,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Intent ejemplo = new Intent(this, MainActivity2.class);
-        ejemplo.putExtra("Surname", "Pérez");
+        Intent ejemplo = new Intent(this, Activity3.class);
         startActivity(ejemplo);
 
     }

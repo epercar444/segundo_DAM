@@ -1,36 +1,23 @@
 package com.example.myapplication;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import android.view.View;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedIns) {
         super.onCreate(savedIns);
-        setContentView(R.layout.activity_actividad1);
-        Bundle b = new Bundle(getIntent().getExtras());
-        Log.i("Datos:",b.getString("Surname"));
+        setContentView(R.layout.actividad3);  // Llamada al XML
 
-        TextView miTexto = (TextView) findViewById(R.id.texto);
-        miTexto.setText(("Nuevo texto para mostrar"));
-        Animation miAnimacion = AnimationUtils.loadAnimation(this, R.anim.animacion);
-        miAnimacion.setRepeatMode(Animation.RESTART);
-        miAnimacion.setRepeatCount(20);
-        miTexto.startAnimation(miAnimacion);
-        //miTexto.setTextColor(getResources().getColor(R.color.principal));
-       // Typeface miFuente = Typeface.createFromAsset((getAssets()),"fonts/karla.ttf");
-        //miTexto.setTypeface(miFuente);
+        TextView tvMensaje = (TextView) findViewById(R.id.mensaje2);
+        tvMensaje.setText("Nuevo texto para mostrar");
     }
-  /*@Override
-  protected void onCreate(Bundle savedIns) {
-      super.onCreate(savedIns);
-      setContentView(R.layout.prueba1_linearlayout);
-  }*/
-}
 
+    // Método para el botón con android:onClick
+    public void cambiarTextoXML(View view) {
+        TextView tvMensaje = (TextView) findViewById(R.id.mensaje3);
+        tvMensaje.setText("Texto cambiado desde XML");
+    }
+}
