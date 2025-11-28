@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Activity3"
-    >
+    tools:context=".Activity3">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,97 +16,17 @@
             android:id="@+id/texto1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Primer texto"
+            android:text="Primer texto para mostrar"
             android:textColor="#0000ff"
             android:textStyle="bold"
             android:textSize="30dp"
             android:typeface="monospace"
-            android:textAllCaps="true"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-        </TextView>
-
-
-
-
-
-
-
-
-        <!--
-            <TextView
-                android:id="@+id/texto2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Texto que mostramos debajo del primero"
-                android:textColor="#0000ff"
-                android:textStyle="italic"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.543"></TextView>
-        -->
-        <!--
-            <Button
-                android:id="@+id/Boton1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PULSAR"
-                app:layout_constraintTop_toBottomOf="@id/texto1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:onClick="cambiaColor"
-                />
-
-            <Button
-                android:id="@+id/Boton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PULSAR"
-                app:layout_constraintTop_toBottomOf="@id/miBoton1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:onClick="cambiaColor"
-                />
-        -->
-
-
-
-
-
-
-
-        <!--
-
-        <EditText
-            android:id="@+id/miTexto"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:inputType="text"/>
-            -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            android:textAllCaps="true" />
 
         <RadioGroup
             android:id="@+id/grupo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center">
 
@@ -115,34 +34,27 @@
                 android:id="@+id/radio1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hola">
-
-            </RadioButton>
+                android:text="Hola1" />
 
             <RadioButton
                 android:id="@+id/radio2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hola2">
+                android:text="Hola2" />
 
-            </RadioButton>
             <RadioButton
                 android:id="@+id/radio3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hola3">
+                android:text="Hola3" />
 
-            </RadioButton>
             <RadioButton
                 android:id="@+id/radio4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hola4">
-
-            </RadioButton>
+                android:text="Hola4" />
 
         </RadioGroup>
-
 
     </LinearLayout>
 
