@@ -161,6 +161,7 @@ class VentanaPrincipal(QMainWindow):
     # =========================
     def conectar_senales(self):
         # conectar señales como textChanged, currentTextChanged, toggled...
+        self.line_edit_titulo.textChanged.connect(self.slot_titulo_cambiado)
         self.line_edit_titulo.textChanged.connect(self.crear_statusbar)
         self.combo_categoria.currentIndexChanged.connect(self.crear_statusbar)
         self.radio_prioridad_normal.toggled.connect(self.crear_statusbar)
