@@ -13,7 +13,7 @@ class VentanaPrincipal(QMainWindow):
       
         # Creamos un QStackedLayout y añadimos cuatro "capas" al layout apilado
         self.pila = QStackedLayout()
-        self.pila.addWidget(QLabel("Capa 1"))
+        self.pila.addWidget(QPushButton("Capa 1"))
         self.pila.addWidget(QLabel("Capa 2"))
         self.pila.addWidget(QLabel("Capa 3"))
       

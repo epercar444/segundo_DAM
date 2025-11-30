@@ -11,13 +11,8 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedIns);
         setContentView(R.layout.actividad3);  // Llamada al XML
 
-        TextView tvMensaje = (TextView) findViewById(R.id.mensaje2);
+        TextView tvMensaje = (TextView) findViewById(R.id.texto1);
         tvMensaje.setText("Nuevo texto para mostrar");
-    }
 
-    // Método para el botón con android:onClick
-    public void cambiarTextoXML(View view) {
-        TextView tvMensaje = (TextView) findViewById(R.id.mensaje3);
-        tvMensaje.setText("Texto cambiado desde XML");
     }
 }
