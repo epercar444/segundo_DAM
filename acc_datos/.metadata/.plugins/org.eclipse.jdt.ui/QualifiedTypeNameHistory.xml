@@ -36,8 +36,18 @@
     <fullyQualifiedTypeName name="xml.SimulacionF1.utils.domEquipo"/>
     <fullyQualifiedTypeName name="xml.SimulacionF1.service.EquipoServ"/>
     <fullyQualifiedTypeName name="xml.SimulacionF1.utils.domPiloto"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="xml.SimulacionF1.utils.EscrituraJSON"/>
     <fullyQualifiedTypeName name="xml.SimulacionF1.utils.EscrituraXML"/>
     <fullyQualifiedTypeName name="xml.SimulacionBancoAlimentos.utils.creaCSV"/>
+    <fullyQualifiedTypeName name="psp.tema2.gasolinera.Coche"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.Semaphore"/>
+    <fullyQualifiedTypeName name="psp.tema2.gasolinera.GestionaGasolinera"/>
+    <fullyQualifiedTypeName name="psp.tema2.gasolinera.GasolineraTarjeta"/>
+    <fullyQualifiedTypeName name="MongoDB.boletin2.utils.AlreadyExistsException"/>
+    <fullyQualifiedTypeName name="MongoDB.boletin2.repositorio.EstudianteRepositorio"/>
+    <fullyQualifiedTypeName name="MongoDB.boletin2.servicio.EstudianteServicio"/>
+    <fullyQualifiedTypeName name="MongoDB.boletin2.repositorio.DispositivoRepositorio"/>
+    <fullyQualifiedTypeName name="MongoDB.boletin2.servicio.DispositivoServicio"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

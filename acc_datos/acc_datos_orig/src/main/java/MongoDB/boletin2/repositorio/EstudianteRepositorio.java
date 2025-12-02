@@ -12,9 +12,10 @@ import com.mongodb.client.MongoDatabase;
 import MongoDB.boletin2.modelo.Address;
 import MongoDB.boletin2.modelo.Estudiante;
 import MongoDB.boletin2.modelo.Scores;
+import MongoDB.boletin2.utils.AlreadyExistsException;
 
 public class EstudianteRepositorio {
-	   private static final String NOMBRE_COLECCION = "estudiantes";
+	  private static final String NOMBRE_COLECCION = "estudiantes";
 	  private final MongoCollection<Document> coleccion;
 	  private List<Estudiante> estudiantes;
 
@@ -87,8 +88,9 @@ public class EstudianteRepositorio {
 			                scoreValue
 			            );
 			            scoresSet.add(scoresObj);
-			            e.setNotas(scoresSet);
+			           
 				}
+					e.setNotas(scoresSet);
 				
 				
 				
@@ -103,4 +105,63 @@ public class EstudianteRepositorio {
 		}
 			return estudiantes;
 	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//CRUD
+		
+		public void addEstudiante (Estudiante e) throws AlreadyExistsException {
+			if (estudiantes.contains(e)) {
+				throw new AlreadyExistsException("Este estudiante ya existe en la lista");
+			}
+			else {
+				estudiantes.add(e);
+			}
+		}
+		
+		
+		public void deleteEstudiante (int id) throws AlreadyExistsException {
+			Estudiante e = getEstudiante(id);
+			if (!e.equals(null)) {
+				estudiantes.remove(e);
+			}
+		}
+		
+		
+		public Estudiante getEstudiante (int id) throws AlreadyExistsException {
+			int i = 0;
+			Estudiante e = null;
+			boolean encontrado = false;
+			while (!encontrado && i < estudiantes.size()) {
+				if (estudiantes.get(i).equals(id)) {
+					encontrado = true;
+					e = estudiantes.get(i);
+				}
+				else {
+					i++;
+				}
+				
+			}
+			if (e.equals(null)) {
+				throw new AlreadyExistsException("No se encuentra el estudiante con el id indicado");
+			}
+			return e;
+		}
+		
+		public void updateEstudiante (int id,Estudiante e1) throws AlreadyExistsException {
+			Estudiante e = getEstudiante(id);
+			if (!e.equals(e)) {
+				estudiantes.remove(e);
+				estudiantes.add(e1);
+			}
+		}
 }
