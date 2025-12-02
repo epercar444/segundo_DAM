@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.mongodb.client.MongoDatabase;
 
+import MongoDB.boletin2.modelo.Estudiante;
 import MongoDB.boletin2.servicio.EstudianteServicio;
 import MongoDB.configuracion.MongoDBConexion;
 
@@ -17,11 +18,11 @@ public class GestionaEstudiantes {
 		MongoDatabase db= conexion.getDb();	
 		EstudianteServicio servicio = new EstudianteServicio(db);
 		
-		/*for (Estudiante e : servicio.getRepo().getEstudiantes()) {
-			System.out.println(e);
+		for (Estudiante e : servicio.getRepo().getEstudiantes()) {
+			logger.info(e);
 		}
-		System.out.println(servicio.notaInferiorA(5));*/
-		servicio.scoreMedio();
+		//System.out.println(servicio.notaInferiorA(5));
+		//servicio.scoreMedio();
 	}
 
 }

@@ -80,12 +80,12 @@ public class EstudianteRepositorio {
 				List<Scores> scoresSet = new ArrayList<>();
 				if (scoresDoc!=null) {
 					for (Document score : scoresDoc) {
-			            Object val = score.get("score");
-			            double scoreValue = val != null ? ((Number) val).doubleValue() : 0D;
+			            /*Object val = score.get("score");
+			            double scoreValue = val != null ? ((Number) val).doubleValue() : 0D;*/
 
 			            Scores scoresObj = new Scores(
 			                score.getString("type"),
-			                scoreValue
+			                score.getDouble("score")
 			            );
 			            scoresSet.add(scoresObj);
 			           
