@@ -64,12 +64,15 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="MongoDB"/>
 			<item value="TowerGPT"/>
 		</list>
 		<list key="name">
+			<item value="EvaPerez_MongoDB"/>
 			<item value="TowerGPT"/>
 		</list>
 		<list key="artifactId">
+			<item value="MongoDB"/>
 			<item value="TowerGPTEvaPerez"/>
 			<item value="accdatos"/>
 		</list>

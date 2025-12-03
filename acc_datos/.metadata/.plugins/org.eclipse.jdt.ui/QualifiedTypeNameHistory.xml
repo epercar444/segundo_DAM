@@ -40,7 +40,6 @@
     <fullyQualifiedTypeName name="xml.SimulacionF1.utils.EscrituraXML"/>
     <fullyQualifiedTypeName name="xml.SimulacionBancoAlimentos.utils.creaCSV"/>
     <fullyQualifiedTypeName name="psp.tema2.gasolinera.Coche"/>
-    <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="java.util.concurrent.Semaphore"/>
     <fullyQualifiedTypeName name="psp.tema2.gasolinera.GestionaGasolinera"/>
     <fullyQualifiedTypeName name="psp.tema2.gasolinera.GasolineraTarjeta"/>
@@ -49,5 +48,16 @@
     <fullyQualifiedTypeName name="MongoDB.boletin2.servicio.EstudianteServicio"/>
     <fullyQualifiedTypeName name="MongoDB.boletin2.repositorio.DispositivoRepositorio"/>
     <fullyQualifiedTypeName name="MongoDB.boletin2.servicio.DispositivoServicio"/>
+    <fullyQualifiedTypeName name="utils.GeneroLibro"/>
+    <fullyQualifiedTypeName name="utils.EstadoLibro"/>
+    <fullyQualifiedTypeName name="utils.RolUsuario"/>
+    <fullyQualifiedTypeName name="repositorio.UsuarioRepositorio"/>
+    <fullyQualifiedTypeName name="controlador.GestionaUsuarios"/>
+    <fullyQualifiedTypeName name="servicio.UsuarioServicio"/>
+    <fullyQualifiedTypeName name="utils.TipoPlan"/>
+    <fullyQualifiedTypeName name="utils.AlreadyExistsException"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="psp.tema2.boletin2.CuentaVocalHilo"/>
+    <fullyQualifiedTypeName name="psp.tema2.boletin2.VocalesTotales"/>
 </qualifiedTypeNameHistroy>
