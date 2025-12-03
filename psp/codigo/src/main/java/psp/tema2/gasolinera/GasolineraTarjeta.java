@@ -16,7 +16,7 @@ public class GasolineraTarjeta implements Runnable{
 
 		@Override
 	    public void run() {
-	        System.out.println(nombreHilo + " está pagando con tarjeta...");
+			pagoTarjeta();
 	        try {
 	            Thread.sleep(1000);
 	            semaforo.acquire();
@@ -30,5 +30,9 @@ public class GasolineraTarjeta implements Runnable{
 	        }
 
 }
+		
+		private void pagoTarjeta () {
+	        System.out.println(nombreHilo + " está pagando con tarjeta...");
+		}
 }
 
