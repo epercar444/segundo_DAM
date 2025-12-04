@@ -7,8 +7,9 @@ import org.bson.Document;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Sorts;
+import com.mongodb.client.result.UpdateResult;
 
 import modelo.Libro;
 import modelo.Suscripcion;
@@ -37,93 +38,144 @@ public class UsuarioRepositorio {
 		   this.usuarios = usuarios;
 	   }
 	   
-		private Document UserToDocument(Usuario u) { //devuelve un documento ya que nos hará falta para realizar las operaciones del crud
-		       Document docSuscripcion = new Document() //definimos el documento(objeto) Suscripcion
-		    		   .append("precio", u.getSuscripcion().getPrecio())
-		    		   .append("pendiente_cobro", u.getSuscripcion().getPendiente_cobro())
-		    		   .append("fecha_cobro", u.getSuscripcion().getFecha_cobro())
-		    		   .append("tipo_plan", u.getSuscripcion().getTipoPlan());
-		       
-		       List<Document> listaL = new ArrayList<>();
-		       for (Libro l : u.getLibros()) {
-			       Document docLibro = new Document() //definimos los documentos (lista de objetos) Libros_biblioteca
-			    		   .append("ISBN",l.getISBN()) 
-			    		   .append("titulo", l.getTitulo())
-			    		   .append("autor", l.getAutor())
-			    		   .append("num_paginas", l.getNum_paginas())
-			    		   .append("genero", l.getGenero())
-			    		   .append("validado", l.getValidado())
-			    		   .append("estado", l.getEstado());
-			       listaL.add(docLibro);
-		       }
-		       
+		private Document userToDocument(Usuario u) { //devuelve un documento ya que nos hará falta para realizar las operaciones del crud
+		       List<Document> listaL = librosToDocuments(u);
+			
 		       Document doc = new Document("id", u.getId())
 		               .append("nombreUsuario", u.getNombreUsuario())
 		               .append("email", u.getEmail())
-		               .append("rol", u.getRol())
+		               .append("rol", u.getRol().toString())
 		               .append("cuenta_verificada", u.getCuenta_verificada())
-		               .append("suscripcion", docSuscripcion)
+		               .append("suscripcion", suscripcionToDocument(u))
 						.append("libros_biblioteca", listaL);
 
 		
 		       return doc;
 			}
+		
+		
+		private Document suscripcionToDocument (Usuario u) {
+		       Document docSuscripcion = new Document() //definimos el documento(objeto) Suscripcion
+		    		   .append("precio", u.getSuscripcion().getPrecio())
+		    		   .append("pendiente_cobro", u.getSuscripcion().getPendiente_cobro())
+		    		   .append("fecha_cobro", u.getSuscripcion().getFecha_cobro())
+		    		   .append("tipo_plan", u.getSuscripcion().getTipoPlan().toString());
+		       return docSuscripcion;
+		}
+		
+		private List<Document> librosToDocuments(Usuario u) {
+		    List<Document> listaDocLibros = new ArrayList<>();
+		    for (Libro l : u.getLibros()) {
+		        Document docLibro = new Document()
+		            .append("ISBN", l.getISBN()) 
+		            .append("titulo", l.getTitulo())
+		            .append("autor", l.getAutor())
+		            .append("num_paginas", l.getNum_paginas())
+		            .append("genero", l.getGenero().toString())
+		            .append("validado", l.getValidado())
+		            .append("estado", l.getEstado().toString());
+		        listaDocLibros.add(docLibro);
+		    }
+		    return listaDocLibros;
+		}
+		
+		
+		
+		
+		
 		public void save(Usuario u) { //guardamos los documentos en la colección
-	        Document doc = UserToDocument(u);
+	        Document doc = userToDocument(u);
 	        coleccion.insertOne(doc);
 	    }
+		
+		
+		
+		
+		
+		
+		
+		
 			public List<Usuario> read() { //leemos los elementos de la coleccion y los guardamos en una lista
 				List<Usuario> usuarios = new ArrayList<>();
 				FindIterable<Document> documentos = coleccion.find();
 				for (Document doc : documentos) {
-					Usuario u = new Usuario();
-					Document docSuscripcion = (Document) doc.get("suscripcion");
-					if (docSuscripcion != null) {
-
-						Number precioNum = docSuscripcion.get("precio", Number.class);
-			            double precio = (precioNum != null) ? precioNum.doubleValue() : 0.0; //guarda el 0.0 como 0, por eso no va con .getDouble()
-			            
-					    Suscripcion suscripcion = new Suscripcion(
-					        docSuscripcion.getBoolean("pendiente_cobro"),
-					        docSuscripcion.getString("fecha_cobro"),
-					        precio,
-					        TipoPlan.valueOf(docSuscripcion.getString("tipo_plan"))
-					    );
-					    u.setSuscripcion(suscripcion);
-					}
-					List<Document> docLibro = (List<Document>) doc.get("libros_biblioteca");
-					List<Libro> librosSet = new ArrayList<>();
-					if (docLibro!=null) {
-						for (Document libro : docLibro) {
-				            Libro libroObj = new Libro(
-				                libro.getString("ISBN"),
-				                libro.getString("titulo"),
-				                libro.getString("autor"),
-				                libro.getInteger("num_paginas"),
-				                libro.getBoolean("validado"),
-				                GeneroLibro.valueOf(libro.getString("genero")),
-				                EstadoLibro.valueOf(libro.getString("estado"))
-				            );
-				            librosSet.add(libroObj);
-				           
-					}
-					u.setLibros(librosSet);
+				       List<Libro> listaL = documentToLibros(doc);
 					
-					
-					u.setId(doc.getInteger("id", 0));
-					u.setNombreUsuario(doc.getString("nombreUsuario"));
-					u.setEmail(doc.getString("email"));
-					u.setRol(RolUsuario.valueOf(doc.getString("rol")));
-					u.setCuenta_verificada(doc.getBoolean("cuenta_verificada"));
-					usuarios.add(u);
+						Usuario u = new Usuario();
+						u.setSuscripcion(documentToSuscripcion(doc));
+						u.setLibros(listaL);
+						u.setId(doc.getInteger("id", 0));
+						u.setNombreUsuario(doc.getString("nombreUsuario"));
+						u.setEmail(doc.getString("email"));
+						u.setRol(RolUsuario.valueOf(doc.getString("rol")));
+						u.setCuenta_verificada(doc.getBoolean("cuenta_verificada"));
+						usuarios.add(u);
 				}
-			}
 				return usuarios;
 		}
 			
+			
+			
+			private Suscripcion documentToSuscripcion (Document doc) { //método para pasar documentos a objetos Suscripción
+				Suscripcion suscripcion = null;
+				Document docSuscripcion = (Document) doc.get("suscripcion");
+				if (docSuscripcion != null) {
+					Number precioNum = docSuscripcion.get("precio", Number.class);
+		            double precio = (precioNum != null) ? precioNum.doubleValue() : 0.0; //guarda el 0.0 como 0, por eso no va con .getDouble()
+				    suscripcion = new Suscripcion(
+				        docSuscripcion.getBoolean("pendiente_cobro"),
+				        docSuscripcion.getString("fecha_cobro"),
+				        precio,
+				        TipoPlan.valueOf(docSuscripcion.getString("tipo_plan"))
+				    );
+				}
+				return suscripcion;
+			}
+			
+			private List<Libro> documentToLibros(Document doc) {
+			    List<Libro> libros = new ArrayList<>();
+			    List<Document> docLibros = (List<Document>) doc.get("libros_biblioteca");
+			    
+			    if (docLibros != null) {
+			        for (Document libro : docLibros) {
+			            Libro libroObj = new Libro(
+			                libro.getString("ISBN"),
+			                libro.getString("titulo"),
+			                libro.getString("autor"),
+			                libro.getInteger("num_paginas"),
+			                libro.getBoolean("validado"),
+			                GeneroLibro.valueOf(libro.getString("genero")),
+			                EstadoLibro.valueOf(libro.getString("estado"))
+			            );
+			            libros.add(libroObj); 
+			        }
+			    }
+			    return libros;
+			}
+			
+			public Usuario documentToUser(Document doc) { //pasamos un documento en un tipo usuario
+				       List<Libro> listaL = documentToLibros(doc);
+					
+						Usuario u = new Usuario();
+						u.setSuscripcion(documentToSuscripcion(doc));
+						u.setLibros(listaL);
+						u.setId(doc.getInteger("id", 0));
+						u.setNombreUsuario(doc.getString("nombreUsuario"));
+						u.setEmail(doc.getString("email"));
+						u.setRol(RolUsuario.valueOf(doc.getString("rol")));
+						u.setCuenta_verificada(doc.getBoolean("cuenta_verificada"));
+						return u;
+				}
+			
+			
+			
+			
+			//CRUD
+			
+			
 			public void addUser (Usuario u) throws AlreadyExistsException { //añadimos un usuario
 				if (!usuarios.contains(u)) { //comprobamos si existe en la lista usuarios
-					Document user = UserToDocument(u); //lo convertimos a documento para poder añadirlo
+					Document user = userToDocument(u); //lo convertimos a documento para poder añadirlo
 					coleccion.insertOne(user);
 				}
 				else { //si ya existe saltará una excepción
@@ -133,7 +185,7 @@ public class UsuarioRepositorio {
 			
 			public void deleteUser (Usuario u) throws AlreadyExistsException { //eliminamos usuario (mismos pasos anterior)
 				if (usuarios.contains(u)) {
-					Document user = UserToDocument(u);
+					Document user = userToDocument(u);
 					coleccion.deleteOne(user);
 				}
 				else { //si no existe saltará la excepción
@@ -142,69 +194,59 @@ public class UsuarioRepositorio {
 			}
 			
 			
-			
-			
-			
-			//PENDIENTE REVISIÓN
 			public Usuario getUser(int id) throws AlreadyExistsException {
 				Usuario u = null;
-				for (Usuario u1 : usuarios) {
-					if (u1.getId() == id) {
-						u = u1;
-					}
+				Document filtro = new Document("id", id);
+				Document find = coleccion.findOneAndDelete(filtro);
+				if (find == null) {
+					throw new AlreadyExistsException("El id indicado no existe en la lista");
 				}
-				if (u.equals(null)) {
-					throw new AlreadyExistsException("El usuario no existe");
-				}
-				
-				
-				Document user = UserToDocument(u);
-				FindIterable<Document> usuario = coleccion.find(user);
-				MongoCursor<Document> cursor = usuario.iterator();
-				while (cursor.hasNext()) {
-				    Document doc = cursor.next();
-				    u = new Usuario();
-					Document docSuscripcion = (Document) doc.get("suscripcion");
-					if (docSuscripcion != null) {
-
-						Number precioNum = docSuscripcion.get("precio", Number.class);
-			            double precio = (precioNum != null) ? precioNum.doubleValue() : 0.0; //guarda el 0.0 como 0, por eso no va con .getDouble()
-			            
-					    Suscripcion suscripcion = new Suscripcion(
-					        docSuscripcion.getBoolean("pendiente_cobro"),
-					        docSuscripcion.getString("fecha_cobro"),
-					        precio,
-					        TipoPlan.valueOf(docSuscripcion.getString("tipo_plan"))
-					    );
-					    u.setSuscripcion(suscripcion);
-					}
-					List<Document> docLibro = (List<Document>) doc.get("libros_biblioteca");
-					List<Libro> librosSet = new ArrayList<>();
-					if (docLibro!=null) {
-						for (Document libro : docLibro) {
-				            Libro libroObj = new Libro(
-				                libro.getString("ISBN"),
-				                libro.getString("titulo"),
-				                libro.getString("autor"),
-				                libro.getInteger("num_paginas"),
-				                libro.getBoolean("validado"),
-				                GeneroLibro.valueOf(libro.getString("genero")),
-				                EstadoLibro.valueOf(libro.getString("estado"))
-				            );
-				            librosSet.add(libroObj);
-				           
-					}
-					u.setLibros(librosSet);
-					
-					
-					u.setId(doc.getInteger("id", 0));
-					u.setNombreUsuario(doc.getString("nombreUsuario"));
-					u.setEmail(doc.getString("email"));
-					u.setRol(RolUsuario.valueOf(doc.getString("rol")));
-					u.setCuenta_verificada(doc.getBoolean("cuenta_verificada"));
-			}
-	   
+				else {
+					u = documentToUser(find);
 				}
 				return u;
+			} 
+			
+			public void updateUser (int id,Usuario u) throws AlreadyExistsException {
+				Document filtro = new Document("id", id);
+				Document usuarioNuevo = userToDocument(u);
+				UpdateResult result = coleccion.replaceOne(filtro, usuarioNuevo); 
+				//definimos una variable tipo UpdateResult para poder lanzar una excepción en caso de que no se haya encontrado el filtro
+				
+				if (result.getMatchedCount() == 0) { //getMatchedCount recupera el número de documentos que cumplen nuestro filtro
+					throw new AlreadyExistsException("El id indicado no existe en la lista, no se ha actualizado ningún usuario");
+				}
 			}
+			
+			
+			
+			//ORDENAR
+			public List<Usuario> ordenarXId () {
+				List<Usuario> ordenadosXIdes = new ArrayList<>();
+				Document filtro = new Document();
+				FindIterable<Document> find = coleccion.find(filtro).sort(Sorts.ascending("id")); //ordenamos los ides de manera ascendente
+				for (Document d : find) {
+					Usuario usuario = documentToUser(d);
+					ordenadosXIdes.add(usuario);
+				}
+				return ordenadosXIdes;
+			}
+			
+			//FILTRAR
+			public List<Usuario> filtrarXrol (RolUsuario rol) { //filtrará por el rol que le pasemos por parametro
+				List<Usuario> usuarios = new ArrayList<>();
+				Document filtro = new Document("rol", rol); 
+				FindIterable<Document> findDocuments = coleccion.find(filtro);
+				
+				for (Document d : findDocuments) {
+					Usuario u = documentToUser(d);
+					usuarios.add(u);
+				}
+				
+				return usuarios;
+				
+			}
+			
+			
+			
 }

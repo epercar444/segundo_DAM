@@ -1,37 +1,26 @@
 package psp.tema2.boletin2;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class GestionaVocales {
 	
-	public static void main(String[] args) {
-		String texto = "En un amanecer tranquilo, las montañas despertaron cubiertas de luz dorada. El viento suave llevó consigo historias antiguas, susurradas entre hojas y ríos. Cada paso revelaba nuevos matices de belleza, invitando a contemplar el paisaje con asombro sereno y gratitud profunda, que llenaba el corazón de calma y renovada esperanza.";
-		VocalesTotales claseVocales = new VocalesTotales(0);
+	public static void main(String[]args) throws InterruptedException {
+		String txt = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  sooo uuuuddddds  e i";
+		CuentaVocales cc = new CuentaVocales();
 		
-		List<Thread> hilos = new ArrayList<>();
-		String[] vocales = {"a","e","i","o","u"};
-		
-		for (String i : vocales) {
-			CuentaVocalHilo hilo = new CuentaVocalHilo(i, texto,0);
-			Thread hiloThread = new Thread(hilo);
-			hilos.add(hiloThread);
-		}
-		
-		for (Thread h : hilos) {
-			h.start();
-		}
-		
-		for (Thread h : hilos) {
-			try {
-				h.join();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			finally {
-				System.out.println(claseVocales.getContador());
-			}
-		}
+		ContarVocalHilo h1 = new ContarVocalHilo(cc, txt, 'a' );
+		ContarVocalHilo h2 = new ContarVocalHilo(cc, txt, 'i' );
+		ContarVocalHilo h3 = new ContarVocalHilo(cc, txt, 'e' );
+		ContarVocalHilo h4 = new ContarVocalHilo(cc, txt, 'o' );
+		ContarVocalHilo h5 = new ContarVocalHilo(cc, txt, 'u' );
+		h1.start();
+		h2.start();
+		h3.start();
+		h4.start();
+		h5.start();
+		h1.join();
+		h2.join();
+		h3.join();
+		h4.join();
+		h5.join();
+		System.out.println("hay "+cc.getVocalesTotales()+ " Vocales");
 	}
 }

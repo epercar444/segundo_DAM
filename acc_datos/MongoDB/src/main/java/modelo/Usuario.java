@@ -1,11 +1,12 @@
 package modelo;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
 import utils.RolUsuario;
 
-public class Usuario {
+public class Usuario implements Comparator<Usuario>{
 	private String nombreUsuario,email;
 	private int id;
 	private boolean cuenta_verificada;
@@ -87,6 +88,11 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [nombreUsuario=" + nombreUsuario + ", email=" + email + ", id=" + id + ", cuenta_verificada="
 				+ cuenta_verificada + ", suscripcion=" + suscripcion + ", libros=" + libros_biblioteca + ", rol=" + rol + "]";
+	}
+	@Override
+	public int compare(Usuario o1, Usuario o2) { //implementamos compare para ordenar por otro atributo que no sea el del equals(id)
+		// TODO Auto-generated method stub
+		return o2.getNombreUsuario().compareTo(o1.nombreUsuario);
 	}
 	
 }

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="services.usuarioServ"/>
-    <fullyQualifiedTypeName name="repositorio.UsuarioRepo"/>
-    <fullyQualifiedTypeName name="repositorio.CanalRepo"/>
     <fullyQualifiedTypeName name="repositorio.RetransRepo"/>
     <fullyQualifiedTypeName name="modelo.Concierto"/>
     <fullyQualifiedTypeName name="enum_.Estado_Crafters"/>
@@ -55,9 +52,12 @@
     <fullyQualifiedTypeName name="controlador.GestionaUsuarios"/>
     <fullyQualifiedTypeName name="servicio.UsuarioServicio"/>
     <fullyQualifiedTypeName name="utils.TipoPlan"/>
-    <fullyQualifiedTypeName name="utils.AlreadyExistsException"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="psp.tema2.boletin2.CuentaVocalHilo"/>
     <fullyQualifiedTypeName name="psp.tema2.boletin2.VocalesTotales"/>
+    <fullyQualifiedTypeName name="utils.AlreadyExistsException"/>
+    <fullyQualifiedTypeName name="com.mongodb.client.model.Sorts"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="org.bson.Document"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

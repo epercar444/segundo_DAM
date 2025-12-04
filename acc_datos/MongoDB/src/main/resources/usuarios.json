@@ -1,11 +1,4 @@
-// Selecciono la base de datos que vaya a utilizar
-use('Readly_EvaPerez');
-
-// Creación de la colección 
-db.createCollection('usuarios');
-
-// insertamos los datos de los usuarios con los que vamos a trabajar
-db.usuarios.insertMany([
+[
   {
     "id": 0,
     "nombreUsuario": "Laura_Lectora_28",
@@ -554,13 +547,4 @@ db.usuarios.insertMany([
       }
     ]
   }
-])
-
-
-db.usuarios.createIndex(
-    { id: 1 },
-    { unique: true }
-)
-
-
-
+]
