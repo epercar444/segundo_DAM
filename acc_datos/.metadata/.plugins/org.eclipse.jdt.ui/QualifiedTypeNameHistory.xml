@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="repositorio.RetransRepo"/>
-    <fullyQualifiedTypeName name="modelo.Concierto"/>
     <fullyQualifiedTypeName name="enum_.Estado_Crafters"/>
     <fullyQualifiedTypeName name="Libreria.repositorio.LibroRepo"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -58,6 +56,8 @@
     <fullyQualifiedTypeName name="utils.AlreadyExistsException"/>
     <fullyQualifiedTypeName name="com.mongodb.client.model.Sorts"/>
     <fullyQualifiedTypeName name="java.util.Collections"/>
-    <fullyQualifiedTypeName name="org.bson.Document"/>
+    <fullyQualifiedTypeName name="MongoDB.simulacion.repositorio.HotelRepositorio"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.mongodb.client.model.Updates"/>
+    <fullyQualifiedTypeName name="org.bson.Document"/>
 </qualifiedTypeNameHistroy>

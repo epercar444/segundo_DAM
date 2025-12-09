@@ -1,13 +1,21 @@
 package MongoDB.simulacion.repositorio;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
+import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Accumulators;
+import com.mongodb.client.model.Aggregates;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.UpdateOptions;
+import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.UpdateResult;
 
 import MongoDB.simulacion.modelo.Coordenada;
@@ -18,7 +26,7 @@ import MongoDB.simulacion.utils.TipoHabitacion;
 import MongoDB.simulacion.utils.AlreadyExistsException;
 
 public class HotelRepositorio {
-	  private static final String NOMBRE_COLECCION = "usuarios";
+	  private static final String NOMBRE_COLECCION = "hoteles";
 	  private final MongoCollection<Document> coleccion;
 	  private List<Hotel> hoteles;
 	  
@@ -38,7 +46,7 @@ public class HotelRepositorio {
 	  
 	  private Document hotelToDocument (Hotel h) {
 	       Document docHotel = new Document() 
-	    		   .append("id", h.getId())
+	    		   .append("idHotel", h.getId())
 	    		   .append("nombre", h.getNombre())
 	    		   .append("fechaApertura", h.getFechaApertura())
 	    		   .append("estrellas", h.getEstrellas())
@@ -52,7 +60,7 @@ public class HotelRepositorio {
 		    List<Document> listaDocHabitacion = new ArrayList<>();
 		    for (Habitacion hab : h.getHabitaciones()) {
 		        Document docHabitacion = new Document()
-		            .append("tipo", hab.getTipo()) 
+		            .append("tipo", hab.getTipo().toString()) 
 		            .append("capacidad", hab.getCapacidad())
 		            .append("disponible", hab.getDisponible())
 		            .append("precio", hab.getPrecio());
@@ -99,10 +107,11 @@ public class HotelRepositorio {
 				Hotel h = new Hotel();
 				h.setUbicacion(documentToUbicacion(doc));;
 				h.setHabitaciones(documentToHabitacion(doc));;
-				h.setId(doc.getString("id"));
+				h.setId(doc.getString("idHotel"));
 				h.setNombre(doc.getString("nombre"));
 				h.setFechaApertura(doc.getString("fechaApertura"));
 				h.setAdmiteMascotas(doc.getBoolean("admiteMascotas"));
+				h.setEstrellas(doc.getInteger("estrellas", 0));
 				return h;
 		}
 		
@@ -186,7 +195,7 @@ public class HotelRepositorio {
 		}
 		
 		
-		public Hotel getHotel(int id) throws AlreadyExistsException {
+		public Hotel getHotel(String id) throws AlreadyExistsException {
 			Hotel h = null;
 			Document filtro = new Document("id", id);
 			Document find = coleccion.findOneAndDelete(filtro);
@@ -199,7 +208,7 @@ public class HotelRepositorio {
 			return h;
 		} 
 		
-		public void updateUser (int id,Hotel h) throws AlreadyExistsException {
+		public void updateUser (String id,Hotel h) throws AlreadyExistsException {
 			Document filtro = new Document("id", id);
 			Document usuarioNuevo = hotelToDocument(h);
 			UpdateResult result = coleccion.replaceOne(filtro, usuarioNuevo); 
@@ -208,7 +217,97 @@ public class HotelRepositorio {
 				throw new AlreadyExistsException("El id indicado no existe en la lista, no se ha actualizado ningún hotel");
 			}
 		}
-	  
+		
+		
+		//FILTRAR
+		public List<Hotel> filtrarXCodigoPostal () { 
+			List<Hotel> hoteles = new ArrayList<>();
+			Document condicionOR = new Document("$or", Arrays.asList( //definimos las condiciones OR
+			        new Document("estrellas", 5),
+			        new Document("admiteMascotas", true)
+			    ));
+			Document condicionAND = new Document("$and", Arrays.asList( //definimos las condiciones AND
+			        new Document("ubicacion.codigoPostal", "28012"), //acceder al anidado
+			        condicionOR
+			    ));
+			FindIterable<Document> findDocuments = coleccion.find(condicionAND);
+			for (Document d : findDocuments) {
+				Hotel u = documentToHotel(d);
+				hoteles.add(u);
+			}
+			
+			return hoteles;
+		}
+		
+		
+		public List<Hotel> filtrarXSuiteJunior() {
+			List<Hotel> hoteles = new ArrayList<>();
+			Document filtro = new Document("habitaciones.tipo", TipoHabitacion.SUITE_JUNIOR); //filtrar por como se llama en la bbdd, si pones 'habitacion' no va
+			FindIterable<Document> documentos = coleccion.find(filtro);
+			
+			for (Document d : documentos) {
+				Hotel h = documentToHotel(d);
+				hoteles.add(h);
+			}
+			return hoteles;
+		}
+		
+		
+		public UpdateResult updateHabitacion (String id,Habitacion habitacion) {
+			Document filtro = new Document("idHotel", id);
+			Document habitacionDocumento = new Document()
+			    .append("capacidad", habitacion.getCapacidad())
+			    .append("tipo", habitacion.getTipo().toString())
+			    .append("disponible", habitacion.getDisponible())
+			    .append("precio", habitacion.getPrecio());
+			UpdateResult resultado = coleccion.updateOne(filtro, Updates.push("habitaciones", habitacionDocumento));
+			return resultado;
+		}
+		
+		public UpdateResult updateCodigoPostal () {
+			Document filtro = new Document("ubicacion.calle", "Calle Sol");
+			Document filtro2 = new Document("$set", 
+				    new Document("ubicacion.codigoPostal", "28013")
+				);
+			UpdateResult resultado = coleccion.updateMany(filtro, filtro2);
+			return resultado;
+		}
+		
+		public UpdateResult updateXId () {
+			Document filtro = new Document("idHotel", "h101");
+	        List<Bson> arrayFilters = Arrays.asList(
+	            new Document("habitacion.tipo", "INDIVIDUAL") 
+	        );
+	        Bson actualizacion = Updates.set("habitaciones.$[habitacion].precio", 90.00);
+	        UpdateOptions opciones = new UpdateOptions().arrayFilters(arrayFilters);
+
+	        UpdateResult resultado = coleccion.updateOne(filtro, actualizacion, opciones);
+	        return resultado;
+	    }
+		
+		public UpdateResult pullHab() {
+		        Document filtro = new Document("nombre", "Grand Hotel Central");
+		        Document condicionPull = new Document("precio", 
+		            new Document("$gt", 300.00)
+		        );
+		        Document actualizacion = new Document("$pull", 
+		            new Document("habitaciones", condicionPull)
+		        );
+		        UpdateResult resultado = coleccion.updateOne(filtro, actualizacion);
+		        return resultado;
+		    }
+	    
+		public double calcularMediaEstrellas() {
+		    List<Bson> media = Arrays.asList(
+		        Aggregates.match(Filters.eq("ubicacion.codigoPostal", "28013")),
+		        Aggregates.group(null, Accumulators.avg("mediaEstrellas", "$estrellas"))
+		    );
+
+		    AggregateIterable<Document> resultado = coleccion.aggregate(media);
+		    Document doc = resultado.first();
+		    return doc.getDouble("mediaEstrellas");
+		}
+
 	  
 	  
 	  
