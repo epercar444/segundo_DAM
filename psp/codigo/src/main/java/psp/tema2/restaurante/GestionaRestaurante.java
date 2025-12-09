@@ -18,7 +18,7 @@ public class GestionaRestaurante {
 		Thread cocineroHilo = new Thread(cocinero);
 		
 		hilos.add(cocineroHilo);
-		for (int i = 0; i <= 3; i++) {
+		for (int i = 1; i <= 3; i++) {
 			Comensal comensal = new Comensal("Comensal"+i, semaforo);
 			Thread comensalHilo = new Thread(comensal);
 			hilos.add(comensalHilo);
