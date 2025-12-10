@@ -7,11 +7,11 @@ import java.util.concurrent.Semaphore;
 public class GestionaRestaurante2 {
 	public static void main(String[] args) {
 	List<Thread> hilos = new ArrayList<>();
-	Semaphore semaforoMenu = new Semaphore(1);
-	Semaphore semaforoClientes = new Semaphore(3);
+	Semaphore semaforoMenu = new Semaphore(3);
+	Semaphore semaforoClientes = new Semaphore(1);
 	try {
-		semaforoMenu.acquire(1);
-		semaforoClientes.acquire(3);
+		semaforoClientes.acquire(1);
+		semaforoMenu.acquire(3);
 	} catch (InterruptedException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

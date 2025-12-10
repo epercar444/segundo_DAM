@@ -38,6 +38,7 @@ public class Comensal2 implements Runnable{
 		super();
 		this.nombreHilo = nombreHilo;
 		this.semaforoClientes = semaforoClientes;
+		this.semaforoMenu = semaforoMenu;
 	}
 
 
@@ -45,14 +46,17 @@ public class Comensal2 implements Runnable{
 	public void run() {
 		while (true) {
 		try {
-			semaforoClientes.acquire();
 			System.out.println(nombreHilo+" tiene hambre");
+			semaforoClientes.release();
 			semaforoMenu.acquire();
 			System.out.println(nombreHilo + " comiendo");
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		finally {
+			System.out.println(nombreHilo+" ha dejado de comer");
 		}
 		}
 		

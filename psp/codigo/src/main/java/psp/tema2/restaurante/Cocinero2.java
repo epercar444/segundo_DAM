@@ -47,14 +47,16 @@ public class Cocinero2 implements Runnable{
 	public void run() {
 		while (true) {
 		try {
-			semaforoClientes.acquire(3);
+			semaforoClientes.acquire();
 			System.out.println(nombreHilo+" cocinando");
 			Thread.sleep(4000);
 			System.out.println(nombreHilo + " ha dejado de cocinar");
-			semaforoMenu.release(2);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		finally {
+			semaforoMenu.release();
 		}
 		} 
 		
