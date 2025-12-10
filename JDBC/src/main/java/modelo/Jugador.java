@@ -5,9 +5,8 @@ import java.util.Objects;
 public class Jugador {
 	private int id,puntos_totales;
 	private String nombre,email;
-	public Jugador(int id, int puntos_totales, String nombre, String email) {
-		super();
-		this.id = id;
+	public Jugador(String email, String nombre, int puntos_totales) {
+		super(); //no ponemos id porque en la bbdd es autoincremental
 		this.puntos_totales = puntos_totales;
 		this.nombre = nombre;
 		this.email = email;

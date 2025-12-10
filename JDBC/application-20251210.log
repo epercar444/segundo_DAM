@@ -1,0 +1,73 @@
+2025-12-10 17:27:25.887 [main] INFO  controlador.GestionaTorneo - Jugador [id=4, puntos_totales=200, nombre=Jugador4, email=jugador4prueba@.com]
+2025-12-10 17:30:43.684 [main] INFO  controlador.GestionaTorneo - Jugador [id=4, puntos_totales=200, nombre=Jugador4, email=jugador4prueba@.com]
+2025-12-10 17:41:10.585 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=50, nombre=Jugador1, email=null]
+2025-12-10 17:42:58.222 [main] INFO  controlador.GestionaTorneo - Jugador [id=4, puntos_totales=200, nombre=Jugador4, email=jugador4prueba@.com]
+2025-12-10 17:44:36.534 [main] INFO  controlador.GestionaTorneo - Jugador [id=4, puntos_totales=200, nombre=Jugador4, email=jugador4@prueba.com]
+2025-12-10 17:44:52.833 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=50, nombre=Jugador1, email=null]
+2025-12-10 17:44:52.836 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=100, nombre=Jugador2, email=null]
+2025-12-10 17:44:52.836 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=150, nombre=Jugador3, email=null]
+2025-12-10 17:44:52.837 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=200, nombre=Jugador4, email=null]
+2025-12-10 17:48:15.301 [main] INFO  repositorio.JugadorRepositorio - Jugador=Jugador1 -Puntos Totales= 50
+2025-12-10 17:48:15.305 [main] INFO  repositorio.JugadorRepositorio - Jugador=Jugador2 -Puntos Totales= 100
+2025-12-10 17:48:15.305 [main] INFO  repositorio.JugadorRepositorio - Jugador=Jugador3 -Puntos Totales= 150
+2025-12-10 17:48:15.306 [main] INFO  repositorio.JugadorRepositorio - Jugador=Jugador4 -Puntos Totales= 200
+2025-12-10 17:49:13.351 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=50, nombre=Jugador1, email=null]
+2025-12-10 17:49:13.355 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=100, nombre=Jugador2, email=null]
+2025-12-10 17:49:13.355 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=150, nombre=Jugador3, email=null]
+2025-12-10 17:49:13.355 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=200, nombre=Jugador4, email=null]
+2025-12-10 18:24:16.804 [main] INFO  repositorio.PartidaRepositorio - Unknown column 'narrador' in 'field list'
+2025-12-10 18:24:16.809 [main] INFO  repositorio.PartidaRepositorio - Unknown column 'narrador' in 'field list'
+2025-12-10 18:24:16.811 [main] INFO  repositorio.PartidaRepositorio - Unknown column 'narrador' in 'field list'
+2025-12-10 18:24:16.812 [main] INFO  repositorio.PartidaRepositorio - Unknown column 'narrador' in 'field list'
+2025-12-10 18:24:16.814 [main] INFO  repositorio.PartidaRepositorio - Unknown column 'narrador' in 'field list'
+2025-12-10 18:27:52.231 [main] INFO  repositorio.PartidaRepositorio - Parameter index out of range (4 > number of parameters, which is 3).
+2025-12-10 18:27:52.237 [main] INFO  repositorio.PartidaRepositorio - Parameter index out of range (4 > number of parameters, which is 3).
+2025-12-10 18:27:52.239 [main] INFO  repositorio.PartidaRepositorio - Parameter index out of range (4 > number of parameters, which is 3).
+2025-12-10 18:27:52.241 [main] INFO  repositorio.PartidaRepositorio - Parameter index out of range (4 > number of parameters, which is 3).
+2025-12-10 18:27:52.243 [main] INFO  repositorio.PartidaRepositorio - Parameter index out of range (4 > number of parameters, which is 3).
+2025-12-10 18:28:23.782 [main] INFO  repositorio.PartidaRepositorio - Parameter index out of range (0 < 1 ).
+2025-12-10 18:28:23.786 [main] INFO  repositorio.PartidaRepositorio - Parameter index out of range (0 < 1 ).
+2025-12-10 18:28:23.788 [main] INFO  repositorio.PartidaRepositorio - Parameter index out of range (0 < 1 ).
+2025-12-10 18:28:23.790 [main] INFO  repositorio.PartidaRepositorio - Parameter index out of range (0 < 1 ).
+2025-12-10 18:28:23.792 [main] INFO  repositorio.PartidaRepositorio - Parameter index out of range (0 < 1 ).
+2025-12-10 18:30:02.829 [main] INFO  repositorio.PartidaRepositorio - Cannot add or update a child row: a foreign key constraint fails (`jdbcmysqlacceso`.`pérezevapartida`, CONSTRAINT `pérezevapartida_ibfk_1` FOREIGN KEY (`narrador_id`) REFERENCES `pérezevajugador` (`id`))
+2025-12-10 18:30:02.836 [main] INFO  repositorio.PartidaRepositorio - Cannot add or update a child row: a foreign key constraint fails (`jdbcmysqlacceso`.`pérezevapartida`, CONSTRAINT `pérezevapartida_ibfk_1` FOREIGN KEY (`narrador_id`) REFERENCES `pérezevajugador` (`id`))
+2025-12-10 18:30:02.839 [main] INFO  repositorio.PartidaRepositorio - Cannot add or update a child row: a foreign key constraint fails (`jdbcmysqlacceso`.`pérezevapartida`, CONSTRAINT `pérezevapartida_ibfk_1` FOREIGN KEY (`narrador_id`) REFERENCES `pérezevajugador` (`id`))
+2025-12-10 18:30:02.842 [main] INFO  repositorio.PartidaRepositorio - Cannot add or update a child row: a foreign key constraint fails (`jdbcmysqlacceso`.`pérezevapartida`, CONSTRAINT `pérezevapartida_ibfk_1` FOREIGN KEY (`narrador_id`) REFERENCES `pérezevajugador` (`id`))
+2025-12-10 18:30:02.847 [main] INFO  repositorio.PartidaRepositorio - Cannot add or update a child row: a foreign key constraint fails (`jdbcmysqlacceso`.`pérezevapartida`, CONSTRAINT `pérezevapartida_ibfk_1` FOREIGN KEY (`narrador_id`) REFERENCES `pérezevajugador` (`id`))
+2025-12-10 18:36:36.819 [main] INFO  repositorio.PartidaRepositorio - Cannot add or update a child row: a foreign key constraint fails (`jdbcmysqlacceso`.`pérezevapartida`, CONSTRAINT `pérezevapartida_ibfk_1` FOREIGN KEY (`narrador_id`) REFERENCES `pérezevajugador` (`id`))
+2025-12-10 18:43:33.829 [main] INFO  servicio.PartidaServicio - No se pueden añadir más de 5 partidas
+2025-12-10 18:46:09.342 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 18:46:09.352 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 18:46:09.359 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 18:46:09.364 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 18:46:09.371 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 18:46:09.373 [main] INFO  servicio.PartidaServicio - No se pueden añadir más de 5 partidas
+2025-12-10 18:46:09.373 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-10 19:02:13.675 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:03:02.680 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-10 19:08:01.448 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:08:01.456 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:08:01.456 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-10 19:14:55.552 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:14:55.559 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:14:55.563 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:17:25.425 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:17:25.432 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:17:25.437 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:17:25.441 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:17:25.444 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:17:25.448 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:28:27.744 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:28:27.753 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:28:27.758 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:28:27.762 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:28:27.766 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-10 19:28:27.767 [main] INFO  servicio.PartidaServicio - No se pueden añadir más de 5 partidas
+2025-12-10 19:28:27.767 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-10 20:06:09.047 [main] INFO  controlador.GestionaTorneo - [Partida [id=2, torneo_id=2, narrador=Jugador [id=2, puntos_totales=100, nombre=Jugador2, email=jugador2@prueba.com], fecha=2024-12-13, resultado=NADIE], Partida [id=3, torneo_id=3, narrador=Jugador [id=3, puntos_totales=150, nombre=Jugador3, email=jugador3@prueba.com], fecha=2025-03-24, resultado=ALGUNOS], Partida [id=1, torneo_id=1, narrador=Jugador [id=1, puntos_totales=50, nombre=Jugador1, email=jugador1@prueba.com], fecha=2025-03-29, resultado=TODOS], Partida [id=4, torneo_id=4, narrador=Jugador [id=4, puntos_totales=200, nombre=Jugador4, email=jugador4@prueba.com], fecha=2025-04-05, resultado=TODOS], Partida [id=5, torneo_id=5, narrador=Jugador [id=5, puntos_totales=250, nombre=Jugador5, email=jugador5@prueba.com], fecha=2025-05-16, resultado=NADIE]]
+2025-12-10 20:07:02.053 [main] INFO  controlador.GestionaTorneo - Partida [id=2, torneo_id=2, narrador=Jugador [id=2, puntos_totales=100, nombre=Jugador2, email=jugador2@prueba.com], fecha=2024-12-13, resultado=NADIE]
+2025-12-10 20:07:02.055 [main] INFO  controlador.GestionaTorneo - Partida [id=3, torneo_id=3, narrador=Jugador [id=3, puntos_totales=150, nombre=Jugador3, email=jugador3@prueba.com], fecha=2025-03-24, resultado=ALGUNOS]
+2025-12-10 20:07:02.055 [main] INFO  controlador.GestionaTorneo - Partida [id=1, torneo_id=1, narrador=Jugador [id=1, puntos_totales=50, nombre=Jugador1, email=jugador1@prueba.com], fecha=2025-03-29, resultado=TODOS]
+2025-12-10 20:07:02.055 [main] INFO  controlador.GestionaTorneo - Partida [id=4, torneo_id=4, narrador=Jugador [id=4, puntos_totales=200, nombre=Jugador4, email=jugador4@prueba.com], fecha=2025-04-05, resultado=TODOS]
+2025-12-10 20:07:02.055 [main] INFO  controlador.GestionaTorneo - Partida [id=5, torneo_id=5, narrador=Jugador [id=5, puntos_totales=250, nombre=Jugador5, email=jugador5@prueba.com], fecha=2025-05-16, resultado=NADIE]

@@ -1,24 +1,31 @@
 package modelo;
 
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.Objects;
 
 import utils.TipoResultado;
 
 public class Partida {
-	private int id;
+	private int id,torneo_id;
 	private Jugador narrador;
-	private LocalDate fecha;
+	private Date fecha;
 	private TipoResultado resultado;
-	public Partida(int id, Jugador narrador, LocalDate fecha, TipoResultado resultado) {
+	public Partida(Jugador narrador, Date fecha, TipoResultado resultado,int torneo_id) {
 		super();
-		this.id = id;
+		//id autoincremental
 		this.narrador = narrador;
 		this.fecha = fecha;
 		this.resultado = resultado;
+		this.torneo_id = torneo_id;
 	}
 	public Partida() {
 		super();
+	}
+	public int getTorneo_id() {
+		return torneo_id;
+	}
+	public void setTorneo_id(int torneo_id) {
+		this.torneo_id = torneo_id;
 	}
 	public int getId() {
 		return id;
@@ -32,10 +39,10 @@ public class Partida {
 	public void setNarrador(Jugador narrador) {
 		this.narrador = narrador;
 	}
-	public LocalDate getFecha() {
+	public Date getFecha() {
 		return fecha;
 	}
-	public void setFecha(LocalDate fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 	public TipoResultado getResultado() {
@@ -46,7 +53,8 @@ public class Partida {
 	}
 	@Override
 	public String toString() {
-		return "Partida [id=" + id + ", narrador=" + narrador + ", fecha=" + fecha + ", resultado=" + resultado + "]";
+		return "Partida [id=" + id + ", torneo_id=" + torneo_id + ", narrador=" + narrador + ", fecha=" + fecha
+				+ ", resultado=" + resultado + "]";
 	}
 	@Override
 	public int hashCode() {

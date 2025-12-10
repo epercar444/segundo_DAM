@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="enum_.Estado_Crafters"/>
-    <fullyQualifiedTypeName name="Libreria.repositorio.LibroRepo"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="java.util.TreeSet"/>
-    <fullyQualifiedTypeName name="Libreria.repositorio.EditorialRepo"/>
-    <fullyQualifiedTypeName name="Libreria.servicios.EditorialServicio"/>
-    <fullyQualifiedTypeName name="Libreria.servicios.LibroServicio"/>
-    <fullyQualifiedTypeName name="repaso1MVC.servicio.ServicioConversaciones"/>
-    <fullyQualifiedTypeName name="file.primer_boletin.modelo.Ejercicio1"/>
-    <fullyQualifiedTypeName name="file.primer_boletin.modelo.Ejercicio2"/>
     <fullyQualifiedTypeName name="file.segundo_boletin.Ejercicio1SinMVC.DiffFolder"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
@@ -57,7 +47,17 @@
     <fullyQualifiedTypeName name="com.mongodb.client.model.Sorts"/>
     <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="MongoDB.simulacion.repositorio.HotelRepositorio"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.mongodb.client.model.Updates"/>
     <fullyQualifiedTypeName name="org.bson.Document"/>
+    <fullyQualifiedTypeName name="repositorio.JugadorRepositorio"/>
+    <fullyQualifiedTypeName name="servicio.JugadorServicio"/>
+    <fullyQualifiedTypeName name="modelo.Jugador"/>
+    <fullyQualifiedTypeName name="configuracion.MySqlConector"/>
+    <fullyQualifiedTypeName name="utils.MiExcepcion"/>
+    <fullyQualifiedTypeName name="repositorio.PartidaRepositorio"/>
+    <fullyQualifiedTypeName name="servicio.PartidaServicio"/>
+    <fullyQualifiedTypeName name="utils.TipoResultado"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="modelo.Partida"/>
 </qualifiedTypeNameHistroy>
