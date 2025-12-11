@@ -2,6 +2,19 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+//Conexión a base de datos
+const mongoose = require('mongoose');
+//Variables que tendremos siempre:
+//Lo correcto será declararlas EN VARIABLES DE ENTORNO
+//para que nadie vea directamente nuestras credenciales
+const user = 'eva_db_user';
+const password = 'XNWWBF';
+const dbname = 'pokemon';
+const uri = `mongodb+srv://${user}:${password}@evaperezcluster1.pksd3qw.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+mongoose.connect(uri)
+  .then(() => console.log('Base de datos conectada'))
+  .catch(e => console.log(e))
+
 // motor de plantillas 
 app.set('view engine', 'ejs');
 
