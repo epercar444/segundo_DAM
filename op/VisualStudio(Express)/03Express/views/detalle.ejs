@@ -1,0 +1,49 @@
+<%- include("templates/cabecera", {subtitulo: 'ÚNICO POKEMON' }) %>
+
+<div class="container my-5">
+    <h1>ÚNICO POKEMON</h1>
+    <hr>
+    
+    <% if (error) { %>
+        <div class="alert alert-danger" role="alert">
+            <h3><%= mensaje %></h3> 
+            <hr>
+            <a 
+                href="/pokemon"
+                class="btn btn-dark btn-block my-2"
+            >
+                Volver
+            </a>
+        </div>
+    <% } %>
+
+    <% if (!error) { %>
+        <table class="table"> 
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col"># ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"><%= pokemon.id %></th> 
+                    <td><%= pokemon.nombre %></td>
+                    <td><%= pokemon.tipo %></td>
+                    <td><%= pokemon.descripcion %></td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" data-id="<%= pokemon.id %>">
+                            Eliminar
+                        </button>
+                        <a href="/pokemon/editar/<%= pokemon.id %>" class="btn btn-warning btn-sm">Editar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table> 
+    <% } %>
+</div>
+
+<%- include("templates/footer") %>
