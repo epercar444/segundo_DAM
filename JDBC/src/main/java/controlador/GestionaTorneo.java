@@ -27,13 +27,13 @@ public class GestionaTorneo {
 		}*/
 		
 		//getPlayerMaxPunt
-		//logger.info(servicioJ.getPlayerMaxPunt());
+		logger.info(servicioJ.getPlayerMaxPunt());
 		
-		//orderBy
-		/*List<Jugador> jugadoresOrderBy = servicioJ.orderBy();
+		//getByPuntosTotales
+		List<Jugador> jugadoresOrderBy = servicioJ.getByPuntosTotales();
 		for (Jugador j : jugadoresOrderBy) {
 			logger.info(j);
-		}*/
+		}
 		
 		
 		//PARTIDAS
@@ -53,23 +53,23 @@ public class GestionaTorneo {
 		}*/
 		
 		//updatePuntNarrador
-		/*logger.info(servicioP.updatePuntNarrados(3, TipoResultado.ALGUNOS));
-		logger.info(servicioP.updatePuntNarrados(4, TipoResultado.TODOS));*/
+		logger.info(servicioP.updatePuntNarrados(3, TipoResultado.ALGUNOS));
+		logger.info(servicioP.updatePuntNarrados(4, TipoResultado.TODOS));
 		
 		//updateNOAcertante
-		/*logger.info(servicioP.updateNOAcertantes(1, TipoResultado.NADIE));
+		logger.info(servicioP.updateNOAcertantes(1, TipoResultado.NADIE));
 		logger.info(servicioP.updateNOAcertantes(2, TipoResultado.TODOS));
-		logger.info(servicioP.updateNOAcertantes(4, TipoResultado.ALGUNOS));*/
+		logger.info(servicioP.updateNOAcertantes(4, TipoResultado.ALGUNOS));
 
 		//updateAcertante
-		/*logger.info(servicioP.updateAcertante(4, TipoResultado.ALGUNOS));
+		logger.info(servicioP.updateAcertante(3, TipoResultado.ALGUNOS));
 		logger.info(servicioP.updateAcertante(5, TipoResultado.NADIE));
-		logger.info(servicioP.updateAcertante(6, TipoResultado.TODOS));*/
+		logger.info(servicioP.updateAcertante(4, TipoResultado.TODOS));
 		
-		//orderByDate
-		/*List<Partida> partidasOrderBy = servicioP.orderByDate();
+		//getPartidasXDate
+		List<Partida> partidasOrderBy = servicioP.getPartidasXDate();
 		for (Partida p : partidasOrderBy) {
 			logger.info(p);
-		}*/
+		}
 	}
 }

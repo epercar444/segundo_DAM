@@ -66,7 +66,7 @@ public class JugadorRepositorio {
 	    }
 	
 	
-	public List<Jugador> orderBy () {
+	public List<Jugador> getByPuntosTotales () {
 		List<Jugador> jugadores = new ArrayList<>();
 	    String sql = "SELECT nombre,puntosTotales FROM PérezEvaJugador ORDER BY puntosTotales;";
 			try {

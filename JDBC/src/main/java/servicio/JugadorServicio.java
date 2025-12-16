@@ -38,7 +38,7 @@ public class JugadorServicio {
 		return repositorio.getPlayerMaxPunt();
 	}
 	
-	public List<Jugador> orderBy () {
-		return repositorio.orderBy();
+	public List<Jugador> getByPuntosTotales () {
+		return repositorio.getByPuntosTotales();
 	}
 }

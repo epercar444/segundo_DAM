@@ -18,6 +18,7 @@ import utils.TipoResultado;
 public class PartidaRepositorio {
 	private static final Logger logger = LogManager.getLogger(PartidaRepositorio.class);
 	private MySqlConector conector;
+	private List<Partida> partidas;
 	public MySqlConector getConector() {
 		return conector;
 	}
@@ -27,9 +28,10 @@ public class PartidaRepositorio {
 	public PartidaRepositorio() throws MiExcepcion {
 		super();
 			this.conector = new MySqlConector();
+			this.partidas = new ArrayList<>();
 	}
 	
-	private int connectAdd(Partida p) { //método para añadir partidas a la bbdd
+	private int connectAdd(Partida p) { //método para añadir partidas a la bbdd 
 		int filas = 0;
 	    String sql = "INSERT INTO PérezEvaPartida (torneo_id,narrador_id, fecha, resultado) VALUES (?, ?, ?, ?)"; 
 
@@ -40,6 +42,7 @@ public class PartidaRepositorio {
 		        stmt.setDate(3, p.getFecha());
 		        stmt.setString(4, p.getResultado().toString());
 		        filas = stmt.executeUpdate(); //devuelve las filas que han sido "modificadas", devolviendola comprobamos que hemos hecho lo que queríamos o no
+		        partidas.add(p);
 	    }
 	    catch (SQLException e) {
 	    	logger.info(e.getMessage());
@@ -107,33 +110,35 @@ public class PartidaRepositorio {
 	    return filas;
 	}
 	
-	public int updateAcertante (int id,TipoResultado tipoResultado) {
-		int filas = 0;
-	    String sql = getQuery(tipoResultado); 
-	    	try {
-	    		PreparedStatement stmt = conector.getConnect().prepareStatement(sql);
-	    		stmt.setInt(1, id);
-		    	filas = stmt.executeUpdate();
-	    	}
-	    		catch (SQLException e) {
-	    			// TODO Auto-generated catch block
-	    			logger.info(e.getMessage());
-		}
+	public int updateAcertante(int id, TipoResultado tipoResultado) {
+	    int filas = 0;
+	    int puntos = getQuery(tipoResultado);
+
+	    String sql = "UPDATE PérezEvaJugador SET puntosTotales = puntosTotales + ? WHERE id = ?";
+
+	    try {
+	        PreparedStatement stmt = conector.getConnect().prepareStatement(sql);
+	        stmt.setInt(1, puntos);
+	        stmt.setInt(2, id);
+	        filas = stmt.executeUpdate();
+	    } catch (SQLException e) {
+	        logger.info(e.getMessage());
+	    }
+
 	    return filas;
-}
-	
-	private String getQuery (TipoResultado tipoResultado) { //devuelve la query dependiendo del tipoResultado
-		String query = "";
-		if (tipoResultado.equals(TipoResultado.ALGUNOS)) {
-			query = "UPDATE PérezEvaJugador SET puntosTotales = puntosTotales + 3 WHERE id = ?";
-		}
-		else {
-			query = "UPDATE PérezEvaJugador SET puntosTotales = puntosTotales + 2 WHERE id = ?";
-		}
-		return query;
 	}
 	
-	public List<Partida> orderByDate () {
+	private int getQuery(TipoResultado tipoResultado) {
+		int numero = 0;
+	    if (tipoResultado.equals(TipoResultado.ALGUNOS)) {
+	        numero = 3;
+	    } else {
+	        numero = 2;
+	    }
+	    return numero;
+	}
+	
+	public List<Partida> getPartidasXDate () {
 		List<Partida> partidas = new ArrayList<>();
 		String sql ="SELECT * FROM PérezEvaPartida ORDER BY fecha;";
 		try {
@@ -155,41 +160,28 @@ public class PartidaRepositorio {
 		return partidas;
 	}
 	
-	private Jugador getJugador(int id_Partida){ //devuelve el tipo Jugador necesario para crear la partida
+	private Jugador getJugador(int id_Partida) { // devuelve el Jugador necesario para crear la partida
 	    Jugador jugador = null;
-	    String sql = "SELECT id, nombre, email, puntosTotales FROM PérezEvaJugador WHERE id = ?";
+
+	    String sql = "SELECT j.id, j.nombre, j.email, j.puntosTotales FROM PérezEvaJugador j JOIN PérezEvaPartida p ON j.id = p.narrador_id WHERE p.id = ?";
 
 	    try (PreparedStatement stmt = conector.getConnect().prepareStatement(sql)) {
-	        stmt.setInt(1, getIdXPartida(id_Partida)); 
+	        stmt.setInt(1, id_Partida);
 	        ResultSet rs = stmt.executeQuery();
 
-	        while (rs.next()) {
+	        if (rs.next()) { // solo debe haber un jugador
 	            jugador = new Jugador();
-	            jugador.setEmail(rs.getString("email"));
-	            jugador.setNombre(rs.getString("nombre"));
-	            jugador.setPuntos_totales(rs.getInt("puntosTotales"));
 	            jugador.setId(rs.getInt("id"));
+	            jugador.setNombre(rs.getString("nombre"));
+	            jugador.setEmail(rs.getString("email"));
+	            jugador.setPuntos_totales(rs.getInt("puntosTotales"));
 	        }
 	    } catch (SQLException e) {
-	    	logger.info(e.getMessage());
+	        logger.info(e.getMessage());
 	    }
 
-	    return jugador; 
+	    return jugador;
 	}
-	
-	private int getIdXPartida (int id_Partida) { //devuelve el id_Narrador que será lo que utilicemos para crear el objeto
-		int idNarrador = 0;
-	    String sql = "SELECT narrador_id FROM PérezEvaPartida WHERE id = ?";
-	    try (PreparedStatement stmt = conector.getConnect().prepareStatement(sql)) {
-	        stmt.setInt(1, id_Partida); 
-	        ResultSet rs = stmt.executeQuery();
-	        while (rs.next()) {
-	        	idNarrador = rs.getInt("narrador_id");
-	        }
-	    } catch (SQLException e) {
-	    	logger.info(e.getMessage());
-	    }
-	    return idNarrador;
-	}
+
 
 }

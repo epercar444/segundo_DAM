@@ -53,8 +53,8 @@ public class PartidaServicio {
 		return repositorio.updateAcertante(id, tipoResultado);
 	}
 	
-	public List<Partida> orderByDate () {
-		return repositorio.orderByDate();
+	public List<Partida> getPartidasXDate () {
+		return repositorio.getPartidasXDate();
 	}
 	
 }
