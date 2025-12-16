@@ -30,6 +30,10 @@ public class PartidaServicio {
 		}
 	}
 	
+	public void cargarPartidas() {
+		repositorio.cargarPartidas();
+	}
+	
 	public int addPartida (Partida p) {
 		int filas = 0;
 		try {

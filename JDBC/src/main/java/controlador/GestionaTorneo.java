@@ -19,12 +19,13 @@ public class GestionaTorneo {
 		
 		//JUGADORES
 		JugadorServicio servicioJ = new JugadorServicio();
+		servicioJ.cargarJugadores();
 		
 		//addJugador	
-		/*for (int i = 0; i < 6; i++) { //añadimos dos jugadores más del que nos dice el enunciado para poder crearnos las partidas que dice este
+		for (int i = 0; i < 6; i++) { //añadimos dos jugadores más del que nos dice el enunciado para poder crearnos las partidas que dice este
 			Jugador j = new Jugador("jugador"+(i+1)+"@prueba.com", "Jugador"+(i+1), 50*(i+1));
 			logger.info(servicioJ.addJugador(j));
-		}*/
+		}
 		
 		//getPlayerMaxPunt
 		logger.info(servicioJ.getPlayerMaxPunt());
@@ -38,9 +39,10 @@ public class GestionaTorneo {
 		
 		//PARTIDAS
 		PartidaServicio servicioP = new PartidaServicio();
+		servicioP.cargarPartidas(); //llamamos al método de cargar partidas para que nuestra lista nunca empiece vacía
 		
 		//addPartida
-		/*Random r = new Random(); //necesario para crear fechas aleatorias
+		Random r = new Random(); //necesario para crear fechas aleatorias
 		TipoResultado[] opciones = TipoResultado.values(); //guardarmos los valores del enum
 		for (int i = 0; i < 6; i++) { //añadimos 6 partidas de manera que en la última saltará una excepción controlada
 			TipoResultado resultadoRotativo = opciones[i % opciones.length]; //los rotamos de manera que no todos los resultados sean iguales 
@@ -50,21 +52,25 @@ public class GestionaTorneo {
 			//la cuenta de Date es necesaria para que nos dé fechas diferentes y podamos ordenarlas
 			
 			logger.info(servicioP.addPartida(p));
-		}*/
+		}
+		logger.info(servicioP.getRepositorio().getPartidas());
 		
 		//updatePuntNarrador
 		logger.info(servicioP.updatePuntNarrados(3, TipoResultado.ALGUNOS));
 		logger.info(servicioP.updatePuntNarrados(4, TipoResultado.TODOS));
-		
+		logger.info(servicioP.getRepositorio().getPartidas());
+
 		//updateNOAcertante
-		logger.info(servicioP.updateNOAcertantes(1, TipoResultado.NADIE));
-		logger.info(servicioP.updateNOAcertantes(2, TipoResultado.TODOS));
-		logger.info(servicioP.updateNOAcertantes(4, TipoResultado.ALGUNOS));
+		logger.info(servicioP.updateNOAcertantes(2, TipoResultado.NADIE));
+		logger.info(servicioP.updateNOAcertantes(1, TipoResultado.TODOS));
+		logger.info(servicioP.updateNOAcertantes(3, TipoResultado.ALGUNOS));
+		logger.info(servicioP.getRepositorio().getPartidas());
 
 		//updateAcertante
 		logger.info(servicioP.updateAcertante(3, TipoResultado.ALGUNOS));
 		logger.info(servicioP.updateAcertante(5, TipoResultado.NADIE));
 		logger.info(servicioP.updateAcertante(4, TipoResultado.TODOS));
+		logger.info(servicioP.getRepositorio().getPartidas());
 		
 		//getPartidasXDate
 		List<Partida> partidasOrderBy = servicioP.getPartidasXDate();

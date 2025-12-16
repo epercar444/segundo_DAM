@@ -29,6 +29,9 @@ public class JugadorServicio {
 			logger.info(e.getMessage());
 		}
 	}
+	public void cargarJugadores() {
+		repositorio.cargarJugadores();
+	}
 	
 	public int addJugador (Jugador j) {
 		return repositorio.addJugador(j);

@@ -6,6 +6,7 @@ import java.util.Objects;
 import utils.TipoResultado;
 
 public class Partida {
+	private static int contador = 1;
 	private int id,torneo_id;
 	private Jugador narrador;
 	private Date fecha;
@@ -13,10 +14,12 @@ public class Partida {
 	public Partida(Jugador narrador, Date fecha, TipoResultado resultado,int torneo_id) {
 		super();
 		//id autoincremental
+		this.id = contador + id;
 		this.narrador = narrador;
 		this.fecha = fecha;
 		this.resultado = resultado;
 		this.torneo_id = torneo_id;
+		contador++;
 	}
 	public Partida() {
 		super();

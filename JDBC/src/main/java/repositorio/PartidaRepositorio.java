@@ -19,6 +19,12 @@ public class PartidaRepositorio {
 	private static final Logger logger = LogManager.getLogger(PartidaRepositorio.class);
 	private MySqlConector conector;
 	private List<Partida> partidas;
+	public List<Partida> getPartidas() {
+		return partidas;
+	}
+	public void setPartidas(List<Partida> partidas) {
+		this.partidas = partidas;
+	}
 	public MySqlConector getConector() {
 		return conector;
 	}
@@ -30,6 +36,27 @@ public class PartidaRepositorio {
 			this.conector = new MySqlConector();
 			this.partidas = new ArrayList<>();
 	}
+	public void cargarPartidas() {
+	    String sql = "SELECT * FROM PérezEvaPartida";
+
+	    try {
+	        PreparedStatement stmt = conector.getConnect().prepareStatement(sql);
+	        ResultSet rs = stmt.executeQuery();
+
+	        while (rs.next()) {
+	            Partida p = new Partida();
+	            p.setId(rs.getInt("id"));
+	            p.setFecha(rs.getDate("fecha"));
+	            p.setTorneo_id(rs.getInt("torneo_id"));
+	            p.setNarrador(getJugador(rs.getInt("id")));
+	            p.setResultado(TipoResultado.valueOf(rs.getString("resultado")));
+	            this.partidas.add(p);
+	        }
+	    } catch (SQLException e) {
+	        logger.info(e.getMessage());
+	    }
+	}
+
 	
 	private int connectAdd(Partida p) { //método para añadir partidas a la bbdd 
 		int filas = 0;
@@ -83,6 +110,7 @@ public class PartidaRepositorio {
 	    		PreparedStatement stmt = conector.getConnect().prepareStatement(sql);
 	    		stmt.setInt(1, id);
 		    	filas = stmt.executeUpdate();
+		    	actualizarJugadorEnPartidas(id, 3);
 	    	}
 	    		catch (SQLException e) {
 	    			// TODO Auto-generated catch block
@@ -101,6 +129,7 @@ public class PartidaRepositorio {
 	    		PreparedStatement stmt = conector.getConnect().prepareStatement(sql);
 	    		stmt.setInt(1, id);
 		    	filas = stmt.executeUpdate();
+		    	actualizarJugadorEnPartidas(id, 2);
 	    	}
 	    		catch (SQLException e) {
 	    			// TODO Auto-generated catch block
@@ -121,6 +150,7 @@ public class PartidaRepositorio {
 	        stmt.setInt(1, puntos);
 	        stmt.setInt(2, id);
 	        filas = stmt.executeUpdate();
+	    	actualizarJugadorEnPartidas(id, puntos);
 	    } catch (SQLException e) {
 	        logger.info(e.getMessage());
 	    }
@@ -182,6 +212,16 @@ public class PartidaRepositorio {
 
 	    return jugador;
 	}
+	
+	private void actualizarJugadorEnPartidas(int idJugador, int puntos) { //método para actualizar puntos de jugadores
+	    for (Partida p : partidas) {
+	        if (p.getNarrador() != null && p.getNarrador().getId() == idJugador) {
+	            Jugador j = p.getNarrador();
+	            j.setPuntos_totales(j.getPuntos_totales() + puntos);
+	        }
+	    }
+	}
+
 
 
 }

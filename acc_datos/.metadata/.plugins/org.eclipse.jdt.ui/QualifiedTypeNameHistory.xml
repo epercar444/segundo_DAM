@@ -58,6 +58,6 @@
     <fullyQualifiedTypeName name="servicio.PartidaServicio"/>
     <fullyQualifiedTypeName name="utils.TipoResultado"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="modelo.Partida"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

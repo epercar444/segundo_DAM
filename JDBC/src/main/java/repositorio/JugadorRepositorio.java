@@ -16,16 +16,37 @@ import utils.MiExcepcion;
 public class JugadorRepositorio {
 	private static final Logger logger = LogManager.getLogger(JugadorRepositorio.class);
 	private MySqlConector conector;
+	private List<Jugador> jugadores;
 	
 	public JugadorRepositorio() throws MiExcepcion {
 		super();
 		this.conector = new MySqlConector();
+		this.jugadores = new ArrayList<>();
 	}
 	public MySqlConector getConector() {
 		return conector;
 	}
 	public void setConector(MySqlConector conector) {
 		this.conector = conector;
+	}
+	public void cargarJugadores() { //carga la lista jugadores con la información de nuestra BBDD
+	    String sql = "SELECT * FROM PérezEvaJugador;";
+
+	    try {
+	        PreparedStatement stmt = conector.getConnect().prepareStatement(sql);
+	        ResultSet rs = stmt.executeQuery();
+
+	        while (rs.next()) {
+	            Jugador j = new Jugador();
+	            j.setId(rs.getInt("id"));
+	            j.setNombre(rs.getString("nombre"));
+	            j.setEmail(rs.getString("email"));
+	            j.setPuntos_totales(rs.getInt("puntosTotales"));
+	            this.jugadores.add(j);
+	        }
+	    } catch (SQLException e) {
+	        logger.info(e.getMessage());
+	    }
 	}
 	
 	public int addJugador(Jugador j){
@@ -38,6 +59,7 @@ public class JugadorRepositorio {
 		        stmt.setString(2, j.getEmail());
 		        stmt.setInt(3, j.getPuntos_totales());
 		        filas = stmt.executeUpdate(); //devuelve las filas que han sido "modificadas", devolviendola comprobamos que hemos hecho lo que queríamos o no
+		        jugadores.add(j);
 	    }
 	    catch (SQLException e) {
 	    	logger.info(e.getMessage());

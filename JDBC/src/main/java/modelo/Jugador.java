@@ -3,13 +3,16 @@ package modelo;
 import java.util.Objects;
 
 public class Jugador {
+	private static int contador = 1;
 	private int id,puntos_totales;
 	private String nombre,email;
 	public Jugador(String email, String nombre, int puntos_totales) {
-		super(); //no ponemos id porque en la bbdd es autoincremental
+		super(); 
+		this.id = contador + id;
 		this.puntos_totales = puntos_totales;
 		this.nombre = nombre;
 		this.email = email;
+		contador++;
 	}
 	public Jugador() {
 		super();
