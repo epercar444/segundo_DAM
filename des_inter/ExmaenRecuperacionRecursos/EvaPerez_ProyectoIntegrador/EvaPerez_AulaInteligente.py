@@ -37,8 +37,11 @@ class VentanaPrincipal(QMainWindow):
         self.crear_dockwidget()
 
         app.setStyle("Fusion")
+        #busca la carpeta donde está ubicado el archivo .py
         carpeta_actual = os.path.dirname(os.path.abspath(__file__))
+        #busca el nombre del archivo que introduzcamos en la ruta de la carpeta que hemos guardado anteriormente
         ruta_qss = os.path.join(carpeta_actual, "estilos.qss")
+        #abre el archivo .qss
         with open(ruta_qss, "r") as f:
             app.setStyleSheet(f.read())
 
@@ -85,7 +88,7 @@ class VentanaPrincipal(QMainWindow):
     def crear_acciones(self):
         ruta_icono = os.path.join(os.path.dirname(__file__), "icono.png")
 
-        self.reestablecer = QAction("Restablecer Aula", self)
+        self.reestablecer = QAction("Reestablecer Aula", self)
         self.reestablecer.setShortcut(QKeySequence("Ctrl+R"))
         self.reestablecer.setIcon(QIcon(ruta_icono))
         self.reestablecer.setIconVisibleInMenu(False)
@@ -147,7 +150,7 @@ class VentanaPrincipal(QMainWindow):
         self.climatizacion.setChecked(False)
         self.nombre.clear()
         self.observaciones.clear()
-        self.widgetNuevo.resetear()
+        self.actualizar_indicador()
         self.statusBar().showMessage("Aula restablecida", 3000)
 
     def salir_app(self):
@@ -164,7 +167,7 @@ class VentanaPrincipal(QMainWindow):
         QMessageBox.information(
             self,
             "Acerca de",
-            "Aula Inteligente\nProyecto Integrador DAM\nEva Pérez Carmona"
+            "Aula Inteligente\nProyecto Integrador DAM\nAutor: Eva Pérez Carmona"
         )
 
     def crear_dockwidget(self):
@@ -197,8 +200,8 @@ class DialogoConfiguracion(QDialog):
 
         layout = QVBoxLayout()
 
-        self.opcion1 = QCheckBox("Modo ahorro energético")
-        self.opcion2 = QCheckBox("Bloquear controles")
+        self.opcion1 = QCheckBox("Activar modo ahorro energético")
+        self.opcion2 = QCheckBox("Bloquear controles del aula")
 
         layout.addWidget(self.opcion1)
         layout.addWidget(self.opcion2)
@@ -214,9 +217,6 @@ class DialogoConfiguracion(QDialog):
 
 
 class CampoNombreAula(QLineEdit):
-
-    estadoCambiado = Signal(bool)
-
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setInputMask("<Aaaaaaaaaaa")
@@ -236,7 +236,6 @@ class CampoNombreAula(QLineEdit):
         else:
             self.cambiar_color("rojo")
             self.valido = False
-        self.estadoCambiado.emit(self.valido)
 
     def cambiar_color(self, color):
         palette = self.palette()
@@ -265,13 +264,10 @@ class IndicadorEstadoAula(QWidget):
             self.estado = "Preparando"
         elif climatizacion == False:
             self.estado = "Incidencia"
+        else:
+            self.estado = "Normal"
 
         self.estadoCambiado.emit(self.estado)
-        self.update()
-
-    def resetear(self):
-        self.estado = ""
-        self.estadoCambiado.emit("")
         self.update()
 
     def paintEvent(self, event):

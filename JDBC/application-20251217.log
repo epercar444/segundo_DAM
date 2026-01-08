@@ -1,0 +1,48 @@
+2025-12-17 12:03:17.236 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.241 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.243 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.246 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.249 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.251 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.252 [main] INFO  controlador.GestionaTorneo - Jugador [id=12, puntos_totales=300, nombre=Jugador6, email=jugador6@prueba.com]
+2025-12-17 12:03:17.253 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=50, nombre=Jugador1, email=null]
+2025-12-17 12:03:17.253 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=54, nombre=Jugador1, email=null]
+2025-12-17 12:03:17.254 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=100, nombre=Jugador2, email=null]
+2025-12-17 12:03:17.254 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=104, nombre=Jugador2, email=null]
+2025-12-17 12:03:17.254 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=150, nombre=Jugador3, email=null]
+2025-12-17 12:03:17.254 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=162, nombre=Jugador3, email=null]
+2025-12-17 12:03:17.254 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=200, nombre=Jugador4, email=null]
+2025-12-17 12:03:17.255 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=204, nombre=Jugador4, email=null]
+2025-12-17 12:03:17.255 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=250, nombre=Jugador5, email=null]
+2025-12-17 12:03:17.255 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=254, nombre=Jugador5, email=null]
+2025-12-17 12:03:17.255 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=300, nombre=Jugador6, email=null]
+2025-12-17 12:03:17.255 [main] INFO  controlador.GestionaTorneo - Jugador [id=0, puntos_totales=300, nombre=Jugador6, email=null]
+2025-12-17 12:03:17.292 [main] INFO  servicio.PartidaServicio - No se pueden añadir más de 5 partidas
+2025-12-17 12:03:17.292 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-17 12:03:17.293 [main] INFO  servicio.PartidaServicio - No se pueden añadir más de 5 partidas
+2025-12-17 12:03:17.293 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-17 12:03:17.294 [main] INFO  servicio.PartidaServicio - No se pueden añadir más de 5 partidas
+2025-12-17 12:03:17.294 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-17 12:03:17.295 [main] INFO  servicio.PartidaServicio - No se pueden añadir más de 5 partidas
+2025-12-17 12:03:17.295 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-17 12:03:17.295 [main] INFO  servicio.PartidaServicio - No se pueden añadir más de 5 partidas
+2025-12-17 12:03:17.296 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-17 12:03:17.296 [main] INFO  servicio.PartidaServicio - No se pueden añadir más de 5 partidas
+2025-12-17 12:03:17.296 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-17 12:03:17.297 [main] INFO  controlador.GestionaTorneo - [Partida [id=1, torneo_id=1, narrador=Jugador [id=1, puntos_totales=54, nombre=Jugador1, email=jugador1@prueba.com], fecha=2025-10-02, resultado=TODOS], Partida [id=2, torneo_id=2, narrador=Jugador [id=2, puntos_totales=104, nombre=Jugador2, email=jugador2@prueba.com], fecha=2025-03-08, resultado=NADIE], Partida [id=3, torneo_id=3, narrador=Jugador [id=3, puntos_totales=162, nombre=Jugador3, email=jugador3@prueba.com], fecha=2025-02-09, resultado=ALGUNOS], Partida [id=4, torneo_id=4, narrador=Jugador [id=4, puntos_totales=204, nombre=Jugador4, email=jugador4@prueba.com], fecha=2025-09-02, resultado=TODOS], Partida [id=5, torneo_id=5, narrador=Jugador [id=5, puntos_totales=254, nombre=Jugador5, email=jugador5@prueba.com], fecha=2025-04-30, resultado=NADIE]]
+2025-12-17 12:03:17.299 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.299 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-17 12:03:17.300 [main] INFO  controlador.GestionaTorneo - [Partida [id=1, torneo_id=1, narrador=Jugador [id=1, puntos_totales=54, nombre=Jugador1, email=jugador1@prueba.com], fecha=2025-10-02, resultado=TODOS], Partida [id=2, torneo_id=2, narrador=Jugador [id=2, puntos_totales=104, nombre=Jugador2, email=jugador2@prueba.com], fecha=2025-03-08, resultado=NADIE], Partida [id=3, torneo_id=3, narrador=Jugador [id=3, puntos_totales=165, nombre=Jugador3, email=jugador3@prueba.com], fecha=2025-02-09, resultado=ALGUNOS], Partida [id=4, torneo_id=4, narrador=Jugador [id=4, puntos_totales=204, nombre=Jugador4, email=jugador4@prueba.com], fecha=2025-09-02, resultado=TODOS], Partida [id=5, torneo_id=5, narrador=Jugador [id=5, puntos_totales=254, nombre=Jugador5, email=jugador5@prueba.com], fecha=2025-04-30, resultado=NADIE]]
+2025-12-17 12:03:17.302 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.304 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.304 [main] INFO  controlador.GestionaTorneo - 0
+2025-12-17 12:03:17.304 [main] INFO  controlador.GestionaTorneo - [Partida [id=1, torneo_id=1, narrador=Jugador [id=1, puntos_totales=56, nombre=Jugador1, email=jugador1@prueba.com], fecha=2025-10-02, resultado=TODOS], Partida [id=2, torneo_id=2, narrador=Jugador [id=2, puntos_totales=106, nombre=Jugador2, email=jugador2@prueba.com], fecha=2025-03-08, resultado=NADIE], Partida [id=3, torneo_id=3, narrador=Jugador [id=3, puntos_totales=165, nombre=Jugador3, email=jugador3@prueba.com], fecha=2025-02-09, resultado=ALGUNOS], Partida [id=4, torneo_id=4, narrador=Jugador [id=4, puntos_totales=204, nombre=Jugador4, email=jugador4@prueba.com], fecha=2025-09-02, resultado=TODOS], Partida [id=5, torneo_id=5, narrador=Jugador [id=5, puntos_totales=254, nombre=Jugador5, email=jugador5@prueba.com], fecha=2025-04-30, resultado=NADIE]]
+2025-12-17 12:03:17.307 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.309 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.312 [main] INFO  controlador.GestionaTorneo - 1
+2025-12-17 12:03:17.312 [main] INFO  controlador.GestionaTorneo - [Partida [id=1, torneo_id=1, narrador=Jugador [id=1, puntos_totales=56, nombre=Jugador1, email=jugador1@prueba.com], fecha=2025-10-02, resultado=TODOS], Partida [id=2, torneo_id=2, narrador=Jugador [id=2, puntos_totales=106, nombre=Jugador2, email=jugador2@prueba.com], fecha=2025-03-08, resultado=NADIE], Partida [id=3, torneo_id=3, narrador=Jugador [id=3, puntos_totales=168, nombre=Jugador3, email=jugador3@prueba.com], fecha=2025-02-09, resultado=ALGUNOS], Partida [id=4, torneo_id=4, narrador=Jugador [id=4, puntos_totales=206, nombre=Jugador4, email=jugador4@prueba.com], fecha=2025-09-02, resultado=TODOS], Partida [id=5, torneo_id=5, narrador=Jugador [id=5, puntos_totales=256, nombre=Jugador5, email=jugador5@prueba.com], fecha=2025-04-30, resultado=NADIE]]
+2025-12-17 12:03:17.317 [main] INFO  controlador.GestionaTorneo - Partida [id=3, torneo_id=3, narrador=Jugador [id=3, puntos_totales=168, nombre=Jugador3, email=jugador3@prueba.com], fecha=2025-02-09, resultado=ALGUNOS]
+2025-12-17 12:03:17.317 [main] INFO  controlador.GestionaTorneo - Partida [id=2, torneo_id=2, narrador=Jugador [id=2, puntos_totales=106, nombre=Jugador2, email=jugador2@prueba.com], fecha=2025-03-08, resultado=NADIE]
+2025-12-17 12:03:17.317 [main] INFO  controlador.GestionaTorneo - Partida [id=5, torneo_id=5, narrador=Jugador [id=5, puntos_totales=256, nombre=Jugador5, email=jugador5@prueba.com], fecha=2025-04-30, resultado=NADIE]
+2025-12-17 12:03:17.317 [main] INFO  controlador.GestionaTorneo - Partida [id=4, torneo_id=4, narrador=Jugador [id=4, puntos_totales=206, nombre=Jugador4, email=jugador4@prueba.com], fecha=2025-09-02, resultado=TODOS]
+2025-12-17 12:03:17.317 [main] INFO  controlador.GestionaTorneo - Partida [id=1, torneo_id=1, narrador=Jugador [id=1, puntos_totales=56, nombre=Jugador1, email=jugador1@prueba.com], fecha=2025-10-02, resultado=TODOS]
