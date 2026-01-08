@@ -1,0 +1,19 @@
+2025-10-09 20:43:24.095 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - Contador ficheros: 12
+2025-10-09 20:45:35.083 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - Nombre archivo: segundo_DAM
+2025-10-09 20:45:35.085 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - Contenido list: [Ljava.io.File;@506ae4d4
+2025-10-09 20:45:35.085 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - Nombre archivo: DAM
+2025-10-09 20:45:35.086 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - Contenido list: [Ljava.io.File;@7d4f9aae
+2025-10-09 20:45:35.086 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - Contador ficheros: 12
+2025-10-09 20:52:59.326 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - Contador ficheros: [C:\Users\evape\Onedrive\Escritorio\segundo_DAM, C:\Users\evape\Onedrive\Escritorio\DAM]
+2025-10-09 20:54:03.410 [main] DEBUG file.primer_boletin.controlador.PrimerBoletin_main - 11
+2025-10-09 20:54:03.412 [main] DEBUG file.primer_boletin.controlador.PrimerBoletin_main - 1
+2025-10-09 20:54:03.412 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - Contador ficheros: [C:\Users\evape\Onedrive\Escritorio\segundo_DAM, C:\Users\evape\Onedrive\Escritorio\DAM]
+2025-10-09 21:03:51.179 [main] DEBUG file.primer_boletin.controlador.PrimerBoletin_main - 0
+2025-10-09 21:03:51.181 [main] DEBUG file.primer_boletin.controlador.PrimerBoletin_main - 0
+2025-10-09 21:03:51.183 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - Contador ficheros: [C:\Users\evape\Onedrive\Escritorio\segundo_DAM, C:\Users\evape\Onedrive\Escritorio\DAM]
+2025-10-09 21:04:34.602 [main] DEBUG file.primer_boletin.controlador.PrimerBoletin_main - 1
+2025-10-09 21:04:34.604 [main] DEBUG file.primer_boletin.controlador.PrimerBoletin_main - 1
+2025-10-09 21:04:34.605 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - Contador ficheros: [C:\Users\evape\Onedrive\Escritorio\segundo_DAM, C:\Users\evape\Onedrive\Escritorio\DAM]
+2025-10-09 21:05:42.326 [main] DEBUG file.primer_boletin.controlador.PrimerBoletin_main - 11
+2025-10-09 21:05:42.329 [main] DEBUG file.primer_boletin.controlador.PrimerBoletin_main - 1
+2025-10-09 21:05:42.329 [main] INFO  file.primer_boletin.controlador.PrimerBoletin_main - Contador ficheros: [C:\Users\evape\Onedrive\Escritorio\segundo_DAM, C:\Users\evape\Onedrive\Escritorio\DAM]

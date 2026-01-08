@@ -1,0 +1,550 @@
+[
+  {
+    "id": 0,
+    "nombreUsuario": "Laura_Lectora_28",
+    "email": "laura.perez@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_MENSUAL",
+      "precio": 4.99,
+      "pendiente_cobro": false,
+      "fecha_cobro": "2025-12-21"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-663-3292-1",
+        "titulo": "El Imperio Final",
+        "autor": "Brandon Sanderson",
+        "genero": "FANTASIA",
+        "estado": "LEYENDO",
+        "num_paginas": 688,
+        "validado": true
+      },
+      {
+        "ISBN": "978-84-339-2019-3",
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "genero": "CIENCIA_FICCION",
+        "estado": "LEIDO",
+        "num_paginas": 326,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "nombreUsuario": "Carlos_Escribe",
+    "email": "carlos.escritor@email.com",
+    "rol": "ESCRITOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-01-02222-1",
+        "titulo": "El Código Da Vinci",
+        "autor": "Dan Brown",
+        "genero": "MISTERIO",
+        "estado": "PENDIENTE",
+        "num_paginas": 560,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nombreUsuario": "Admin_Ana",
+    "email": "ana.admin@readly.com",
+    "rol": "ADMINISTRADOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_ANUAL",
+      "precio": 49.99,
+      "pendiente_cobro": true,
+      "fecha_cobro": "2025-11-21"
+    },
+    "libros_biblioteca": []
+  },
+  {
+    "id": 3,
+    "nombreUsuario": "Miguel_Fantasia",
+    "email": "miguel.f@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-450-0066-3",
+        "titulo": "El Señor de los Anillos",
+        "autor": "J.R.R. Tolkien",
+        "genero": "FANTASIA",
+        "estado": "LEIDO",
+        "num_paginas": 576,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nombreUsuario": "Elena_Books",
+    "email": "elena.books@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": false,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": []
+  },
+  {
+    "id": 5,
+    "nombreUsuario": "David_Thriller",
+    "email": "david.t@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_MENSUAL",
+      "precio": 4.99,
+      "pendiente_cobro": false,
+      "fecha_cobro": "2025-12-05"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-08-24984-9",
+        "titulo": "La Bestia",
+        "autor": "Carmen Mola",
+        "genero": "MISTERIO",
+        "estado": "LEYENDO",
+        "num_paginas": 544,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nombreUsuario": "Sofia_Romance",
+    "email": "sofia.r@email.com",
+    "rol": "ESCRITOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_ANUAL",
+      "precio": 49.99,
+      "pendiente_cobro": false,
+      "fecha_cobro": "2026-06-15"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-163-2781-7",
+        "titulo": "Orgullo y Prejuicio",
+        "autor": "Jane Austen",
+        "genero": "ROMANCE",
+        "estado": "LEIDO",
+        "num_paginas": 416,
+        "validado": true
+      },
+      {
+        "ISBN": "978-0-14-143951-8",
+        "titulo": "Emma",
+        "autor": "Jane Austen",
+        "genero": "ROMANCE",
+        "estado": "PENDIENTE",
+        "num_paginas": 474,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nombreUsuario": "Pablo_Scifi",
+    "email": "pablo.scifi@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-9070-517-3",
+        "titulo": "Dune",
+        "autor": "Frank Herbert",
+        "genero": "CIENCIA_FICCION",
+        "estado": "LEYENDO",
+        "num_paginas": 890,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "nombreUsuario": "Lucia_Novelas",
+    "email": "lucia.novelas@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_MENSUAL",
+      "precio": 4.99,
+      "pendiente_cobro": true,
+      "fecha_cobro": "2025-11-28"
+    },
+    "libros_biblioteca": []
+  },
+  {
+    "id": 9,
+    "nombreUsuario": "Admin_Roberto",
+    "email": "roberto.admin@readly.com",
+    "rol": "ADMINISTRADOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": []
+  },
+  {
+    "id": 10,
+    "nombreUsuario": "Clara_Misterio",
+    "email": "clara.m@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_MENSUAL",
+      "precio": 4.99,
+      "pendiente_cobro": false,
+      "fecha_cobro": "2025-12-10"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-9838-708-7",
+        "titulo": "La Chica del Tren",
+        "autor": "Paula Hawkins",
+        "genero": "MISTERIO",
+        "estado": "LEIDO",
+        "num_paginas": 496,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "nombreUsuario": "Javier_Hist",
+    "email": "javier.hist@email.com",
+    "rol": "ESCRITOR",
+    "cuenta_verificada": false,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-08-00434-9",
+        "titulo": "Los Pilares de la Tierra",
+        "autor": "Ken Follett",
+        "genero": "FICCION_HISTORICA",
+        "estado": "PENDIENTE",
+        "num_paginas": 1040,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "nombreUsuario": "Marina_Poesia",
+    "email": "marina.p@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_ANUAL",
+      "precio": 49.99,
+      "pendiente_cobro": false,
+      "fecha_cobro": "2026-02-14"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-9895-677-1",
+        "titulo": "Veinte poemas de amor",
+        "autor": "Pablo Neruda",
+        "genero": "POESIA",
+        "estado": "LEIDO",
+        "num_paginas": 80,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "nombreUsuario": "Fernando_Terror",
+    "email": "fernando.t@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-9759-379-3",
+        "titulo": "It",
+        "autor": "Stephen King",
+        "genero": "TERROR",
+        "estado": "LEYENDO",
+        "num_paginas": 1504,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "nombreUsuario": "Bea_Biografias",
+    "email": "bea.b@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_MENSUAL",
+      "precio": 4.99,
+      "pendiente_cobro": false,
+      "fecha_cobro": "2025-12-30"
+    },
+    "libros_biblioteca": []
+  },
+  {
+    "id": 15,
+    "nombreUsuario": "Sergio_Comics",
+    "email": "sergio.c@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-1-4012-4819-5",
+        "titulo": "Watchmen",
+        "autor": "Alan Moore",
+        "genero": "NOVELA_GRAFICA",
+        "estado": "LEIDO",
+        "num_paginas": 448,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "nombreUsuario": "Nuria_Clasicos",
+    "email": "nuria.c@email.com",
+    "rol": "ESCRITOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_ANUAL",
+      "precio": 49.99,
+      "pendiente_cobro": false,
+      "fecha_cobro": "2026-09-01"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-376-0494-7",
+        "titulo": "Don Quijote de la Mancha",
+        "autor": "Miguel de Cervantes",
+        "genero": "CLASICOS",
+        "estado": "PENDIENTE",
+        "num_paginas": 1376,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "nombreUsuario": "Victor_Aventura",
+    "email": "victor.a@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": []
+  },
+  {
+    "id": 18,
+    "nombreUsuario": "Irene_Drama",
+    "email": "irene.d@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": false,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-322-2636-5",
+        "titulo": "La casa de Bernarda Alba",
+        "autor": "Federico García Lorca",
+        "genero": "TEATRO",
+        "estado": "LEIDO",
+        "num_paginas": 128,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "nombreUsuario": "Admin_Luisa",
+    "email": "luisa.admin@readly.com",
+    "rol": "ADMINISTRADOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_MENSUAL",
+      "precio": 4.99,
+      "pendiente_cobro": false,
+      "fecha_cobro": "2025-12-01"
+    },
+    "libros_biblioteca": []
+  },
+  {
+    "id": 20,
+    "nombreUsuario": "Raul_Filosofia",
+    "email": "raul.f@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_MENSUAL",
+      "precio": 4.99,
+      "pendiente_cobro": false,
+      "fecha_cobro": "2025-12-15"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-206-3694-3",
+        "titulo": "El mundo de Sofía",
+        "autor": "Jostein Gaarder",
+        "genero": "FILOSOFIA",
+        "estado": "LEYENDO",
+        "num_paginas": 640,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "nombreUsuario": "Marta_Infantil",
+    "email": "marta.i@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-9838-254-9",
+        "titulo": "El Principito",
+        "autor": "Antoine de Saint-Exupéry",
+        "genero": "INFANTIL",
+        "estado": "LEIDO",
+        "num_paginas": 96,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "nombreUsuario": "Oscar_NoFiccion",
+    "email": "oscar.nf@email.com",
+    "rol": "ESCRITOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_ANUAL",
+      "precio": 49.99,
+      "pendiente_cobro": true,
+      "fecha_cobro": "2025-11-30"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-9992-622-3",
+        "titulo": "Sapiens",
+        "autor": "Yuval Noah Harari",
+        "genero": "NO_FICCION",
+        "estado": "PENDIENTE",
+        "num_paginas": 496,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "nombreUsuario": "Carmen_Manga",
+    "email": "carmen.m@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "PREMIUM_MENSUAL",
+      "precio": 4.99,
+      "pendiente_cobro": false,
+      "fecha_cobro": "2025-12-08"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-679-0466-0",
+        "titulo": "Naruto 01",
+        "autor": "Masashi Kishimoto",
+        "genero": "MANGA",
+        "estado": "LEIDO",
+        "num_paginas": 192,
+        "validado": true
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "nombreUsuario": "Alberto_Negra",
+    "email": "alberto.n@email.com",
+    "rol": "LECTOR",
+    "cuenta_verificada": true,
+    "suscripcion": {
+      "tipo_plan": "GRATUITO",
+      "precio": 0.0,
+      "pendiente_cobro": false,
+      "fecha_cobro": "N/A"
+    },
+    "libros_biblioteca": [
+      {
+        "ISBN": "978-84-9062-895-3",
+        "titulo": "El silencio de la ciudad blanca",
+        "autor": "Eva García Sáenz de Urturi",
+        "genero": "NOVELA_NEGRA",
+        "estado": "LEYENDO",
+        "num_paginas": 480,
+        "validado": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "tipoAgente": "HUMANO",
+    "peticion": "¿Cuál es la capital de Francia?",
+    "respuesta": "París",
+    "valoracion": 4.5,
+    "porcentaje_Acierto": 85
+  },
+  {
+    "id": 2,
+    "tipoAgente": "HUMANO",
+    "peticion": "Resuelve 5+7",
+    "respuesta": "12",
+    "valoracion": 4.8,
+    "porcentaje_Acierto": 90
+  },
+  {
+    "id": 3,
+    "tipoAgente": "HUMANO",
+    "peticion": "Traduce al inglés: 'Hola mundo'",
+    "respuesta": "Hello world",
+    "valoracion": 4.7,
+    "porcentaje_Acierto": 75
+  },
+  {
+    "id": 4,
+    "tipoAgente": "IA",
+    "peticion": "Genera un poema corto",
+    "respuesta": "Rosa roja en el jardín",
+    "valoracion": 5.0,
+    "porcentaje_Acierto": 95
+  },
+  {
+    "id": 5,
+    "tipoAgente": "IA",
+    "peticion": "Resume este texto",
+    "respuesta": "Resumen breve del texto",
+    "valoracion": 3.3,
+    "porcentaje_Acierto": 66
+  }
+]

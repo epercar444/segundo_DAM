@@ -1,0 +1,23 @@
+        Fondo general de la ventana
+        QMainWindow {
+            background-color: #f5f5f5;
+        }
+
+        QLabel {
+            font-size: 16px;
+            padding : 0px 2px 2px 0px;
+        }
+        QPushButton {
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        QPushButton:hover {
+            background-color: #2980b9;
+        }
+
+        QPushButton:pressed {
+            background-color: #1f5f8b;
+        }
+        

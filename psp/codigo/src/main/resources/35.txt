@@ -1,0 +1,1 @@
+El número de veces que se supera dicha temperatura es: 7 

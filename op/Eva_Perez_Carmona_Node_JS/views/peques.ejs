@@ -1,0 +1,28 @@
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (peque && peques.length > 0) { %>
+                <% peques.forEach(peque => { %>
+                    <tr>
+                        <th scope="row"><%= peque.id %></th>
+                        <td><%= peque.nombre %></td>
+                        <td><%= peque.direccion %></td>
+                        <td><%= peque.telefono %></td>
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <tr>
+                    <td colspan="5" class="text-center">No hay escuelas registradas.</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>

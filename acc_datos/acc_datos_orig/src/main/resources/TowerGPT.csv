@@ -1,0 +1,6 @@
+Id,TipoAgente,Peticion,Respuesta,Valoracion,Porcentaje_Acierto
+1,HUMANO,¿Cuál es la capital de Francia?,París,4.500000,85
+2,HUMANO,Resuelve 5+7,12,4.800000,90
+3,HUMANO,Traduce al inglés: 'Hola mundo',Hello world,4.700000,75
+4,IA,Genera un poema corto,Rosa roja en el jardín,5.000000,95
+5,IA,Resume este texto,Resumen breve del texto,3.300000,66

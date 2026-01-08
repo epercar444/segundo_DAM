@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción partido</title>
+    <link rel="stylesheet" href="css/formulario.css">
+</head>
+<body>
+    <form id="form">
+        <h1>Inscripción partido</h1>
+        <div class="field" id="field-name" style="display:block">
+            <label for="name">Nombre</label>
+            <input id="name" type="text" placeholder="Leo" name="name" required>
+        </div>
+
+        <div class="field" id="field-surname">
+            <label for="surname">Apellido</label>
+            <input id="surname" type="text" placeholder="Ej: Rodríguez Barrios" name="surname" required>
+        </div>
+
+        <div class="field" id="field-email">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Ej: abcdefg@gmail.com" name="mails" required>
+        </div>
+
+        <div class="field" id="field-phone">
+            <label for="phone">Teléfono</label>
+            <input id="phone" type="tel" placeholder="Ej: 123456789" name="phone" required>
+        </div>
+
+        <div class="field" id="field-dni">
+            <label for="dni">DNI</label>
+            <input id="dni" type="text" placeholder="Ej: 12345678A" name="dni" required>
+        </div>
+
+        <div class="field" id="field-category">
+            <label for="category">Categoría</label>
+            <select id="category" name="category" required>
+                <option value="">Selecciona una opción</option>
+                <option value="1">Benjamín</option>
+                <option value="2">Alevín</option>
+                <option value="3">Infantil</option>
+                <option value="4">Cadete</option>
+                <option value="5">Juvenil</option>
+            </select>
+        </div>
+
+        <div class="field" id="field-team">
+            <label for="team">Equipo</label>
+            <select id="team" name="team" required></select>
+        </div>
+
+        <div class="field" id="field-match">
+            <label for="match">Partido</label>
+            <select id="match" name="match" required>
+                <option value="">Selecciona una opción</option>
+                <option value="1">Algabeño-Santiponce</option>
+                <option value="2">Algabeño-Bormujos</option>
+                <option value="3">Algabeño-Gines</option>
+                <option value="4">Algabeño-Guillena</option>
+                <option value="5">Algabeño-Cantillana</option>
+            </select>
+        </div>
+
+        <div class="field" id="field-date">
+            <label for="date">Fecha Nacimiento</label>
+            <input id="date" type="date" name="date" required>
+        </div>
+
+        <div class="field" id="field-shirt">
+            <label for="shirt">Número Camiseta</label>
+            <input id="shirt" type="number" name="shirt" required>
+        </div>
+
+        <div class="field" id="field-button">
+            <button type="submit" id="button">Enviar inscripción</button>
+        </div>
+
+    </form>
+
+    <script src="js/formularioScript.js"></script>
+</body>
+</html>

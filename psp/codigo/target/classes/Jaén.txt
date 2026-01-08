@@ -1,0 +1,7 @@
+Artículo: Espejo	, Unidades: 1	, Importe: 150	, Referencia: 0000011	, Dirección: c/Calle Jaén, 2	, Provincia: Jaén	, Fecha: 06/03/2021
+Artículo: Escritorio	, Unidades: 2	, Importe: 220	, Referencia: 0000017	, Dirección: c/Calle Jaén, 20	, Provincia: Jaén	, Fecha: 12/03/2021
+Artículo: Alfombra	, Unidades: 2	, Importe: 150	, Referencia: 0000025	, Dirección: c/Calle Jaén, 30	, Provincia: Jaén	, Fecha: 20/03/2021
+Artículo: Armario ropero	, Unidades: 2	, Importe: 400	, Referencia: 0000033	, Dirección: c/Calle Jaén, 38	, Provincia: Jaén	, Fecha: 28/03/2021
+Artículo: Lámpara colgante	, Unidades: 2	, Importe: 200	, Referencia: 0000041	, Dirección: c/Calle Jaén, 46	, Provincia: Jaén	, Fecha: 05/04/2021
+Artículo: Espejo decorativo	, Unidades: 1	, Importe: 60	, Referencia: 0000049	, Dirección: c/Calle Jaén, 54	, Provincia: Jaén	, Fecha: 13/04/2021
+Artículo: Lámpara colgante	, Unidades: 1	, Importe: 130	, Referencia: 0000057	, Dirección: c/Calle Jaén, 62	, Provincia: Jaén	, Fecha: 21/04/2021

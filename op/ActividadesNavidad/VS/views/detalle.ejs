@@ -1,0 +1,42 @@
+<%- include("templates/cabecera", {subtitulo: 'ÚNICO LIBRO' }) %>
+
+<div class="container my-5">
+    <h1>ÚNICO LIBRO</h1>
+    <hr>
+    
+    <% if (error) { %>
+        <div class="alert alert-danger" role="alert">
+            <h3><%= mensaje %></h3> 
+            <hr>
+            <a 
+                href="/libro"
+                class="btn btn-dark btn-block my-2"
+            >
+                Volver
+            </a>
+        </div>
+    <% } %>
+
+<% if (!error) { %>
+                        <form id="editar" data-id="<%= libro.id %>">
+                            <input type="text" value="<%= libro.isbn %>" class="form-control my-2" name="isbn"
+                                id="isbnInput">
+                            <input type="text" value="<%= libro.titulo %>" class="form-control my-2" name="titulo"
+                                id="tituloInput">
+                            <input type="text" value="<%= libro.autor %>" class="form-control my-2"
+                                name="autor" id="autorInput">
+                            <input type="number" value="<%= libro.numeroPaginas %>" class="form-control my-2"
+                                name="numeroPaginas" id="numeroPaginasInput">
+                            <button class="btn btn-warning btn-sm" type="submit">
+                                Editar
+                            </button>
+                        </form>
+                        <hr>
+                        <button class="btn btn-danger btn-sm" data-id="<%= libro.id %>">
+                            Eliminar
+                        </button>
+<% } %>
+
+</div>
+
+<%- include("templates/footer") %>

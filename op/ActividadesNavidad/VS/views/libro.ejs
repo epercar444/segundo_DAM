@@ -1,0 +1,37 @@
+<%- include("templates/cabecera", {subtitulo: 'Librería Digital : Readly'}) %>
+
+    <div class="container">
+        <h1>CRUD Readly</h1>
+        <a class="btn btn-success btn-block my-4" href="/libro/crear">Crear nuevo Libro</a>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">isbn</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Autor</th>
+                    <th scope="col">Número páginas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (arrayLibro && arrayLibro.length > 0) { %>
+                    <% arrayLibro.forEach(libro => { %>
+                        <tr>
+                            <th scope="row"><%= libro.id %></th>
+                            <td><%= libro.isbn %></td>
+                            <td><%= libro.titulo %></td>
+                            <td><%= libro.autor %></td>
+                            <td><%= libro.numeroPaginas %></td>
+                            <td><a class="btn btn-warning btn-sm" href="libro/<%= libro.id %>">Editar/Eliminar</a></td>
+                        </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="5" class="text-center">No hay libros registrados.</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+<%- include("templates/footer") %>

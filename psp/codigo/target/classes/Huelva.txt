@@ -1,0 +1,7 @@
+Artículo: Lámpara	, Unidades: 2	, Importe: 175	, Referencia: 0000004	, Dirección: c/Calle Sevilla 1	, Provincia: Huelva	, Fecha: 01/03/2021
+Artículo: Mueble TV	, Unidades: 1	, Importe: 350	, Referencia: 0000013	, Dirección: c/Calle Huelva, 9	, Provincia: Huelva	, Fecha: 08/03/2021
+Artículo: Estantería pequeña	, Unidades: 2	, Importe: 80	, Referencia: 0000021	, Dirección: c/Calle Huelva, 26	, Provincia: Huelva	, Fecha: 16/03/2021
+Artículo: Perchero	, Unidades: 1	, Importe: 45	, Referencia: 0000029	, Dirección: c/Calle Huelva, 34	, Provincia: Huelva	, Fecha: 24/03/2021
+Artículo: Lámpara de pie	, Unidades: 3	, Importe: 180	, Referencia: 0000037	, Dirección: c/Calle Huelva, 42	, Provincia: Huelva	, Fecha: 01/04/2021
+Artículo: Estantería metálica	, Unidades: 3	, Importe: 180	, Referencia: 0000045	, Dirección: c/Calle Huelva, 50	, Provincia: Huelva	, Fecha: 09/04/2021
+Artículo: Lámpara escritorio	, Unidades: 3	, Importe: 150	, Referencia: 0000053	, Dirección: c/Calle Huelva, 58	, Provincia: Huelva	, Fecha: 17/04/2021

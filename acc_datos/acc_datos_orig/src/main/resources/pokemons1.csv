@@ -1,0 +1,4 @@
+id,nombre,tipo,altura_m,peso_kg,habilidades,evoluciona_a
+1,Bulbasaur,Planta,0.7,6.9,"Espesura;Clorofila",Ivysaur
+2,Ivysaur,Planta,1.0,13.0,"Espesura;Clorofila",Venusaur
+4,Charmander,Fuego,0.6,8.5,"Mar Llamas;Poder Solar",Charmeleon

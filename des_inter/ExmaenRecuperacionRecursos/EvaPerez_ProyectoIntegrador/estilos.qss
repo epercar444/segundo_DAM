@@ -1,0 +1,54 @@
+/* ===== Estilo general ===== */
+QMainWindow {
+    background-color: #f4f6f8;
+}
+
+/* ===== Botones ===== */
+QPushButton {
+    background-color: #2f80ed;
+    color: white;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+QPushButton:hover {
+    background-color: #1c6dd5;
+}
+
+QPushButton:pressed {
+    background-color: #174ea6;
+}
+
+/* ===== Etiquetas ===== */
+QLabel {
+    font-weight: sans;
+}
+
+/* ===== Campos de texto ===== */
+QLineEdit,
+QTextEdit {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 4px;
+    background-color: white;
+}
+
+/* ===== CheckBox ===== */
+QCheckBox {
+    spacing: 6px;
+}
+
+QCheckBox::indicator {
+    width: 14px;
+    height: 14px;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #2f80ed;
+    border: 1px solid #2f80ed;
+}
+
+QCheckBox::indicator:unchecked {
+    border: 1px solid #999999;
+    background-color: white;
+}
