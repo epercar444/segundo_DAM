@@ -1,7 +1,7 @@
-<%- include("templates/cabecera", {subtitulo: 'ÚNICO LIBRO' }) %>
+<%- include("templates/cabecera", {subtitulo: 'Único Libro' }) %>
 
 <div class="container my-5">
-    <h1>ÚNICO LIBRO</h1>
+    <h1 style="font-style: italic; color:#f0ad4e;">Único Libro</h1>
     <hr>
     
     <% if (error) { %>
@@ -18,25 +18,82 @@
     <% } %>
 
 <% if (!error) { %>
+    <div class="container my-5 bg-light p-4 rounded-4 shadow">
+            <div class="card shadow-lg border-0 rounded-4 p-4"> <!--convierte el editar en una tarjeta-->
+                <h3 class="text-center mb-4" style="font-style: italic; color:#ffc107;">Editar libro</h3>
                         <form id="editar" data-id="<%= libro.id %>">
-                            <input type="text" value="<%= libro.isbn %>" class="form-control my-2" name="isbn"
-                                id="isbnInput">
-                            <input type="text" value="<%= libro.titulo %>" class="form-control my-2" name="titulo"
-                                id="tituloInput">
-                            <input type="text" value="<%= libro.autor %>" class="form-control my-2"
-                                name="autor" id="autorInput">
-                            <input type="number" value="<%= libro.numeroPaginas %>" class="form-control my-2"
-                                name="numeroPaginas" id="numeroPaginasInput">
+
+                            <div class="input-group my-2">
+                                <span class="input-group-text">🆔</span>
+                                <input type="text" value="<%= libro.isbn %>" class="form-control" name="isbn">
+                            </div>
+                                <div class="input-group my-2">
+                                <span class="input-group-text">📘</span>
+                                <input type="text" value="<%= libro.titulo %>" class="form-control" name="titulo">
+                            </div> <!--añade un icono a los atributos-->
+                            <div class="input-group my-2">
+                                <span class="input-group-text">✍️</span>
+                                <input type="text" value="<%= libro.autor %>" class="form-control" name="autor">
+                            </div>
+                            <div class="input-group my-2">
+                                <span class="input-group-text">📄</span>
+                                <input type="number" value="<%= libro.numeroPaginas %>" class="form-control" name="numeroPaginas">
+                            </div>
                             <button class="btn btn-warning btn-sm" type="submit">
                                 Editar
                             </button>
-                        </form>
+                        </form>´
+            </div>
                         <hr>
                         <button class="btn btn-danger btn-sm" data-id="<%= libro.id %>">
                             Eliminar
                         </button>
+            </div>
+
 <% } %>
 
-</div>
-
 <%- include("templates/footer") %>
+<script>
+            const btnEliminar = document.querySelector('.btn-danger')
+            btnEliminar.addEventListener('click', async () => {
+                console.log(btnEliminar.dataset.id)
+                try {
+                    // https://developer.mozilla.org/es/docs/Web/API/HTMLElement/dataset
+                    const data = await fetch(`/libro/${btnEliminar.dataset.id}`, {
+                        method: 'delete'
+                    })
+                    const res = await data.json()
+                    console.log(res)
+                    if (res.estado) {
+                        window.location.href = '/libro'
+                    } else {
+                        console.log(res)
+                    }
+                } catch (error) {
+                    console.log(error)
+                }
+            })
+              const formEditar = document.querySelector('#editar');
+            formEditar.addEventListener('submit', async (e) => {
+                e.preventDefault()
+                const isbn = formEditar.elements['isbn'].value
+                const titulo = formEditar.elements['titulo'].value
+                const autor = formEditar.elements['autor'].value
+                const numeroPaginas = formEditar.elements['numeroPaginas'].value
+                const id = formEditar.dataset.id
+                const data = await fetch(`/libro/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ isbn, titulo, autor,numeroPaginas })
+                })
+                const res = await data.json()
+                if (res.estado) {
+                    window.location.href = '/libro'
+                } else {
+                    console.log(res)
+                }
+            })
+
+</script>

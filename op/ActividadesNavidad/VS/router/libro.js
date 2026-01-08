@@ -51,5 +51,52 @@ router.get('/:id', async(req, res) => { //El id vendrá por el GET (barra de dir
         })
     }
 })
+router.delete('/:id', async (req, res) => {
+    const id = req.params.id;
+    console.log('id desde backend', id)
+    try {
+        //En la documentación de Mongoose podremos encontrar la
+        //siguiente función para eliminar
+        const libroDB = await Libro.findByIdAndDelete({ _id: id });
+        console.log(libroDB)
+        // https://stackoverflow.com/questions/27202075/expressjs-res-redirect-not-working-as-expected
+        // res.redirect('/pokemon') //Esto daría un error, tal y como podemos ver arriba
+        if (!libroDB) {
+            res.json({ 
+                estado: false,
+                mensaje: 'No se puede eliminar el libro.'
+            })
+        } else {
+            res.json({
+                estado: true,
+                mensaje: 'Libro eliminado.'
+            })
+        } 
+    } catch (error) {
+        console.log(error)
+    }
+})
+router.put('/:id', async (req, res) => {
+    const id = req.params.id;
+    const body = req.body;
+    console.log(id)
+    console.log('body', body)
+    try {
+        const libroDB = await Libro.findByIdAndUpdate(
+            id, body, { useFindAndModify: false }
+        )
+        console.log(libroDB)
+        res.json({
+            estado: true,
+            mensaje: 'Libro editado'
+        })
+    } catch (error) {
+        console.log(error)
+        res.json({
+            estado: false,
+            mensaje: 'Problema al editar el libro'
+        })
+    }
+})
 
 module.exports = router;

@@ -1,16 +1,28 @@
 <%- include("templates/cabecera", {subtitulo: 'Librería Digital : Readly'}) %>
 
-    <div class="container">
-        <h1>CRUD Readly</h1>
-        <a class="btn btn-success btn-block my-4" href="/libro/crear">Crear nuevo Libro</a>
-        <table class="table">
-            <thead class="thead-dark">
+<div class="container my-5">
+
+    <!-- Título centrado -->
+    <h1 class="text-center" style="font-style : italic; color:#f0ad4e;">CRUD Readly</h1>
+
+    <!-- Botón Crear Libro -->
+    <div class="text-center mb-4">
+        <a class="btn btn-warning" href="/libro/crear" style="font-weight:bold;">
+            Crear nuevo Libro
+        </a>
+    </div>
+
+    <!-- Tarjeta para la tabla -->
+    <div class="card shadow-lg rounded-4 p-4">
+        <table class="table table-hover align-middle">
+            <thead class="table-dark rounded-top">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">isbn</th>
+                    <th scope="col">ISBN</th>
                     <th scope="col">Título</th>
                     <th scope="col">Autor</th>
                     <th scope="col">Número páginas</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,16 +34,22 @@
                             <td><%= libro.titulo %></td>
                             <td><%= libro.autor %></td>
                             <td><%= libro.numeroPaginas %></td>
-                            <td><a class="btn btn-warning btn-sm" href="libro/<%= libro.id %>">Editar/Eliminar</a></td>
+                            <td>
+                                <a class="btn btn-warning" href="/libro/<%= libro.id %>">
+                                    Editar/Eliminar
+                                </a>
+                            </td>
                         </tr>
                     <% }) %>
                 <% } else { %>
                     <tr>
-                        <td colspan="5" class="text-center">No hay libros registrados.</td>
+                        <td colspan="6" class="text-center">No hay libros registrados.</td>
                     </tr>
                 <% } %>
             </tbody>
         </table>
     </div>
+
+</div>
 
 <%- include("templates/footer") %>
