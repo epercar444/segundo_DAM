@@ -1,12 +1,12 @@
 {
   "dependencies": {
+    "@angular/cli": "^21.0.5",
     "typescript": "^5.9.3"
   },
   "name": "04_angular",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
