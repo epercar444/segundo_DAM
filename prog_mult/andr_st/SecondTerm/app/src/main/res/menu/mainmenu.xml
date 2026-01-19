@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="Inicio"/>
+    <item android:id="@+id/about"
+        android:title="Jugadores">
+        <menu>
+            <item android:id="@+id/primera"
+                android:title="PrimeraDivision" />
+            <item android:id="@+id/segunda"
+                android:title="Segunda División" />
+        </menu>
+    </item>
+    <item android:id="@+id/ligas"
+        android:title="Ligas">
+        <menu>
+            <item android:id="@+id/premier"
+                android:title="Premier Ligue" />
+            <item android:id="@+id/ligaEspañola"
+                android:title="Liga Española" />
+            <item android:id="@+id/alemana"
+                android:title="Bundesliga" />
+            <item android:id="@+id/francesa"
+                android:title="Ligue 1" />
+            <item android:id="@+id/italiana"
+                android:title="Serie A" />
+        </menu>
+    </item>
+    <item android:id="@+id/contact"
+        android:title="Ayuda"/>
+</menu>
+

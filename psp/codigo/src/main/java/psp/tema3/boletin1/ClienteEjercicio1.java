@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
-public class ClienteEjercicio3 {
+public class ClienteEjercicio1 {
 	public static void main(String[] args) {
 		// 1. Definir el host y el puerto del servidor
 		String host = "localhost"; // IP de la propia máquina
@@ -22,7 +22,14 @@ public class ClienteEjercicio3 {
 		    cliente = new Socket(host, puerto);
 		    System.out.println("¡Conexión establecida!");
 		    // 3. Configurar flujos para enviar y recibir datos
+		    PrintWriter salida = new PrintWriter(cliente.getOutputStream(), true);
 		    BufferedReader entrada = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
+		    // Usamos Scanner para que puedas escribir tú el mensaje por consola
+		    Scanner sc = new Scanner(System.in);
+		    System.out.print("Escribe un mensaje para el servidor: ");
+		    String mensajeParaServidor = sc.nextLine();
+		    // 4. Enviar mensaje al servidor
+		    salida.println(mensajeParaServidor);
 		    // 5. Leer la respuesta del servidor
 		    String respuesta = entrada.readLine();
 		    System.out.println("Respuesta del servidor: " + respuesta);

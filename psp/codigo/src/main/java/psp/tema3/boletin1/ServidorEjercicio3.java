@@ -3,31 +3,43 @@ package psp.tema3.boletin1;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class ServidorEjercicio3 {
-	public static void main(String[] args) {
-		//1.Definimos el puerto (identifica la aplicación en la máquina)
-		int puerto = 6000;
-		ServerSocket servidor = null;
-		Socket clienteConectado = null;
-		
-		//2.Crear el ServerSocket para escuchar peticiones
-		try {
-			servidor = new ServerSocket(puerto);
-			System.out.println("Servidor : Servidor escuchando en el puerto " + puerto);
-			//Acepto comunicarme y devuelvo el socket del cliente
-			Socket cliente = servidor.accept();
-			System.out.println("Servidor : Nuevo cliente conectado: " + cliente.getInetAddress());
-			BufferedReader entrada = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
-			
-			String mensaje = entrada.readLine();
-			System.out.println("Servidor : Cliente dice: "+mensaje);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+	    public static void main(String[] args) {
+	        int puerto = 6000;
+	        ServerSocket servidor = null;
+	        try {
+	            servidor = new ServerSocket(puerto);
+	            System.out.println("Servidor iniciado. Esperando a los clientes.");
+	            // Bucle para atender a 3 clientes
+	            for (int i = 1; i <= 3; i++) {
+	                System.out.println("Esperando al cliente número " + i);
+	                // Acepta la conexión de un solo cliente
+	                Socket clienteConectado = servidor.accept();
+	                System.out.println("Cliente " + i + " conectado.");
+	                // Configurar flujo de salida para enviar el número
+	                PrintWriter salida = new PrintWriter(clienteConectado.getOutputStream(), true);
+	                // Enviar el número de cliente
+	                salida.println("Eres el cliente número " + i);
+	                // Cerrar la conexión con este cliente antes de pasar al siguiente
+	                clienteConectado.close();
+	                System.out.println("Cliente " + i + " atendido y desconectado.");
+	            }
+
+	            System.out.println("Se han atendido los 3 clientes. Cerrando servidor.");
+
+	        } catch (IOException e) {
+	            System.err.println("Error: " + e.getMessage());
+	        } finally {
+	            try {
+	                if (servidor != null) servidor.close();
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    }
 	}
-}
+
