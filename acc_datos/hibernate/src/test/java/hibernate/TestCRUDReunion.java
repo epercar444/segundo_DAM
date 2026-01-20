@@ -11,6 +11,7 @@ import org.hibernate.Transaction;
 import org.junit.jupiter.api.Test;
 
 import modelo.Reunion;
+import util.HibernateUtil;
  
 
 public class TestCRUDReunion {

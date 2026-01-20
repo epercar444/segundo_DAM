@@ -9,7 +9,7 @@ public class PruebaConexion {
             "jdbc:mysql://localhost:3307/accesoDatosDAM",
             "usuario2",
             "usuario"
-        );
+        ); 
         System.out.println("Conectado OK");
         c.close();
     }
