@@ -3,12 +3,16 @@ version: '3.1'
 services:
   db:
     image: postgres:15
+    container_name: odoo_db
     environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: odoo
-      POSTGRES_PASSWORD: odoo
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
     ports:
       - "5432:5432"
+    volumes:
+      - odoo_db_data:/var/lib/postgresql/data
+    restart: always
 
   odoo:
     image: odoo:18
@@ -22,20 +26,21 @@ services:
       - USER=odoo
       - PASSWORD=odoo
     volumes:
-      - odoo_addons:/mnt/extra-addons
+      - ./odoo_addons:/mnt/extra-addons
     restart: always
 
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin_container
+    depends_on:
+      - db
     environment:
       PGADMIN_DEFAULT_EMAIL: odoo@odoo.com
       PGADMIN_DEFAULT_PASSWORD: odoo
     ports:
       - "5050:80"
-    depends_on:
-      - db
+    restart: always
 
 volumes:
   odoo_db_data:
-  odoo_addons:
+  #odoo_addons:
