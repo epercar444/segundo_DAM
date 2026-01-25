@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="file.segundo_boletin.Ejercicio1SinMVC.DiffFolder"/>
-    <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="file.segundo_boletin.Paises.utiles.GestionaFicherosPaises"/>
     <fullyQualifiedTypeName name="file.segundo_boletin.Paises.Pais"/>
@@ -59,5 +57,7 @@
     <fullyQualifiedTypeName name="utils.TipoResultado"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="modelo.Partida"/>
+    <fullyQualifiedTypeName name="java.net.Socket"/>
+    <fullyQualifiedTypeName name="psp.tema3.primerasPruebas.ManejadorHilosCliente"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
