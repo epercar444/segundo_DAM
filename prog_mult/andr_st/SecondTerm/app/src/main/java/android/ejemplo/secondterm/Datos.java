@@ -13,6 +13,14 @@ public class Datos {
         public String getTexto2(){
             return texto2;
         }
+
+    @Override
+    public String toString() {
+        return "Datos{" +
+                "texto1='" + texto1 + '\'' +
+                ", texto2='" + texto2 + '\'' +
+                '}';
     }
+}
 
 
