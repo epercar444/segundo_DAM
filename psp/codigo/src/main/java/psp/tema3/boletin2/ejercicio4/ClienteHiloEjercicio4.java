@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class ClienteHiloEjercicio4 extends Thread {
@@ -21,25 +22,41 @@ public class ClienteHiloEjercicio4 extends Thread {
 			System.out.println("Cliente : Conectado al servidor.");
 
 			String textoUsuario = "";
-			while (!textoUsuario.equalsIgnoreCase("n")) {
-				System.out.print("¿Quieres jugar? (S para coordenadas / N para salir): ");
-				textoUsuario = sc.nextLine();
+            boolean seguirJugando = true; // Variable de control
 
-				if (textoUsuario.equalsIgnoreCase("s")) {
-					System.out.print("Escribe el hueco (fila,columna): ");
-					String coordenadas = sc.nextLine();
-					salida.println(coordenadas);
-					String respuestaServidor = entrada.readLine();
-					System.out.println("Respuesta del servidor: " + respuestaServidor);
-				} else if (textoUsuario.equalsIgnoreCase("n")) {
-					salida.println("n");
-					String respuestaServidor = entrada.readLine();
-					System.out.println(respuestaServidor);
-				}
-			}
+            while (seguirJugando && !textoUsuario.equalsIgnoreCase("n")) {
+                System.out.print("¿Quieres jugar? (S para coordenadas / N para salir): ");
+                textoUsuario = sc.nextLine();
 
-		} catch (IOException e) {
-			System.err.println("Error: " + e.getMessage());
-		}
+                if (textoUsuario.equalsIgnoreCase("s")) {
+                    System.out.print("Escribe el hueco (fila,columna): ");
+                    String coordenadas = sc.nextLine();
+                    salida.println(coordenadas);
+                    
+                    String respuestaServidor = entrada.readLine();
+                    System.out.println("Respuesta del servidor: " + respuestaServidor);
+
+                    // Si el servidor envía el segundo mensaje de "No quedan premios"
+                    if (entrada.ready()) {
+                        String mensajeFin = entrada.readLine();
+                        System.out.println(mensajeFin);
+                        
+                        // Si el mensaje contiene la despedida, cambiamos la variable
+                        if (mensajeFin.contains("No quedan más premios")) {
+                            seguirJugando = false; 
+                        }
+                    }
+                } else if (textoUsuario.equalsIgnoreCase("n")) {
+                    salida.println("n");
+                    System.out.println(entrada.readLine());
+                }
+            }
+	} catch (UnknownHostException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
+}
 }

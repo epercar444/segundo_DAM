@@ -1,21 +1,20 @@
-package psp.tema3.boletin2.ejercicio4;
+package psp.tema3.boletin2.ejercicio5;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 
-public class ServidorEjercicio4 {
+
+public class ServidorEjercicio5 {
 	public static void main(String[] args) {
-		Contador contador = new Contador();
-		Tablero tablero = new Tablero();
 	    int puerto = 6666;
+	    NumSecreto numerito = new NumSecreto();
 	    try (ServerSocket servidor = new ServerSocket(puerto)) {
 	        System.out.println("Servidor multihilo iniciado en el puerto " + puerto);
-	        System.out.println("Posiciones con premio: [0, 0], [1, 2], [2, 0], [2, 3]");
 	        while (true) {
 	            Socket socketCliente = servidor.accept();
-	            new ServidorHiloEjercicio4(socketCliente,contador,tablero).start();
+	            new ServidorHiloEjercicio5(socketCliente,numerito).start();
 	        }
 	    } catch (IOException e) {
 	        System.err.println("Error en el servidor: " + e.getMessage());
