@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="file.segundo_boletin.Paises.utiles.GestionaFicherosPaises"/>
     <fullyQualifiedTypeName name="file.segundo_boletin.Paises.Pais"/>
     <fullyQualifiedTypeName name="psp.tema1.boletin2.Ejercicio11.LanzadorJAR"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="java.net.Socket"/>
     <fullyQualifiedTypeName name="psp.tema3.primerasPruebas.ManejadorHilosCliente"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="psp.tema3.boletin2.ejercicio2.ClienteHiloEjercicio2"/>
 </qualifiedTypeNameHistroy>
