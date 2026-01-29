@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Log.i("menus", item.toString());
+        Log.i("administrador", item.toString());
         return super.onOptionsItemSelected(item);
     }
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        Log.i("menus", item.toString());
+        Log.i("administrador", item.toString());
         return super.onContextItemSelected(item);
     }
 
@@ -68,11 +68,18 @@ public class MainActivity extends AppCompatActivity {
         /*TextView elemento = (TextView) findViewById(R.id.texto);
         registerForContextMenu(elemento);*/
         Datos[] datos = new Datos[]{
-                new Datos("Linea superior 1", "Linea inferior 1"),
-                new Datos("Linea superior 2", "Linea inferior 2"),
-                new Datos("Linea superior 3", "Linea inferior 3"),
-                new Datos("Linea superior 4", "Linea inferior 4"),
-                new Datos("Linea superior 5", "Linea inferior 5")
+                new Datos("Cien Años de Soledad", "Gabriel García Márquez"),
+                new Datos("Frankenstein", "Mary Shelley"),
+                new Datos("El Principito", "Antoine de Saint-Exupéry"),
+                new Datos("Don Quijote de la Mancha", "Miguel de Cervantes"),
+                new Datos("El Señor de los Anillos", "J.R.R. Tolkien"),
+                new Datos("El Hobbit", "J.R.R. Tolkien"),
+                new Datos("El Silmarillion", "J.R.R. Tolkien"),
+                new Datos("Mujercitas", "Louisa May Alcott"),
+                new Datos("Orgullo y Prejuicio", "Jane Austen"),
+                new Datos("Los Pilares de la Tierra", "Ken Follett"),
+                new Datos("El Alquimista", "Paulo Coelho"),
+                new Datos("Odisea", "Homero"),
         };
         ListView listado = (ListView) findViewById(R.id.miLista);
         Adaptador miAdaptador = new Adaptador(this, datos);

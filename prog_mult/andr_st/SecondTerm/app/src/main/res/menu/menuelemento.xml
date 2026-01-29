@@ -5,8 +5,10 @@
     <item android:id="@+id/opciones"
         android:title="opciones">
         <menu>
-            <item android:id="@+id/editar"
-                android:title="Editar" />
+            <item android:id="@+id/equipo"
+                android:title="Ver equipo" />
+            <item android:id="@+id/estadio"
+                android:title="Cómo llegar" />
             <item android:id="@+id/eliminar"
                 android:title="Eliminar" />
         </menu>

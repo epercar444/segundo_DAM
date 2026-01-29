@@ -3,28 +3,36 @@
     <item android:id="@+id/home"
         android:title="Inicio"/>
     <item android:id="@+id/about"
-        android:title="Jugadores">
+        android:title="Cuenta">
         <menu>
-            <item android:id="@+id/primera"
-                android:title="PrimeraDivision" />
-            <item android:id="@+id/segunda"
-                android:title="Segunda División" />
+            <item android:id="@+id/cuenta"
+                android:title="Ver cuenta" />
+            <item android:id="@+id/salir"
+                android:title="Cerrar sesión" />
         </menu>
     </item>
-    <item android:id="@+id/ligas"
-        android:title="Ligas">
+    <item android:id="@+id/revisados"
+        android:title="Por revisar">
         <menu>
-            <item android:id="@+id/premier"
-                android:title="Premier Ligue" />
-            <item android:id="@+id/ligaEspañola"
-                android:title="Liga Española" />
-            <item android:id="@+id/alemana"
-                android:title="Bundesliga" />
-            <item android:id="@+id/francesa"
-                android:title="Ligue 1" />
-            <item android:id="@+id/italiana"
-                android:title="Serie A" />
+            <item android:id="@+id/libros"
+                android:title="Libros por revisar" />
+            <item android:id="@+id/cuentas"
+                android:title="Cuentas por resvisar" />
         </menu>
+   </item>
+    <item android:id="@+id/Encuestas"
+        android:title="Encuestas y valoraciones">
+        <menu>
+            <item android:id="@+id/encuesta"
+                android:title="Encuestas" />
+            <item android:id="@+id/valoraciones"
+                android:title="Valoraciones" />
+            <item android:id="@+id/Comentarios"
+                android:title="Comentarios" />
+        </menu>
+    </item>
+    <item android:id="@+id/Reclamaciones"
+        android:title="Quejas y reclamaciones">
     </item>
     <item android:id="@+id/contact"
         android:title="Ayuda"/>
