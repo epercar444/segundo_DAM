@@ -1,16 +1,21 @@
 package modelo;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "lector")
 public class Lector {
 	// Este campo es la clave primaria
 	@Id
@@ -23,24 +28,35 @@ public class Lector {
 	
 	private String username,password;
 	
-	@OneToOne (cascade = CascadeType.ALL)
+	@OneToOne (cascade = CascadeType.PERSIST)
 	@JoinColumn (name= "idConfig")
-	private Configuracion config;
+	private Configuracion configuracion;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="idAnotacion")
+	@OneToMany(mappedBy = "lector")
 	private List<Anotacion> anotaciones;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="idValoracion")
+	@OneToMany(mappedBy = "lector")
 	private List<Valoracion> valoraciones;
+	
+	@ManyToMany
+	private Set<Libro> libros;
+	
+	
 
-	public int getId() {
+	public int getIdLector() {
 		return idLector;
 	}
 
-	public void setId(int id) {
-		this.idLector = id;
+	public void setIdLector(int idLector) {
+		this.idLector = idLector;
+	}
+
+	public Set<Libro> getLibros() {
+		return libros;
+	}
+
+	public void setLibros(Set<Libro> libros) {
+		this.libros = libros;
 	}
 
 	public String getUsername() {
@@ -60,11 +76,11 @@ public class Lector {
 	}
 
 	public Configuracion getConfig() {
-		return config;
+		return configuracion;
 	}
 
 	public void setConfig(Configuracion config) {
-		this.config = config;
+		this.configuracion = config;
 	}
 
 	public List<Anotacion> getAnotaciones() {
@@ -100,22 +116,28 @@ public class Lector {
 		return idLector == other.idLector;
 	}
 
-	public Lector(int id, String username, String password, Configuracion config, List<Anotacion> anotaciones,
-			List<Valoracion> valoraciones) {
+	public Lector(String username, String password, Configuracion configuracion, List<Anotacion> anotaciones,
+			List<Valoracion> valoraciones, Set<Libro> libros) {
 		super();
-		this.idLector = id;
 		this.username = username;
 		this.password = password;
-		this.config = config;
+		this.configuracion = configuracion;
 		this.anotaciones = anotaciones;
 		this.valoraciones = valoraciones;
+		this.libros = libros;
 	}
 
 	public Lector() {
 		super();
 	}
+
+	@Override
+	public String toString() {
+		return "Lector [idLector=" + idLector + ", username=" + username + ", password=" + password
+				+ "]";
+	}
 	
-	//ToString
+	
 	
 	
 	

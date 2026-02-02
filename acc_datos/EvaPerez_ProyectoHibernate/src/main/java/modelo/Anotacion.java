@@ -3,13 +3,17 @@ package modelo;
 import java.util.Objects;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "anotacion")
 public class Anotacion {
 	// Este campo es la clave primaria
 	@Id
@@ -19,19 +23,19 @@ public class Anotacion {
 	private String descripcion;
 	private int pagReferencia;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="idLector")
 	   private Lector lector;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="idLibro")
 	   private Libro libro;
 
-	public int getId() {
+	public int getIdAnotacion() {
 		return idAnotacion;
 	}
 
-	public void setId(int id) {
+	public void setIdAnotacion(int id) {
 		this.idAnotacion = id;
 	}
 
@@ -84,9 +88,8 @@ public class Anotacion {
 		return idAnotacion == other.idAnotacion;
 	}
 
-	public Anotacion(int id, String descripcion, int pagReferencia, Lector lector, Libro libro) {
+	public Anotacion(String descripcion, int pagReferencia, Lector lector, Libro libro) {
 		super();
-		this.idAnotacion = id;
 		this.descripcion = descripcion;
 		this.pagReferencia = pagReferencia;
 		this.lector = lector;
@@ -96,6 +99,14 @@ public class Anotacion {
 	public Anotacion() {
 		super();
 	}
+
+	@Override
+	public String toString() {
+		return "Anotacion [idAnotacion=" + idAnotacion + ", descripcion=" + descripcion + ", pagReferencia="
+				+ pagReferencia + "]";
+	}
+
 	
-	//ToString
+	
+	
 }

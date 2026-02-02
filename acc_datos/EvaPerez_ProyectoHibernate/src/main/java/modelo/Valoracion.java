@@ -2,14 +2,17 @@ package modelo;
 
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.Set;
 
-import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "valoracion")
 public class Valoracion {
 	// Este campo es la clave primaria
 	@Id
@@ -20,17 +23,19 @@ public class Valoracion {
 	private String comentario;
 	private LocalDate fechaPublicacion;
 	
-	@ManyToMany(mappedBy="valoraciones", cascade = CascadeType.ALL)
-	private Set<Libro> libros;
-	
-	@ManyToMany(mappedBy="valoraciones", cascade = CascadeType.ALL)
-	private Set<Lector> lector;
+	@ManyToOne
+    @JoinColumn(name = "idLibro")
+    private Libro libro;
+    
+    @ManyToOne
+    @JoinColumn(name = "idLector")
+    private Lector lector;
 
-	public int getId() {
+	public int getIdValoracion() {
 		return idValoracion;
 	}
 
-	public void setId(int id) {
+	public void setIdValoracion(int id) {
 		this.idValoracion = id;
 	}
 
@@ -58,19 +63,19 @@ public class Valoracion {
 		this.fechaPublicacion = fechaPublicacion;
 	}
 
-	public Set<Libro> getLibros() {
-		return libros;
+	public Libro getLibro() {
+		return libro;
 	}
 
-	public void setLibros(Set<Libro> libros) {
-		this.libros = libros;
+	public void setLibro(Libro libro) {
+		this.libro = libro;
 	}
 
-	public Set<Lector> getLector() {
+	public Lector getLector() {
 		return lector;
 	}
 
-	public void setLector(Set<Lector> lector) {
+	public void setLector(Lector lector) {
 		this.lector = lector;
 	}
 
@@ -91,21 +96,26 @@ public class Valoracion {
 		return idValoracion == other.idValoracion;
 	}
 
-	public Valoracion(int id, int puntuacion, String comentario, LocalDate fechaPublicacion, Set<Libro> libros,
-			Set<Lector> lector) {
+	public Valoracion(int puntuacion, String comentario, LocalDate fechaPublicacion, Libro libro,
+			Lector lector) {
 		super();
-		this.idValoracion = id;
 		this.puntuacion = puntuacion;
 		this.comentario = comentario;
 		this.fechaPublicacion = fechaPublicacion;
-		this.libros = libros;
+		this.libro = libro;
 		this.lector = lector;
 	}
 
 	public Valoracion() {
 		super();
 	}
+
+	@Override
+	public String toString() {
+		return "Valoracion [idValoracion=" + idValoracion + ", puntuacion=" + puntuacion + ", comentario=" + comentario
+				+ ", fechaPublicacion=" + fechaPublicacion + ", libro=" + libro + ", lector=" + lector + "]";
+	}
 	
 	
-	//ToString
+	
 }

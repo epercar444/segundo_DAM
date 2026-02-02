@@ -2,12 +2,16 @@ package modelo;
 
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import utils.TemaVisual;
 
+@Entity
+@Table(name = "configuracion")
 public class Configuracion {
 	// Este campo es la clave primaria
 	@Id
@@ -18,14 +22,14 @@ public class Configuracion {
 	private TemaVisual temaVisual;
 	private boolean notificaciones;
 	
-	@OneToOne ( optional=true)
+	@OneToOne (mappedBy = "configuracion")
 	private Lector lector;
 
-	public int getId() {
+	public int getIdConfiguracion() {
 		return idConfiguracion;
 	}
 
-	public void setId(int id) {
+	public void setIdConfiguracion(int id) {
 		this.idConfiguracion = id;
 	}
 
@@ -78,9 +82,8 @@ public class Configuracion {
 		return idConfiguracion == other.idConfiguracion;
 	}
 
-	public Configuracion(int id, String idioma, TemaVisual temaVisual, boolean notificaciones, Lector lector) {
+	public Configuracion(String idioma, TemaVisual temaVisual, boolean notificaciones, Lector lector) {
 		super();
-		this.idConfiguracion = id;
 		this.idioma = idioma;
 		this.temaVisual = temaVisual;
 		this.notificaciones = notificaciones;
@@ -94,7 +97,7 @@ public class Configuracion {
 	@Override
 	public String toString() {
 		return "Configuracion [id=" + idConfiguracion + ", idioma=" + idioma + ", temaVisual=" + temaVisual + ", notificaciones="
-				+ notificaciones + ", lector=" + lector + "]";
+				+ notificaciones + "]";
 	}
 	
 	
