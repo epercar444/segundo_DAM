@@ -110,7 +110,10 @@
             android:stateListAnimator="@null"
             android:text="Continuar con Google"
             android:textAllCaps="false"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:drawableLeft="@drawable/ic_google"
+            android:drawablePadding="12dp"
+            android:paddingLeft="20dp" />
 
         <Button
             android:layout_width="match_parent"
@@ -120,7 +123,10 @@
             android:stateListAnimator="@null"
             android:text="Continuar con Apple"
             android:textAllCaps="false"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:drawableLeft="@drawable/ic_apple"
+            android:drawablePadding="12dp"
+            android:paddingLeft="20dp" />
 
         <Button
             android:layout_width="match_parent"
