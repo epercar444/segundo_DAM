@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/crearFichaje"
+        android:title="Crear Fichaje"/>
+    <item android:id="@+id/acciones"
+        android:title="Más acciones">
+        <menu>
+            <item android:id="@+id/incidencia"
+                android:title="Notificar incidencia" />
+            <item android:id="@+id/informes"
+                android:title="Informes Total" />
+        </menu>
+    </item>
+    <item android:id="@+id/cerrar"
+        android:title="Cerrar Sesión">
+    </item>
+</menu>
+
