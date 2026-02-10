@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "Tarea 5.2b"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
