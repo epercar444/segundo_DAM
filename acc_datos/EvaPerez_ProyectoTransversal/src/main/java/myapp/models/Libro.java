@@ -16,7 +16,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -39,8 +38,8 @@ public class Libro {
 	   private Autor autor;
 	@JsonIgnoreProperties("libros")
 	@ToString.Exclude
-	@ManyToMany(mappedBy = "libros",cascade=CascadeType.MERGE)
-	private Set<Lector> lectores;
+	@ManyToMany(cascade= CascadeType.MERGE)
+	private Set<Lector> lectores = new HashSet<>();
 	
 	@Override
 	public int hashCode() {
@@ -62,7 +61,7 @@ public class Libro {
 		this.titulo = titulo;
 		this.pagTotales = pagTotales;
 		this.autor = autor;
-		this.lectores = new HashSet<>();
+		this.lectores = lectores;
 	}
 	
 	

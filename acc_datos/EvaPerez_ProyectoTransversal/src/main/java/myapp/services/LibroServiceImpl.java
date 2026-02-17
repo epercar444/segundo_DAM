@@ -1,16 +1,17 @@
 package myapp.services;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import myapp.exceptions.LibroNotFoundException;
-import myapp.models.Autor;
 import myapp.models.Lector;
 import myapp.models.Libro;
-import myapp.repositories.AutorRepository;
+import myapp.repositories.LectorRepository;
 import myapp.repositories.LibroRepository;
 
 @Service
@@ -18,24 +19,36 @@ public class LibroServiceImpl implements LibroService{
 	@Autowired
 	private LibroRepository libroRepository;
 	@Autowired
-	private AutorRepository autorRepository;
-
+	private LectorRepository lectorRepository;
+	
+	
 	@Override
 	public List<Libro> findAll() {
 		return libroRepository.findAll();
 	}
 
-	@Override
 	public Libro createLibro(Libro libro) {
-	    if (libro.getLectores() != null) {
-	        for (Lector lector : libro.getLectores()) {
-	            if (lector.getLibros() == null) {
-	                lector.setLibros(new java.util.HashSet<>());
+	    // Guarda el libro limpio, sin lectores
+	    Set<Lector> lectoresOriginales = libro.getLectores();
+	    libro.setLectores(new HashSet<>());
+	    Libro libroGuardado = libroRepository.save(libro);
+
+	    // Ahora asocia desde el lado dueño (Lector)
+	    if (lectoresOriginales != null) {
+	        for (Lector lector : lectoresOriginales) {
+	            Lector lectorBD = lectorRepository.findById(lector.getId())
+	                .orElseThrow();
+	            
+	            // Inicializa el set si es null
+	            if (lectorBD.getLibros() == null) {
+	                lectorBD.setLibros(new HashSet<>());
 	            }
-	            lector.getLibros().add(libro); 
+	            
+	            lectorBD.getLibros().add(libroGuardado);
+	            lectorRepository.save(lectorBD);
 	        }
 	    }
-	    return libroRepository.save(libro);
+	    return libroGuardado;
 	}
 
 	@Override
@@ -46,13 +59,9 @@ public class LibroServiceImpl implements LibroService{
 
 	@Override
 	public Libro updatepagTotalesLibro(long id, Libro l) {
-    	Libro lOriginal = this.findLibroById(id);
-    	if (lOriginal!=null) {
-        	lOriginal.setPagTotales(l.getPagTotales());
-    	}
-    	else {
-    		new LibroNotFoundException(id);
-    	}
-    	return libroRepository.save(lOriginal);
+	    Libro lOriginal = libroRepository.findById(id)
+	        .orElseThrow(() -> new LibroNotFoundException(id));
+	    lOriginal.setPagTotales(l.getPagTotales());
+	    return libroRepository.save(lOriginal);
 	}
 }

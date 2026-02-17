@@ -1,10 +1,10 @@
-create database perez_spring_boot;
-use perez_spring_boot;
+/*create database perez_spring_boot;
+use perez_spring_boot;*/
 
-CREATE USER IF NOT EXISTS 'evaSpring'@'172.17.0.1' IDENTIFIED BY 'root1234';
+/*CREATE USER IF NOT EXISTS 'evaSpring'@'172.17.0.1' IDENTIFIED BY 'root1234';
 GRANT ALL PRIVILEGES ON perez_spring_boot.* TO 'evaSpring'@'172.17.0.1';
 
-FLUSH PRIVILEGES;
+FLUSH PRIVILEGES;*/
 
 
 INSERT INTO autor (id, nombre, pais_origen) VALUES (1, 'Gabriel García Márquez', 'Colombia');
@@ -19,8 +19,8 @@ INSERT INTO lector (id, username, password) VALUES (1, 'lector_pro', 'pass123');
 INSERT INTO lector (id, username, password) VALUES (2, 'biblioteca_viva', 'securePass456');
 INSERT INTO lector (id, username, password) VALUES (3, 'ana_reads', 'mypassword789');
 
-INSERT INTO lector_libros (lectores_id, libros_id) VALUES (1, 1);
-INSERT INTO lector_libros (lectores_id, libros_id) VALUES (1, 2);
-INSERT INTO lector_libros (lectores_id, libros_id) VALUES (2, 3);
-INSERT INTO lector_libros (lectores_id, libros_id) VALUES (3, 1);
-INSERT INTO lector_libros (lectores_id, libros_id) VALUES (3, 3);
+INSERT INTO libro_lectores (libros_id, lectores_id) VALUES (1, 1);
+INSERT INTO libro_lectores (libros_id, lectores_id) VALUES (2, 1);
+INSERT INTO libro_lectores (libros_id, lectores_id) VALUES (3, 2);
+INSERT INTO libro_lectores (libros_id, lectores_id) VALUES (1, 3);
+INSERT INTO libro_lectores (libros_id, lectores_id) VALUES (3, 3);

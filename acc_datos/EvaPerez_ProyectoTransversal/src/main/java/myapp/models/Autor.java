@@ -1,5 +1,6 @@
 package myapp.models;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,7 +13,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -30,7 +30,7 @@ public class Autor {
 	private String pais_origen;
 	@JsonIgnoreProperties("autor")
 	@ToString.Exclude
-	@OneToMany(mappedBy="autor",cascade=CascadeType.MERGE)
+	@OneToMany(mappedBy="autor",cascade= CascadeType.ALL)
 	   private List<Libro> librosEscritos;
 
 	@Override

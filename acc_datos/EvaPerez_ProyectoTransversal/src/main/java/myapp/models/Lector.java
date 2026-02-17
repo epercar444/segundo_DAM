@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,10 +14,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 
 @Data
 @NoArgsConstructor
@@ -28,9 +31,10 @@ public class Lector {
 	private String username;
 	@Column
 	private String password;
+	@JsonIgnore
 	@ToString.Exclude
-	@ManyToMany(cascade=CascadeType.MERGE)
-	private Set<Libro> libros;
+	@ManyToMany(mappedBy="lectores")
+	private Set<Libro> libros = new HashSet<>();
 
 	@Override
 	public int hashCode() {
@@ -51,7 +55,7 @@ public class Lector {
 		super();
 		this.username = username;
 		this.password = password;
-		this.libros = new HashSet<>();
+		this.libros = libros;
 	}
 	
 	
