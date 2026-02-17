@@ -1,122 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi App de Lectura</title>
-    <style>
-        :root {
-            --bg-color: #f4f1ea; /* Tono papel sepia para cansar menos la vista */
-            --text-color: #2c3e50;
-            --accent-color: #3498db;
-        }
-
-        body {
-            font-family: 'Georgia', serif; /* Fuente con serifa, ideal para lectura larga */
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            width: 100%;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        main {
-            max-width: 800px;
-            width: 90%;
-            padding: 40px 20px;
-            background: white;
-            margin-top: 20px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-            border-radius: 8px;
-        }
-
-        .controls {
-            margin-bottom: 20px;
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        button {
-            padding: 5px 15px;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            background: white;
-            border-radius: 4px;
-        }
-
-        .content {
-            font-size: 1.1rem;
-            text-align: justify;
-        }
-
-        footer {
-            margin-top: 40px;
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid #ddd;
-            width: 100%;
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
+    <title>Readly</title>
 </head>
 <body>
-
-    <header>
-        <h1>Bienvenidos a Readly</h1>
-        <p>Visita el <a href="/readly/listaLibros">catálogo</a> de libros</p>
-    </header>
-
-    <main>
-        <section class="controls">
-            <button onclick="changeSize(1)">Aumentar letra</button>
-            <button onclick="changeSize(-1)">Reducir letra</button>
-        </section>
-
-        <article class="content" id="reader-text">
-            <h2>Título del Libro</h2>
-            <p>
-                Este es el comienzo de tu gran historia. Una buena aplicación de lectura debe tener 
-                márgenes amplios, una fuente legible y la capacidad de adaptarse a las preferencias del usuario.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-        </article>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Readly - Tu biblioteca digital en un click</p>
-    </footer>
-
-    <script>
-        // Funciones básicas para mejorar la experiencia de lectura
-        function changeSize(delta) {
-            const el = document.getElementById('reader-text');
-            const style = window.getComputedStyle(el, null).getPropertyValue('font-size');
-            const currentSize = parseFloat(style);
-            el.style.fontSize = (currentSize + delta) + 'px';
-        }
-    </script>
-
+    <h1>Bienvenidos a Readly</h1>
+    <p>Visita el <a href="/readly/autores">catálogo</a> de autores</p>
+    <p>Visita el <a href="/readly/libros">catálogo</a> de libros</p>
+    <p>Visita el <a href="/readly/lectores">catálogo</a> de lectores</p>
 </body>
 </html>
