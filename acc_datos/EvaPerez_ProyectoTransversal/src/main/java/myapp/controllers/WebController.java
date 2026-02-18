@@ -156,5 +156,16 @@ public class WebController {
 	        return "lector_busqueda";
 	    }
 	
-	
+
+	/*	@DeleteMapping("/lectura/{id}")
+		public ResponseEntity<Lectura> deleteLectura(@PathVariable Long id) {
+			lecturaService.deleteLectura(id);
+			return new ResponseEntity<>(HttpStatus.OK);
+		}
+			@Override
+	public void deleteEstudiante(Long id) {
+		Estudiante eOriginal = this.findEstudianteById(id);
+		estudianteRepository.delete(eOriginal);
+
+	}*/
 }
