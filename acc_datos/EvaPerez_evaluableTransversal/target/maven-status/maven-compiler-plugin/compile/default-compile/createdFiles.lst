@@ -1,0 +1,13 @@
+acceso\guzmanesSalud\GuzmanesSaludApp.class
+acceso\guzmanesSalud\test\TestGestionaPacientes.class
+acceso\guzmanesSalud\models\Response.class
+exceptions\PacienteNotFoundException.class
+acceso\guzmanesSalud\repositories\PacienteRepository.class
+acceso\guzmanesSalud\services\PacientesServiceImpl.class
+acceso\guzmanesSalud\models\ConstantesVitales.class
+acceso\guzmanesSalud\repositories\ConstantesRepository.class
+acceso\guzmanesSalud\models\Response$Error.class
+acceso\guzmanesSalud\controllers\WebController.class
+acceso\guzmanesSalud\models\Paciente.class
+acceso\guzmanesSalud\GuzmanesSalud.class
+acceso\guzmanesSalud\services\PacientesService.class
