@@ -8,7 +8,6 @@ class SalaReuniones(models.Model):
     name = fields.Char(string = 'Salas',required=True, index = True)
     description = fields.Text(string = 'Descripción')
     
-    # Relación One2many con Reunión
     reuniones_ids = fields.One2many(
         comodel_name='reuniones',  
         inverse_name='sala_id',           
