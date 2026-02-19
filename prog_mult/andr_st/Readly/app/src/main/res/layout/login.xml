@@ -103,30 +103,43 @@
             android:layout_marginEnd="30dp"
             android:background="#A9A9A9" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:backgroundTint="#EEEEEE"
-            android:stateListAnimator="@null"
             android:text="Continuar con Google"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:drawableLeft="@drawable/ic_google"
-            android:drawablePadding="12dp"
-            android:paddingLeft="20dp" />
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:cornerRadius="8dp"
+            app:elevation="0dp"
 
-        <Button
+            app:icon="@drawable/ic_google"
+            app:iconSize="18dp"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            app:iconTint="@null"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginTop="8dp"
             android:backgroundTint="#EEEEEE"
-            android:stateListAnimator="@null"
             android:text="Continuar con Apple"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:drawableLeft="@drawable/ic_apple"
-            android:drawablePadding="12dp"
-            android:paddingLeft="20dp" />
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:cornerRadius="8dp"
+            app:elevation="0dp"
+            app:icon="@drawable/ic_apple"
+            app:iconSize="33dp"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            app:iconTint="@null"
+            />
 
         <Button
             android:layout_width="match_parent"
