@@ -1,5 +1,6 @@
 package android.ejemplo.readly;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,12 +16,21 @@ public class MainPrincipalLector extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.principal_lector);
+
         View mainView = findViewById(R.id.principalLector);
         if (mainView != null) {
             ViewCompat.setOnApplyWindowInsetsListener(mainView, (v, insets) -> {
                 Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
                 v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
                 return insets;
+            });
+        }
+
+        View headerAutores = findViewById(R.id.headerAutores);
+        if (headerAutores != null) {
+            headerAutores.setOnClickListener(v -> {
+                Intent intent = new Intent(MainPrincipalLector.this, MainAutores.class);
+                startActivity(intent);
             });
         }
     }
