@@ -8,9 +8,6 @@
       <SelectionState runConfigName="MainPrincipalLector">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="MainAutores">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="MainLogin">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
