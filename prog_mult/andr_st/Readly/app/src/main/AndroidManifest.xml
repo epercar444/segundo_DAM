@@ -20,6 +20,14 @@
             android:exported="true"
             />
         <activity
+            android:name=".MainVistaPreviaAutores"
+            android:exported="true"
+            />
+        <activity
+            android:name=".MainAnadirComentario"
+            android:exported="true"
+            />
+        <activity
             android:name=".MainLogin"
             android:exported="true">
             <intent-filter>

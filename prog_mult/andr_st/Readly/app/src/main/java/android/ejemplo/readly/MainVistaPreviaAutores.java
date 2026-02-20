@@ -10,14 +10,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainAutores extends AppCompatActivity {
+public class MainVistaPreviaAutores extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.autores);
+        setContentView(R.layout.vista_principal_lector);
 
-        View mainView = findViewById(R.id.autores);
+        View mainView = findViewById(R.id.vistaPreviaAutor);
         if (mainView != null) {
             ViewCompat.setOnApplyWindowInsetsListener(mainView, (v, insets) -> {
                 Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -27,17 +27,14 @@ public class MainAutores extends AppCompatActivity {
         }
 
         findViewById(R.id.navHome).setOnClickListener(v -> {
-            Intent intent = new Intent(MainAutores.this, MainPrincipalLector.class);
+            Intent intent = new Intent(MainVistaPreviaAutores.this, MainPrincipalLector.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         });
 
-        View autorElisabet = findViewById(R.id.autorElisabet);
-        if (autorElisabet != null) {
-            autorElisabet.setOnClickListener(v -> {
-                Intent intent = new Intent(MainAutores.this, MainVistaPreviaAutores.class);
-                startActivity(intent);
-            });
-        }
+        findViewById(R.id.layoutComentarioLibro1).setOnClickListener(v -> {
+            Intent intent = new Intent(MainVistaPreviaAutores.this, MainAnadirComentario.class);
+            startActivity(intent);
+        });
     }
 }

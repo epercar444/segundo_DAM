@@ -33,5 +33,13 @@ public class MainPrincipalLector extends AppCompatActivity {
                 startActivity(intent);
             });
         }
+
+        View autorElisabet = findViewById(R.id.autorElisabet);
+        if (autorElisabet != null) {
+            autorElisabet.setOnClickListener(v -> {
+                Intent intent = new Intent(MainPrincipalLector.this, MainVistaPreviaAutores.class);
+                startActivity(intent);
+            });
+        }
     }
 }

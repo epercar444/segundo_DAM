@@ -263,10 +263,13 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/autorElisabet"
                         android:layout_width="96dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
 
                         <ImageView
                             android:layout_width="80dp"
