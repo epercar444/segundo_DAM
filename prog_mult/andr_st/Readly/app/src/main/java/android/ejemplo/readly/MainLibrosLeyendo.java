@@ -45,5 +45,28 @@ public class MainLibrosLeyendo extends AppCompatActivity {
             });
         }
 
+        View libroItem2 = findViewById(R.id.libroItem2);
+        if (libroItem2 != null) {
+            libroItem2.setOnClickListener(v -> {
+                Intent intent = new Intent(MainLibrosLeyendo.this, MainVistaPrincipalLibro.class);
+                startActivity(intent);
+            });
+        }
+
+        View btnFavorito = findViewById(R.id.navStar);
+        if (btnFavorito != null) {
+            btnFavorito.setOnClickListener(v -> {
+                Intent intent = new Intent(MainLibrosLeyendo.this, MainFavoritos.class);
+                startActivity(intent);
+            });
+        }
+
+        View tvFavoritos = findViewById(R.id.tvFavoritos);
+        if (tvFavoritos != null) {
+            tvFavoritos.setOnClickListener(v -> {
+                Intent intent = new Intent(MainLibrosLeyendo.this, MainFavoritos.class);
+                startActivity(intent);
+            });
+        }
     }
 }

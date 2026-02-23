@@ -1,0 +1,44 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root { --bg:#e8e0d0; --bg-card:#dfd7c7; --ink:#0f0e0b; --muted:#8a8070; --red:#c8463a; --font-display:'Playfair Display',serif; --font-body:'DM Sans',sans-serif; }
+  body { background:var(--bg); font-family:var(--font-body); color:var(--ink); }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+  .page { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:3rem 2rem; gap:3rem; }
+
+  .heading { text-align:center; animation:fadeUp 0.4s ease both; }
+  .title { font-family:var(--font-display); font-size:clamp(2.2rem,5vw,3.5rem); font-weight:900; letter-spacing:-2px; }
+  .title em { color:var(--red); font-style:normal; }
+  .sub { font-size:0.75rem; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-top:0.5rem; }
+
+  .cards { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+
+  .card { background:var(--bg-card); border:2px solid var(--ink); box-shadow:3px 3px 0 var(--ink); padding:2rem 2.2rem; cursor:pointer; text-align:center; min-width:150px; transition:background 0.15s,color 0.15s,transform 0.15s,box-shadow 0.15s; animation:fadeUp 0.4s ease both; }
+  .card:nth-child(2){animation-delay:0.08s} .card:nth-child(3){animation-delay:0.16s}
+  .card:hover { background:var(--ink); color:var(--bg); transform:translate(-2px,-3px); box-shadow:5px 5px 0 var(--red); }
+
+  .card-icon { font-size:1.6rem; display:block; margin-bottom:0.6rem; }
+  .card-name { font-family:var(--font-display); font-size:1.1rem; font-weight:700; letter-spacing:-0.3px; }
+</style>
+
+<div class="page">
+  <div class="heading">
+    <div class="title">Bienvenido a <em>Readly</em></div>
+    <div class="sub">Selecciona una sección</div>
+  </div>
+  <div class="cards">
+    <div class="card" (click)="goTo('/books')">
+      <span class="card-icon">📖</span>
+      <div class="card-name">Libros</div>
+    </div>
+    <div class="card" (click)="goTo('/authors')">
+      <span class="card-icon">✒️</span>
+      <div class="card-name">Autores</div>
+    </div>
+    <div class="card" (click)="goTo('/readers')">
+      <span class="card-icon">👤</span>
+      <div class="card-name">Lectores</div>
+    </div>
+  </div>
+</div>

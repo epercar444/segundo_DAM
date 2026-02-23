@@ -230,6 +230,7 @@
             android:scaleType="fitCenter" />
 
         <ImageView
+            android:id="@+id/navStar"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

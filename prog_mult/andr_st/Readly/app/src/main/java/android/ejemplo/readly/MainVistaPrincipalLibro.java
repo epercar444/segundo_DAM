@@ -41,7 +41,20 @@ public class MainVistaPrincipalLibro extends AppCompatActivity {
             });
         }
 
+        View btnAnadirAnotacion = findViewById(R.id.btnAnadirAnotacion);
+        if (btnAnadirAnotacion != null) {
+            btnAnadirAnotacion.setOnClickListener(v -> {
+                Intent intent = new Intent(MainVistaPrincipalLibro.this, MainAnadirAnotacion.class);
+                startActivity(intent);
+            });
+        }
 
-
+        View btnFavorito = findViewById(R.id.navStar);
+        if (btnFavorito != null) {
+            btnFavorito.setOnClickListener(v -> {
+                Intent intent = new Intent(MainVistaPrincipalLibro.this, MainFavoritos.class);
+                startActivity(intent);
+            });
+        }
     }
 }

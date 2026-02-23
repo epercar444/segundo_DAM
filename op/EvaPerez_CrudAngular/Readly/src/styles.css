@@ -1,14 +1,16 @@
-body {
-  background: #2c3e50;
-  background: linear-gradient(to right, #2c3e50, #4ca1af);
-  min-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.card {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+html, body {
+  background-color: #e8e0d0 !important;
+  font-family: 'DM Sans', sans-serif;
+  color: #0f0e0b;
+  min-height: 100%;
 }
 
-.navbar-brand {
-  font-weight: bold;
-  text-transform: uppercase;
-}
+a { color: inherit; text-decoration: none; }

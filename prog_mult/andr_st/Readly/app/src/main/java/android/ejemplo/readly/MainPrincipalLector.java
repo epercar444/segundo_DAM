@@ -26,6 +26,14 @@ public class MainPrincipalLector extends AppCompatActivity {
             });
         }
 
+        View tvFavoritos = findViewById(R.id.tvFavoritos);
+        if (tvFavoritos != null) {
+            tvFavoritos.setOnClickListener(v -> {
+                Intent intent = new Intent(MainPrincipalLector.this, MainFavoritos.class);
+                startActivity(intent);
+            });
+        }
+
         View headerAutores = findViewById(R.id.headerAutores);
         if (headerAutores != null) {
             headerAutores.setOnClickListener(v -> {
@@ -54,6 +62,22 @@ public class MainPrincipalLector extends AppCompatActivity {
         if (headerLibrosLeyendo != null) {
             headerLibrosLeyendo.setOnClickListener(v -> {
                 Intent intent = new Intent(MainPrincipalLector.this, MainLibrosLeyendo.class);
+                startActivity(intent);
+            });
+        }
+
+        View libroBlackwater = findViewById(R.id.libroBlackwater);
+        if (libroBlackwater != null) {
+            libroBlackwater.setOnClickListener(v -> {
+                Intent intent = new Intent(MainPrincipalLector.this, MainVistaPrincipalLibro.class);
+                startActivity(intent);
+            });
+        }
+
+        View navStar = findViewById(R.id.navStar);
+        if (navStar != null) {
+            navStar.setOnClickListener(v -> {
+                Intent intent = new Intent(MainPrincipalLector.this, MainFavoritos.class);
                 startActivity(intent);
             });
         }

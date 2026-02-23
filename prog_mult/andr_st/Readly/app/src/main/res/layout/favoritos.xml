@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/favoritos"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="72dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:clickable="true"
+                    android:focusable="true"
+                    tools:src="@android:drawable/ic_media_previous" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Favoritos"
+                    android:textColor="#212121"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/favoritoItem1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:src="@drawable/book_chica_nieve"
+                        android:scaleType="centerCrop"
+                        tools:src="@android:color/holo_blue_dark" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Suma"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="La chica de la nieve"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/favoritoItem2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:src="@drawable/book_esnob"
+                        android:scaleType="centerCrop"
+                        tools:src="@android:color/holo_orange_light" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Suma"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Esnob"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/favoritoItem3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:src="@drawable/book_musica_huesos"
+                        android:scaleType="centerCrop"
+                        tools:src="@android:color/holo_green_dark" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="B de Bolsillo"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="La música de los huesos"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#212121" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_star" app:tint="#CCCCCC" android:scaleType="fitCenter" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp">
+
+        <ImageView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_home"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_library"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_star"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_notifications"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_following"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

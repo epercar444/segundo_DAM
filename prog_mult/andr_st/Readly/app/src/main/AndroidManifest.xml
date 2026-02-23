@@ -36,6 +36,18 @@
             android:exported="true"
             />
         <activity
+            android:name=".MainVistaPrincipalLibro"
+            android:exported="true"
+            />
+        <activity
+            android:name=".MainAnadirAnotacion"
+            android:exported="true"
+            />
+        <activity
+            android:name=".MainFavoritos"
+            android:exported="true"
+            />
+        <activity
             android:name=".MainLogin"
             android:exported="true">
             <intent-filter>

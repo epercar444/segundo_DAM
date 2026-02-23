@@ -44,5 +44,12 @@ public class MainIA extends AppCompatActivity {
                     startActivity(intent);
                 });
         }
+        View btnFavorito = findViewById(R.id.navStar);
+        if (btnFavorito != null) {
+            btnFavorito.setOnClickListener(v -> {
+                Intent intent = new Intent(MainIA.this, MainFavoritos.class);
+                startActivity(intent);
+            });
+        }
     }
 }

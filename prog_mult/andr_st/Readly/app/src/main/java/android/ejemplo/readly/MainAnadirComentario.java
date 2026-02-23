@@ -44,5 +44,14 @@ public class MainAnadirComentario extends AppCompatActivity {
             Intent intent = new Intent(MainAnadirComentario.this, MainVistaPreviaAutores.class);
             startActivity(intent);
         });
+
+        View btnFavorito = findViewById(R.id.navStar);
+        if (btnFavorito != null) {
+            btnFavorito.setOnClickListener(v -> {
+                Intent intent = new Intent(MainAnadirComentario.this, MainFavoritos.class);
+                startActivity(intent);
+            });
+        }
     }
+
 }

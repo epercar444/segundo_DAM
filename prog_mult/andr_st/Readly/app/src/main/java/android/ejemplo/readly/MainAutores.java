@@ -39,5 +39,21 @@ public class MainAutores extends AppCompatActivity {
                 startActivity(intent);
             });
         }
+
+        View btnFavorito = findViewById(R.id.navStar);
+        if (btnFavorito != null) {
+            btnFavorito.setOnClickListener(v -> {
+                Intent intent = new Intent(MainAutores.this, MainFavoritos.class);
+                startActivity(intent);
+            });
+        }
+
+        View tvFavoritos = findViewById(R.id.tvFavoritos);
+        if (tvFavoritos != null) {
+            tvFavoritos.setOnClickListener(v -> {
+                Intent intent = new Intent(MainAutores.this, MainFavoritos.class);
+                startActivity(intent);
+            });
+        }
     }
 }
