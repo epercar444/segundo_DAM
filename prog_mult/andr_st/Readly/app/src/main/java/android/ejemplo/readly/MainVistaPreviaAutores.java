@@ -26,6 +26,12 @@ public class MainVistaPreviaAutores extends AppCompatActivity {
             });
         }
 
+        findViewById(R.id.btnVolverAutor).setOnClickListener(v -> {
+            Intent intent = new Intent(MainVistaPreviaAutores.this, MainAutores.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+        });
+
         findViewById(R.id.navHome).setOnClickListener(v -> {
             Intent intent = new Intent(MainVistaPreviaAutores.this, MainPrincipalLector.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);

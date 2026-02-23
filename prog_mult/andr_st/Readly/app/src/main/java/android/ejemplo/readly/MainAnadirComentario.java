@@ -27,6 +27,12 @@ public class MainAnadirComentario extends AppCompatActivity {
             });
         }
 
+        findViewById(R.id.btnVolverComentario).setOnClickListener(v -> {
+            Intent intent = new Intent(MainAnadirComentario.this, MainVistaPreviaAutores.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+        });
+
         findViewById(R.id.navHome).setOnClickListener(v -> {
             Intent intent = new Intent(MainAnadirComentario.this, MainPrincipalLector.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
