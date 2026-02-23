@@ -1,0 +1,19 @@
+{
+  "nombre": "Sylvain Neuvel",
+  "pais_origen": "Canadá",
+  "librosEscritos": [
+    {
+      "titulo": "Los Gigantes Dormidos",
+      "pagTotales": 320,
+      "lectores": [
+        {
+          "username": "pablo_nuevo",
+          "password": "123"
+        },
+        {
+          "id": 1
+        }
+      ]
+    }
+  ]
+}

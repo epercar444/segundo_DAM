@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/vistaPreviaLibro"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="72dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_arrow_back"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                tools:src="@android:drawable/ic_media_previous" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgPortadaLibro"
+                    android:layout_width="130dp"
+                    android:layout_height="190dp"
+                    android:src="@drawable/book_blackwater"
+                    android:scaleType="centerCrop"
+                    tools:src="@android:color/holo_green_light" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Autor"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tvAutorLibro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Michael McDowell"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Editorial"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tvEditorialLibro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Blackie Books"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Número de Páginas"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tvPaginasLibro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="272"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha Publicación"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tvFechaLibro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="07/02/2024"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Sinopsis"
+                android:textColor="#212121"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSinopsis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="24dp"
+                android:text="Las gélidas y oscuras aguas del río Blackwater inundan Perdido, un pequeño pueblo al sur de Alabama. Allí, los Caskey, un gran clan de ricos terratenientes, intentan hacer frente a los daños causados por la riada. Liderados por Mary-Love, la incontestable matriarca, y Óscar, su obediente hijo, los Caskey trabajan por recomponerse y salvaguardar su fortuna. Pero no cuentan con la aparición de la misteriosa Elinor Dammert. Una joven hermosa pero parca en palabras con un único objetivo: acercarse a los Caskey cueste lo que cueste."
+                android:textColor="#616161"
+                android:textSize="13sp"
+                android:lineSpacingExtra="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="6dp"
+                android:text="Progreso"
+                android:textColor="#212121"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPorcentajeProgreso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="25%"
+                android:textColor="#212121"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPaginaProgreso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="24dp"
+                android:text="Página 68 de 272"
+                android:textColor="#9E9E9E"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Valoración"
+                android:textColor="#212121"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/star1"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="#CCCCCC"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitCenter" />
+
+                <ImageView
+                    android:id="@+id/star2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="#CCCCCC"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitCenter" />
+
+                <ImageView
+                    android:id="@+id/star3"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="#CCCCCC"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitCenter" />
+
+                <ImageView
+                    android:id="@+id/star4"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="#CCCCCC"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitCenter" />
+
+                <ImageView
+                    android:id="@+id/star5"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="#CCCCCC"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitCenter" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnAnadirAnotacion"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Añadir anotación"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:backgroundTint="#212121"
+                android:stateListAnimator="@null" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp">
+
+        <ImageView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_home"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/navLibrary"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_library"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/navStar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_star"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/navNotifications"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_notifications"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/navFollowing"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_following"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

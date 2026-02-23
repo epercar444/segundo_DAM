@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle Lector</title>
+</head>
+<body>
+    <h1>Detalle del Lector</h1>
+    <h2 th:text="${detalleLector.username}">Nombre de Usuario</h2>
+    
+    <h3>Libros en su biblioteca:</h3>
+    <ul>
+        <li th:each="libro : ${detalleLector.libros}" th:text="${libro.titulo}">Título del Libro</li>
+    </ul>
+</body>
+</html>

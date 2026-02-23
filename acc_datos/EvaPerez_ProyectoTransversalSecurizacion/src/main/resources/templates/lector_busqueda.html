@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Búsqueda Username</title>
+</head>
+<body>
+    <h1>Lectores encontrados</h1>
+    
+    <div th:each="lector : ${listaLectores}">
+        <h2 th:text="${lector.username}">Nombre de Usuario</h2>
+        <p>Libros asociados:</p>
+        <ul>
+            <li th:each="libro : ${lector.libros}" th:text="${libro.titulo}">Título del Libro</li>
+        </ul>
+        <hr>
+    </div>
+
+    <p th:if="${#lists.isEmpty(listaLectores)}">No se encontraron lectores con ese nombre.</p>
+</body>
+</html>

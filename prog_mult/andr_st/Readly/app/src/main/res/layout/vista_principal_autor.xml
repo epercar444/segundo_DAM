@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/vistaPreviaAutor"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="72dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="320dp">
+
+                <ImageView
+                    android:id="@+id/imgAutorCabecera"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/author_elisabe"
+                    android:scaleType="centerCrop"
+                    tools:src="@android:color/holo_blue_bright" />
+
+                <ImageView
+                    android:id="@+id/btnVolverAutor"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:padding="8dp"
+                    tools:src="@android:drawable/ic_media_previous" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/tvNombreAutor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Elisabet Benavent"
+                    android:textColor="#212121"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvBioAutor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Elisabet Benavent, conocida como &quot;Beta Coqueta&quot;, transformó el panorama romántico actual tras irrumpir con su icónica Saga Valeria. Su carrera incluye éxitos masivos como los libros Fuimos canciones, la aclamada novela Un cuento perfecto y su reciente lanzamiento, Esnob. Sus historias destacan por un estilo fresco que explora la amistad femenina, el amor y los dilemas de la vida urbana contemporánea. Con millones de ejemplares vendidos, muchas de sus obras han saltado a la pantalla en Netflix, consolidándola como un fenómeno cultural imparable."
+                    android:textColor="#616161"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_marginBottom="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="28dp">
+
+                    <ImageView
+                        android:id="@+id/btnSeguirAutor"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_add"
+                        android:background="@drawable/bg_circle_outline"
+                        android:padding="6dp"
+                        android:contentDescription="Seguir autor"
+                        tools:src="@android:drawable/ic_input_add" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Libros destacados"
+                    android:textColor="#212121"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:id="@+id/layoutComentarioLibro1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="12dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/book_cuento_perfecto"
+                        android:scaleType="centerCrop"
+                        tools:src="@android:color/holo_orange_light" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="DelBolsillo"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Un cuento perfecto"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+
+                    <TextView
+                        android:id="@+id/tvComentarioLibro1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Añadir comentario"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/book_valeria"
+                        android:scaleType="centerCrop"
+                        tools:src="@android:color/holo_purple" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="DelBolsillo"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Valeria"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+
+                    <TextView
+                        android:id="@+id/tvComentarioLibro2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Añadir comentario"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp">
+
+        <ImageView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_home"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_library"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_star"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_notifications"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_following"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

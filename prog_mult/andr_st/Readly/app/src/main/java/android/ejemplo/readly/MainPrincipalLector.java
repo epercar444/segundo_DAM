@@ -41,5 +41,21 @@ public class MainPrincipalLector extends AppCompatActivity {
                 startActivity(intent);
             });
         }
+
+        View bannerIA = findViewById(R.id.bannerIA);
+        if (bannerIA != null) {
+            bannerIA.setOnClickListener(v -> {
+                Intent intent = new Intent(MainPrincipalLector.this, MainIA.class);
+                startActivity(intent);
+            });
+        }
+
+        View headerLibrosLeyendo = findViewById(R.id.headerLibrosLeyendo);
+        if (headerLibrosLeyendo != null) {
+            headerLibrosLeyendo.setOnClickListener(v -> {
+                Intent intent = new Intent(MainPrincipalLector.this, MainLibrosLeyendo.class);
+                startActivity(intent);
+            });
+        }
     }
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		 <meta charset="UTF-8">
+		 <title>Autores</title>
+	</head>
+	<body>
+		<table>
+		       <thead>
+		           <tr>
+		               <th>Nombre</th>
+		               <th>Pais Origen</th>
+		           </tr>
+		       </thead>
+		       <tbody>
+		           <tr th:each="autor : ${autores}">
+		               <td th:text="${autor.nombre}">Nombre Autor</td>
+		               <td th:text="${autor.pais_origen}">País Origen</td>
+		           </tr>
+		       </tbody>
+		   </table>
+	</body>
+</html>

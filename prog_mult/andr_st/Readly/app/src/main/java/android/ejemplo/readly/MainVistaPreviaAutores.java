@@ -15,7 +15,7 @@ public class MainVistaPreviaAutores extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.vista_principal_lector);
+        setContentView(R.layout.vista_principal_autor);
 
         View mainView = findViewById(R.id.vistaPreviaAutor);
         if (mainView != null) {

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		 <meta charset="UTF-8">
+		 <title>Lectores</title>
+	</head>
+	<body>
+		<table>
+		       <thead>
+		           <tr>
+		               <th>Username</th>
+		               <th>Id</th>
+		           </tr>
+		       </thead>
+		       <tbody>
+		           <tr th:each="lector : ${lectores}">
+		               <td th:text="${lector.username}">Username</td>
+		               <td th:text="${lector.id}">idLector</td>
+		           </tr>
+		       </tbody>
+		   </table>
+	</body>
+</html>

@@ -95,12 +95,15 @@
             </LinearLayout>
 
             <FrameLayout
+                android:id="@+id/bannerIA"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginBottom="24dp"
                 android:background="@drawable/banner_background"
-                android:clipToOutline="true">
+                android:clipToOutline="true"
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -137,7 +140,6 @@
 
             </FrameLayout>
 
-            <!-- Cabecera Autores con IDs para el click -->
             <LinearLayout
                 android:id="@+id/headerAutores"
                 android:layout_width="match_parent"
@@ -296,12 +298,15 @@
             </HorizontalScrollView>
 
             <LinearLayout
+                android:id="@+id/headerLibrosLeyendo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:layout_marginHorizontal="16dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="0dp"
@@ -313,6 +318,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/arrowLibrosLeyendo"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_arrow_right"

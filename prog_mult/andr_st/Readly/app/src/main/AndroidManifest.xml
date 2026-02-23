@@ -28,6 +28,14 @@
             android:exported="true"
             />
         <activity
+            android:name=".MainIA"
+            android:exported="true"
+            />
+        <activity
+            android:name=".MainLibrosLeyendo"
+            android:exported="true"
+            />
+        <activity
             android:name=".MainLogin"
             android:exported="true">
             <intent-filter>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/inteligencia_artificial"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#F0F0F0"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            tools:src="@android:drawable/ic_media_previous" />
+
+        <Space android:layout_width="8dp" android:layout_height="1dp" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/logo"
+            android:background="@drawable/bg_circle"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            tools:src="@android:color/holo_blue_bright" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="Bookie"
+            android:textColor="#212121"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/chatScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="128dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="260dp"
+                    android:background="@drawable/bg_bubble_user"
+                    android:padding="12dp"
+                    android:text="Bookie, tengo un bloqueo lector. ¿Qué me recomiendas?"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/logo"
+                    android:background="@drawable/bg_circle"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    tools:src="@android:color/holo_blue_bright" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="240dp"
+                    android:background="@drawable/bg_bubble_bot"
+                    android:padding="12dp"
+                    android:text="Oh, no. ¿Tienes alguna preferencia sobre qué leer?"
+                    android:textColor="#212121"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="260dp"
+                    android:background="@drawable/bg_bubble_user"
+                    android:padding="12dp"
+                    android:text="No tengo preferencias ¿Qué libro crees que me ayudará a salir del bloqueo?"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/logo"
+                    android:background="@drawable/bg_circle"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    tools:src="@android:color/holo_blue_bright" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="240dp"
+                    android:background="@drawable/bg_bubble_bot"
+                    android:padding="12dp"
+                    android:text="Entiendo. Según tus últimas lecturas y la situación en la que estás, te recomendaría un libro corto. Para dar un cambio, un libro de Thriller. Te recomendaría &quot;La Asistenta&quot; de Freida McFadden. ¿Te gusta la idea?"
+                    android:textColor="#212121"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp">
+
+            <EditText
+                android:id="@+id/inputMensaje"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Escribe un mensaje..."
+                android:textColorHint="#9E9E9E"
+                android:textColor="#212121"
+                android:textSize="14sp"
+                android:background="@drawable/bg_search_bar"
+                android:paddingHorizontal="14dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:imeOptions="actionSend" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp">
+
+            <ImageView
+                android:id="@+id/navHome"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="12dp"
+                android:src="@drawable/ic_home"
+                app:tint="#9E9E9E"
+                android:scaleType="fitCenter" />
+
+            <ImageView
+                android:id="@+id/navLibrary"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="12dp"
+                android:src="@drawable/ic_library"
+                app:tint="#9E9E9E"
+                android:scaleType="fitCenter" />
+
+            <ImageView
+                android:id="@+id/navStar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="12dp"
+                android:src="@drawable/ic_star"
+                app:tint="#9E9E9E"
+                android:scaleType="fitCenter" />
+
+            <ImageView
+                android:id="@+id/navNotifications"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="12dp"
+                android:src="@drawable/ic_notifications"
+                app:tint="#9E9E9E"
+                android:scaleType="fitCenter" />
+
+            <ImageView
+                android:id="@+id/navFollowing"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="12dp"
+                android:src="@drawable/ic_following"
+                app:tint="#9E9E9E"
+                android:scaleType="fitCenter" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

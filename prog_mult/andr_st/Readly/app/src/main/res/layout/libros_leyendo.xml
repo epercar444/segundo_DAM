@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/librosLeyendo"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="72dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_search_bar"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_search"
+                    app:tint="#9E9E9E"
+                    tools:src="@android:drawable/ic_menu_search" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:hint="Buscar"
+                    android:textColorHint="#9E9E9E"
+                    android:textColor="#212121"
+                    android:textSize="16sp"
+                    android:background="@null"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:imeOptions="actionSearch" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:drawableStart="@drawable/ic_favorite"
+                    android:drawablePadding="4dp"
+                    android:text="Favoritos"
+                    android:textColor="#212121"
+                    android:textSize="14sp"
+                    tools:drawableStart="@android:drawable/btn_star_big_on" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:drawableStart="@drawable/ic_following"
+                    android:drawablePadding="4dp"
+                    android:text="Siguiendo"
+                    android:textColor="#212121"
+                    android:textSize="14sp"
+                    tools:drawableStart="@android:drawable/ic_menu_my_calendar" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_poll"
+                    android:drawablePadding="4dp"
+                    android:text="Encuestas"
+                    android:textColor="#212121"
+                    android:textSize="14sp"
+                    tools:drawableStart="@android:drawable/ic_menu_agenda" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:padding="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    tools:src="@android:drawable/ic_media_previous" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:text="Libros leyendo"
+                    android:textColor="#212121"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/libroItem1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/book_cien_anos"
+                        android:scaleType="centerCrop"
+                        tools:src="@android:color/holo_orange_light" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Penguin Random House"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Cien Años de Soledad"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="55%"
+                        android:textColor="#212121"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/libroItem2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/book_blackwater"
+                        android:scaleType="centerCrop"
+                        tools:src="@android:color/holo_green_light" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Blackie Books"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Blackwater I: La Riada"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="25%"
+                        android:textColor="#212121"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/libroItem3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/book_enigma"
+                        android:scaleType="centerCrop"
+                        tools:src="@android:color/holo_blue_light" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Alfaguara"
+                        android:textColor="#9E9E9E"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="El enigma de la habitación 622"
+                        android:textColor="#212121"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="43%"
+                        android:textColor="#212121"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp">
+
+        <ImageView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_home"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/navLibrary"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_library"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/navStar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_star"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/navNotifications"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_notifications"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/navFollowing"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@drawable/ic_following"
+            app:tint="#9E9E9E"
+            android:scaleType="fitCenter" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
