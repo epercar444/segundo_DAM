@@ -45,8 +45,8 @@ public class LectorServiceImpl implements LectorService{
 	}
 
 	@Override
-	public Set<Lector> findByUsername(String username) {
-		return lectorRepository.findByUsername(username);
+	public Set<Lector> findByUsuario(String usuario) {
+		return lectorRepository.findByUsuario(usuario);
 	}
 	
 }

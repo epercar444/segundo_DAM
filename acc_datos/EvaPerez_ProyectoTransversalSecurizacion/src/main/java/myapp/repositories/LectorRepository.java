@@ -11,6 +11,6 @@ import myapp.models.Lector;
 @Repository
 public interface LectorRepository extends JpaRepository<Lector, Long>{
     List<Lector> findAll();
-    Set<Lector> findByUsername(String username);
+    Set<Lector> findByUsuario(String usuario);
     Lector findLectorById(long id);
 }

@@ -10,5 +10,5 @@ public interface LectorService {
     public Lector createLector(Lector l) ;
     public Lector findLectorById(long id);
     public Lector updateLibrosLector (long id, Lector l);
-    Set<Lector> findByUsername(String username);
+    Set<Lector> findByUsuario(String usuario);
 }

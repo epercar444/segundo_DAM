@@ -111,11 +111,11 @@ public class WebController {
 		 }
 		
 	    // Método para obtener un producto por ID, get para recuperar, put para actualizar
-		@GetMapping("/autor/{id}")
-		public String getAutorById(@PathVariable Long id, Model model) {
+		@GetMapping("/autor/json/{id}")
+		@ResponseBody
+		public ResponseEntity<?> getAutorByIdJson(@PathVariable Long id) {
 		    Autor autor = autorService.findAutorById(id);
-		    model.addAttribute("autor", autor); 
-		    return "autor_detalle"; 
+		    return new ResponseEntity<>(autor, HttpStatus.OK);
 		}
 	    @PutMapping ("/autor/{id}")
 	    public ResponseEntity<Autor> getAutorById(@PathVariable Long id,@RequestBody Autor autor) {
@@ -151,7 +151,7 @@ public class WebController {
 	    
 	    @GetMapping("/lector/username/{username}")
 	    public String getLectorByUsername(@PathVariable String username, Model model) {
-	        Set<Lector> lectoresEncontrados = lectorService.findByUsername(username);
+	        Set<Lector> lectoresEncontrados = lectorService.findByUsuario(username);
 	        model.addAttribute("listaLectores", lectoresEncontrados);
 	        return "lector_busqueda";
 	    }
